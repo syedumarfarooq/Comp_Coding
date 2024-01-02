@@ -37,9 +37,11 @@ arr[0]//=>value at base address +(0*4(int size is 4 bytes))
     arr.capacity();//capacity means the number of elements that can be stored 
   //checking if empty
     arr.empty();//=>true or false
- 
-  //
-    
+  //for each loop 
+    for(auto value:auto){
+      cout<<value<<" ";
+    }
+  
 
     
 
