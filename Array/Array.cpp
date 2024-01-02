@@ -19,6 +19,51 @@
 int arr[n];//Bad practise use dynamic array instead
 arr[0]//=>value at base address +(0*4(int size is 4 bytes))
 //whenever array is passed into a function its size should also be passed and it is passed by address(reference)
+//CLASS 2
+// Vector
+  #include<vector>
+  //declare
+    vector<int> arr;
+  //initialise
+    vector<int> arr{10,20,30};
+    vector<int> arr(10,-1);//it will create a vector of size 10 and initialize with -1
+    vector<int> arr(n);
+  // inserting element
+    arr.push_back(5);
+  //removing element
+    arr.pop_back();
+  //checking size
+    arr.size();//size of vector means the number of elements stored in it
+    arr.capacity();//capacity means the number of elements that can be stored 
+  //checking if empty
+    arr.empty();//=>true or false
+  // Unique element question
+    // example:[1,2,1,2,3,4,4]=>3 because it is the only element which is unique
+    int findUnique(vector<int> arr){
+      int ans=0;
+      for(int i=0;i<arr.size();i++){
+        ans=ans^arr[i];
+      }
+      return ans;
+    }
+    int main(){
+  
+      int n;
+      cout<<"enter the size of array"<<endl;
+      cin>>n;
+      vector<int> arr(n);
+      cout<<"enter the elements"<<endl;
+      for(int i=0;i<arr.size();i++){
+        cin>>arr[i];
+      }
+      int uniqueElement =findUnique(arr);
+      cout<<uniqueElement;
+    }
+  //
+    
+
+    
+
 
 
 
