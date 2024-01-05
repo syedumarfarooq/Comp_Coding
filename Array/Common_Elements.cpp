@@ -11,6 +11,8 @@
 // Output: 20 80
 // Explanation: 20 and 80 are the only
 // common elements in A, B and C.
+// Time_Complexity:O[n1+n2+n3]
+// Space_Complexity:O(n)
 class Solution
 {
     public:    
