@@ -29,3 +29,4 @@
 // STL for Binary Search
 //   #include<algorithm>
 //   binary_search(v.begin(),v.end(),key);{where v is vector<int> v;}
+// CLASS 2
