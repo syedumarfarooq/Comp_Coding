@@ -51,7 +51,7 @@
       //    4 5 6 =>[1,2,3,4,5,6,7,8,9] 
       //    7 8 9
       // arr[2][1]=c*i+j=>7 arr[7]=8; where c is no of columns i.e 3 and i=2,j=1
-      // u cannot access 2d array using arr[] it is just for our understading
+      // u cannot access 2d array using arr[] it is just for our understading but it is stored in array in single fashion
     // initialise
       int arr[][]={{1,2},{3,4}};
     //while passing a 2d array into a function u have to pass the row,colum and give value after  1st bracket i.e first bracket can be empty
