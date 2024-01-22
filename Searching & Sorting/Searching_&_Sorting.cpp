@@ -40,8 +40,8 @@ bool binarySearch(int arr[][4], int rows, int cols, int target) {
   int mid = s + (e-s)/2;
 
   while(s <= e) {
-    int rowIndex = mid/cols;//formula to access row number using a number and column
-    int colIndex = mid%cols;//formula to access column number using a number and column
+    int rowIndex = mid/cols;//formula to access row number using a single index 
+    int colIndex = mid%cols;//formula to access column number using a single index 
     
     if(arr[rowIndex][colIndex] == target) {
       cout << "Found at " << rowIndex <<" " << colIndex << endl;
