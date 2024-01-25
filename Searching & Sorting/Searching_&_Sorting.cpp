@@ -86,8 +86,8 @@ int main() {
 // 2.Search space question(finding answers in search space)(aggressive cow etc)
 // 3.Index Observation question(finding odd occurence in an array)
 //CLASS 4
-Sorting Techniques
-i)Selection sort
+// Sorting Techniques
+// i)Selection sort
     for(int i=0;i<n-1;i++){
         int minIndex=i;
         for(int j=i+1;j<n;j++){
@@ -97,5 +97,20 @@ i)Selection sort
         }
     swap(arr[i],arr[minIndex]);
     }
-Time Complexity:O(n^2)
-
+// Time Complexity:O(n^2)
+// ii)Bubble sort
+     for(int round=1;i<n;i++){
+        bool swapped=false;
+        for(int j=0;j<n;j++){
+            if(arr[j]>arr[j+1]){
+                swapped=true;
+                swap(arr[j],arr[j+1]);
+            }
+        }
+         if(swapped==false){//this is used to optimize the code when the array has no more swap then it says that it is sorted no need to check for more iterations
+             break;
+    }
+// Time Complexity:O(n^2)
+iii)Insertion Sort
+Steps:fetch,compare,shift,copy
+    
