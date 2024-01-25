@@ -111,6 +111,19 @@ int main() {
              break;
     }
 // Time Complexity:O(n^2)
-iii)Insertion Sort
-Steps:fetch,compare,shift,copy
-    
+// iii)Insertion Sort
+// Steps:fetch,compare,shift,copy
+    for(int i=1;i<n;i++){
+        int val=arr[i];
+        for(int j=i-1;j>=0;j--){
+            if(arr[j]>val){
+                arr[j+1]=arr[j];
+            }else{
+                break;
+            }
+        }
+    arr[j+1]=val;//i+1 because after loop j--
+    }
+// *Sort predefined function
+#include<algorithm>
+sort(v.begin(),v.end());
