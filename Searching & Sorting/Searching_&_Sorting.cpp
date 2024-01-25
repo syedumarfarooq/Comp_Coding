@@ -85,4 +85,6 @@ int main() {
 // 1.Classic question(lower bound,upper bound,pivot,peak,search in rotated sorted,total occurence,square root etc)
 // 2.Search space question(finding answers in search space)(aggressive cow etc)
 // 3.Index Observation question(finding odd occurence in an array)
-
+//CLASS 4
+Sorting Techniques
+i)Selection sort
