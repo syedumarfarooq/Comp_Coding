@@ -38,42 +38,42 @@
 //                 O(n-k)
 // Space complexity:we have used O(k) for ans
 // 2)binary search+ two pointer
-// class Solution {
-// public:
-//     int bn(vector<int>& nums,int k){
-//         int s=0,e=nums.size()-1;
-//         int ans=e;
-//         while(s<=e){
-//             int mid=s+(e-s)/2;
-//             if(nums[mid]>=k){
-//                 ans=mid;
-//                 e=mid-1;
+class Solution {
+public:
+    int bn(vector<int>& nums,int k){
+        int s=0,e=nums.size()-1;
+        int ans=e;
+        while(s<=e){
+            int mid=s+(e-s)/2;
+            if(nums[mid]>=k){
+                ans=mid;
+                e=mid-1;
                 
-//             }else if(nums[mid]<k){
-//                 s=mid+1;
-//             }else{
-//                 e=mid-1;
-//             }
-//         }
-//         return ans;
-//     }
-//     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
-//         int h=bn(arr,x);
-//         int l=h-1;
-//         while((h-l)<=k){
-//             if(l<0){
-//                 h++;
-//             }
-//             else if(h>=arr.size()){
-//                 l--;
-//             }
-//             else if((x-arr[l])>(arr[h]-x)){
-//                 h++;
-//             }
-//             else{
-//                 l--;
-//             }
-//         }
-//         return vector<int>(arr.begin()+l+1,arr.begin()+h);
-//     }
-// };
+            }else if(nums[mid]<k){
+                s=mid+1;
+            }else{
+                e=mid-1;
+            }
+        }
+        return ans;
+    }
+    vector<int> findClosestElements(vector<int>& arr, int k, int x) {
+        int h=bn(arr,x);
+        int l=h-1;
+        while((h-l)<=k){
+            if(l<0){
+                h++;
+            }
+            else if(h>=arr.size()){
+                l--;
+            }
+            else if((x-arr[l])>(arr[h]-x)){
+                h++;
+            }
+            else{
+                l--;
+            }
+        }
+        return vector<int>(arr.begin()+l+1,arr.begin()+h);//used l+1 because l can go in negative number l=h-1 if h=0 then will show error
+    }
+};
