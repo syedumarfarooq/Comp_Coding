@@ -53,3 +53,33 @@
     //     }
     //     return ans.size();
     // }
+// 3)using binary search
+class Solution {
+public:
+    int bn(vector<int>& nums,int start,int k){
+        int s=start,e=nums.size()-1;
+        while(s<=e){
+            int mid=s+(e-s)/2;
+            if(nums[mid]==k){
+                return mid;
+            }else if(nums[mid]<k){
+                s=mid+1;
+            }else{
+                e=mid-1;
+            }
+        }
+        return -1;
+    }
+    int findPairs(vector<int>& nums, int k) {
+        sort(nums.begin(),nums.end());
+        set<pair<int,int>> ans;
+        for(int i=0;i<nums.size()-1;i++){
+            int j=bn(nums,i+1,nums[i]+k);
+            if(j!=-1){
+                ans.insert({nums[i],nums[j]});
+            }
+        }
+        return ans.size();
+    }
+
+};
