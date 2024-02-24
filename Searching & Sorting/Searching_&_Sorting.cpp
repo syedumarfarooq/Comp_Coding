@@ -127,3 +127,5 @@ int main() {
 // *Sort predefined function
 #include<algorithm>
 sort(v.begin(),v.end());
+// ❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖Question trick❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖
+// IF QUESTION IS SORTED THEN TRY SOLVING TWO POINTER OR BINARY SEARCH
