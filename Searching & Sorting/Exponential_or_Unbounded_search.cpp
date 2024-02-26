@@ -13,7 +13,19 @@ return binarysearch(a,i/2`(start position)`,min(i,n-1)`(if i goes outside the n 
 // example:2^4-2^3=>2^log₂16-2^log₂16-1=>2^log4(as base 2 and 2 from 2^4=16 will be cancelled)=>2^logm-2^logm-1
 //         =>2^logm(1-2^-1)
 //         =>O(logn)=>O(log(2^logm-1))
-application:
-1)search in infinite array
-2)better than binary search if target is in begining
-
+// application:
+// 1)search in infinite array
+// 2)better than binary search if target is in begining
+// for infinite
+int exposearch(int a[],int n,int target){
+  if(a[0]==target){
+    return 0;
+  }
+  int i=0;
+  int j=1;
+  while(a[i]<target){
+    i=j;
+    j=j*2;
+  }
+return binarysearch(a,i`(start position)`,min(j,n-1)`(if i goes outside the n it takes n)`,target);
+}
