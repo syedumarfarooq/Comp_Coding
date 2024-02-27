@@ -30,3 +30,49 @@
 // Output:32
 // Explanation: Allocation is done as
 // {15,17} and {20}
+class Solution 
+{
+    public:
+    bool isPossibleSolution(int A[],int N,int M,int sol){
+        int pageSum=0;//keep count of page number
+        int count=1;//keeps count of students
+        for(int i=0;i<N;i++){
+            if(A[i]>sol){
+                return false;
+            }
+            if(pageSum+A[i]>sol){
+                pageSum=0;
+                pageSum=pageSum+A[i];
+                count++;
+                if(count>M){
+                    return false;
+                }
+            }
+            else{
+                pageSum+=A[i];
+            }
+        }
+        return true;
+    }
+    
+    int findPages(int A[], int N, int M) 
+    {   int s=0;
+        int e=accumulate(A,A+N,0);//add all the elements in the array and 0 is the initial starting point so it starting adding array to 0
+        
+        int ans=-1;
+        if(M>N){
+            return -1;//if students are more than books -1 as all students must be allocated
+        }
+        while(s<=e){
+            int mid=s+(e-s)/2;
+            if(isPossibleSolution(A,N,M,mid)){
+                ans=mid;
+                e=mid-1;
+            }else{
+                s=mid+1;
+            }
+        }
+        return ans;
+    }
+};
+
