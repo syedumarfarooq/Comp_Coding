@@ -23,3 +23,43 @@
 // 12
 // 36
 // 1
+bool isPossibleSol(vector<int>&cooksrank,int sol,int nP){
+    int currentParanta=0;
+    for(int i=0;i<cooksrank.size();i++){
+       int timeTaken=0;
+       int j=1;//where j is the paranta no of each cook
+       int R=cooksrank[i];
+       while(true){
+        if(timeTaken+j*R<=sol){
+          currentParanta++;
+          timeTaken+=j*R;
+          j++;
+        }
+        else{
+          break;
+        }
+       }
+      if(currentParanta>=nP){
+        return true;
+      }
+    }
+  return false;
+}
+  
+int solve(vector<int>&cooksrank,int nP){//where nP are no of paratas
+  sort(cooksrank.begin(),cooksrank.end());
+  int s=0;
+  int e=cooksrank[cooksrank.end()-1]*(np*(np+1)/2);//r*(n*(n+1)/2);
+  int ans=-1;
+  while(s<=e){
+    int mid=s+(e-s)/2;
+    if(isPossibleSol(cooksrank,mid,nP){
+        ans=mid;
+        e=mid-1;
+    }
+    else{
+      s=mid+1;
+    }
+  }
+  return ansl
+}
