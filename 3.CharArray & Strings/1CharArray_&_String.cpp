@@ -30,4 +30,22 @@
       swap(name[i],name[j]);
       i++,j--;
     }
+  // Question 3
+  // # Check Palindrome
+  bool checkPalindrome(char name[]){
+     int i=0;
+    int n=getLength(name);
+    int j=n-1;
+    while(i<=j){
+      if(name[i]!=name[j]){
+        return false;
+      }
+      else{
+        i++;
+        j--:
+          }
+    }
+    return true;
+  }
+
 
