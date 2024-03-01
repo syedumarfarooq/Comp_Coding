@@ -74,5 +74,17 @@
 
     str.erase(starting_index,no_of_characters_to_be_erased);
 
-    
+//Connect class
+// custom comparator for sort
+bool cmp(char first,char second){
+    return first<second//for increasing
+    return first>second//for decreasing
+}
+int main(){
+string s="umar";
+sort(s.begin(),s.end(),cmp);
+cout<<s<<endl;
+return 0;
+}
+
 
