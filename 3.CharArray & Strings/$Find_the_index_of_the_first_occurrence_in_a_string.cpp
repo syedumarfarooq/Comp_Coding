@@ -12,6 +12,7 @@
 // Input: haystack = "leetcode", needle = "leeto"
 // Output: -1
 // Explanation: "leeto" did not occur in "leetcode", so we return -1.
+//---------------CAN BE SOLVED USING RABIN-KARP AND KMP ALGO---------------
 class Solution {
 public:
     int strStr(string haystack, string needle) {
