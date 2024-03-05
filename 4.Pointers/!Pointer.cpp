@@ -22,9 +22,11 @@
     int* ptr=&a;
     int* secondptr=ptr;
 // CLASS 2
-int arr[4]={1,2,3,4}
-cout<<arr;//this gives the base address of arr            }
-cout<<&arr;//this also gives the address of  arr          }there address are all same
-cout<<&arr[0]//this gives the address of arr              }
+    int arr[4]={1,2,3,4}
+    cout<<arr;//this gives the base address of arr            }
+    cout<<&arr;//this also gives the address of  arr          }there address are all same
+    cout<<&arr[0]//this gives the address of arr              }
+    cout<<*arr;//this gives 1 as output 
+    cout<<*(arr+1);//=>2
 
 
