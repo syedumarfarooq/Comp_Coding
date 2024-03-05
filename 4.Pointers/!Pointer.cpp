@@ -75,3 +75,17 @@
         int** q=&p;//q is a pointer to p and contains address of p
         cout<<*q;//this gives the addess of a as the value at address of p contains address of a
         cout<<**q;//this gives the value of a 
+    //FUNCTION AND DOUBLE POINTER
+        int main(){
+            int x=12;
+            int* p=&x;
+            int** q=&p;
+            cout<<p;//for eg;104
+            solve(q);
+            cout<<p;//=>108 as it has been changed in the function because of *ptr+=1;
+        }
+        int solve(int** ptr){
+            *ptr=*ptr+1;//&x is changed 
+            **ptr=**ptr+1;//this changes the value of x to 13
+            
+        }
