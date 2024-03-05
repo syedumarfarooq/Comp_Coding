@@ -10,15 +10,21 @@
   //*->it is used to create pointer and dereference operator
     cout<<*ptr;//it access the value whose address is stored in ptr
   // why pointers?
-    // 1.Dynamic memory allocation
-    // 2.Memory management
-    // 3.accessing hardware
-    // 4.to pass a function into another function we use pointer
-//int* ptr;//BAD PRACTISE
-  int* ptr=0;//NULL POINTER
-  int* ptr=NULL;
-  int* ptr=nullptr;
-//copying ptr
-int* ptr=&a;
-int* secondptr=ptr;
+            // 1.Dynamic memory allocation
+            // 2.Memory management
+            // 3.accessing hardware
+            // 4.to pass a function into another function we use pointer
+    //int* ptr;//BAD PRACTISE
+      int* ptr=0;//NULL POINTER
+      int* ptr=NULL;
+      int* ptr=nullptr;
+    //copying ptr
+    int* ptr=&a;
+    int* secondptr=ptr;
+// CLASS 2
+int arr[4]={1,2,3,4}
+cout<<arr;//this gives the base address of arr            }
+cout<<&arr;//this also gives the address of  arr          }there address are all same
+cout<<&arr[0]//this gives the address of arr              }
+
 
