@@ -77,6 +77,7 @@
 //Connect class
 // custom comparator for sort
 bool cmp(char first,char second){
+    //no matter the order of input it places them in such manner where the return condition is satisfied that is it places both the char in such a way that first<second
     return first<second//for increasing
     return first>second//for decreasing
 }
