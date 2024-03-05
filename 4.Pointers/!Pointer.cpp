@@ -100,10 +100,22 @@
         cout<<a<<b;//=>7 7
     //FUNCTIONS AND REFERENCE VARIABLE
         void solve(int &value){
-              value++'
+              value++;
         }
         int main(){
             int a=5;
             solve(a);
             cout<<a;//=>6
+        }
+    //POINTER AND FUNCTIONS AND REFERENCE VARIABLE
+        void solve(int*& p){
+            p=p+10;    //this changes the address of p as it is passed by reference
+        }
+        int main(){
+            int a=5;
+            int *ptr=&a;
+            cout<<ptr;
+            solve(ptr);
+            cout<<ptr;//the address is different from the above ptr and it is changed in solve function by using & but previous we could not do that by just using pointer but we can change by using a refernce variable
+            
         }
