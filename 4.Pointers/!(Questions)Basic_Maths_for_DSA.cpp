@@ -84,3 +84,5 @@ public:
         return ans;
     }
 };
+//Time complexity:O(nlog(logn))
+//as the inner loop has(n/2+n/3+n/5+n/7+.....)=>log(logn)
