@@ -39,6 +39,12 @@
         char* c=chr;
         cout<<*c;//=>U
         cout<<c;//=>THIS WILL PRINT UMAR
+        cout<<chr;//=>umar
         //it prints out the entire string of that address
+        char name[10]="syedUmar";
+        char* c=&name[0];
+        cout<<name;//=>syedUmar
+        cout<<c;//=>syedUmar
+        cout<<c+2;//=>edUmar
 
 
