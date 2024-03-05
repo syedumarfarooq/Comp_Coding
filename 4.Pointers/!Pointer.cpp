@@ -14,6 +14,8 @@
     // 2.Memory management
     // 3.accessing hardware
     // 4.to pass a function into another function we use pointer
-  //int* ptr;//BAD PRACTISE
+//int* ptr;//BAD PRACTISE
   int* ptr=0;//NULL POINTER
+  int* ptr=NULL;
+  int* ptr=nullptr;
 
