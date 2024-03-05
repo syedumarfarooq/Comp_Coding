@@ -91,3 +91,19 @@
         }
     //REFERENCE VARIABLE
         // same memory location can be accessed through different names
+        //it is used in pass by reference concepts
+        int a=5;
+        int& b=a;//b is a reference variable and pointing to the same memory location of a
+        a++;
+        cout<<a<<b;//=>6 6
+        b++;
+        cout<<a<<b;//=>7 7
+    //FUNCTIONS AND REFERENCE VARIABLE
+        void solve(int &value){
+              value++'
+        }
+        int main(){
+            int a=5;
+            solve(a);
+            cout<<a;//=>6
+        }
