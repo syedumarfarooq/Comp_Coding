@@ -89,3 +89,5 @@
             **ptr=**ptr+1;//this changes the value of x to 13
             
         }
+    //REFERENCE VARIABLE
+        // same memory location can be accessed through different names
