@@ -29,5 +29,8 @@
     cout<<*arr;//this gives 1 as output 
     cout<<*(arr+1);//=>2
     cout<<*(arr+i)<<arr[i]<<i[arr];//all are same 
+    int* p=arr;
+    arr=arr+1;//ERROR
+    p=p+1;//works fine
 
 
