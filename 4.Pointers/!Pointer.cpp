@@ -46,5 +46,6 @@
         cout<<name;//=>syedUmar
         cout<<c;//=>syedUmar
         cout<<c+2;//=>edUmar
+        cout<<*(name+3);//=>d
 
 
