@@ -37,6 +37,8 @@
         //cout implementation is different for char array
         char chr[10]="umar";
         char* c=chr;
+        //1.first a in temporary storage umar is saved
+        //2.then it is copied to chr array
         cout<<*c;//=>U
         cout<<c;//=>THIS WILL PRINT UMAR
         cout<<chr;//=>umar
@@ -47,5 +49,11 @@
         cout<<c;//=>syedUmar
         cout<<c+2;//=>edUmar
         cout<<*(name+3);//=>d
-
-
+        char ch='k';
+        char* c=ch;
+        cout<<c;//=>this will print k and some garbage values till the null character is found eg:k^a;dfk
+        char* ccc="syedumar";//BAD PRACTISE   
+        cout<<ccc;//=>syedumar
+        //1.first syedumar is stored temporarily and then
+        //2.then it is pointed through a pointer
+        
