@@ -59,7 +59,7 @@ public:
         return count;
     }
 };
-// 3)SIEVE OF ERATOSHENES
+// 3)SIEVE OF ERATOSHENES(imp theorem for counting prime)
 -make a array from 2 to n-1 which represent all number and mark them as true(prime no)
 -start from 2 till end mark all the multiples of 2 except 2 as non prime i.e false
 -repeat till end where it is true and mark its multiples false
