@@ -28,5 +28,6 @@
     cout<<&arr[0]//this gives the address of arr              }
     cout<<*arr;//this gives 1 as output 
     cout<<*(arr+1);//=>2
+    cout<<*(arr+i)<<arr[i]<<i[arr];//all are same 
 
 
