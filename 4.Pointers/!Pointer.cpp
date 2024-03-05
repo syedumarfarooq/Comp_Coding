@@ -56,4 +56,22 @@
         cout<<ccc;//=>syedumar
         //1.first syedumar is stored temporarily and then
         //2.then it is pointed through a pointer
-        
+    //FUNCTION AND POINTER
+        //whenever a array is passed into a function it is passed by reference that is a pointer is created in the function and it contains the base address of the array so the &arr in main function will have the base address and &arr in the function will have a different address as a new pointer is created
+        //eg:
+        void solve(int *p){
+            *p=*p+10;    //p is a new pointer created with the address of a
+        }
+        int main(){
+            int a=5;
+            int *ptr=&a;
+            solve(ptr);
+            cout<<a;//=>15
+        }
+//CLASS 3
+    //DOUBLE POINTER
+        int a=5;
+        int* p=&a;//p is a pointer to a and contains address of p
+        int** q=&p;//q is a pointer to p and contains address of p
+        cout<<*q;//this gives the addess of a as the value at address of p contains address of a
+        cout<<**q;//this gives the value of a 
