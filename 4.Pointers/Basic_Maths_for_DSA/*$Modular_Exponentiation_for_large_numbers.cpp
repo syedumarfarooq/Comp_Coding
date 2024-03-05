@@ -36,4 +36,6 @@ class Solution
 		    }
 		    return ans%M;//whenever performing big operation the value can go out of range so we mod the value in every step to reduce the range so that it can fit
 		}
+
 };
+// TimeComplexity:O(logb)
