@@ -18,4 +18,7 @@
   int* ptr=0;//NULL POINTER
   int* ptr=NULL;
   int* ptr=nullptr;
+//copying ptr
+int* ptr=&a;
+int* secondptr=ptr;
 
