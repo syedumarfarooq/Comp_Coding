@@ -119,3 +119,10 @@
             cout<<ptr;//the address is different from the above ptr and it is changed in solve function by using & but previous we could not do that by just using pointer but we can change by using a refernce variable
             
         }
+//Question
+//what is the output
+int* solve(){
+    int a=5;
+    int* ans=&a;
+    return ans;
+}
