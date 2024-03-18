@@ -86,3 +86,5 @@
         // T(n)<=2^0*c+2^1*c........}where c is the processing time of addition in return statement and this is derived by tree where fib(n)=>fib(n-1)+fib(n-2) i.e it increases by 2^1,2^2,2^3
         // T(n)<=c[2^0+2^1+2^2.........+2^n-1]
         // T(n)<=c[2^n-1]=>2^n
+  //Space Complexity:O(n*m)=O(n)}where is m is constant space
+
