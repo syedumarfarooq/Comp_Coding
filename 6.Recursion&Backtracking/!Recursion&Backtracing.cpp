@@ -75,5 +75,5 @@
           // T(n)=k }   as t(n/2),T(n/4)... will all get cancelled
           // =>O(a*K)}where a is log n  and k is constant as n/2^a=1 so a=logn i.e n iterates till it becomes 1
           // =>O(logn)
-      //Space Complexity:O(n*m)=O(n)}where is m is constant space
+      //Space Complexity:O(k*logn)=O(logn)}where k is constant space
 
