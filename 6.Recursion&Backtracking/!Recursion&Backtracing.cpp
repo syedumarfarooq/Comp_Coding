@@ -45,7 +45,7 @@
       // =>O(n)
   //Space Complexity:O(n*m)=O(n)}where is m is constant space
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-  // 2)Time Complexity:O(n)
+  // 3)Time Complexity:O(n)
       // eg:
           int BS(int a[], int k, int start, int end){
             if (start › end)
@@ -76,4 +76,13 @@
           // =>O(a*K)}where a is log n  and k is constant as n/2^a=1 so a=logn i.e n iterates till it becomes 1
           // =>O(logn)
       //Space Complexity:O(k*logn)=O(logn)}where k is constant space
-
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  // 4)Time Complexity:O(2^n) very high complexity not OPTIMAL can be solved more optimally using dynamic programming
+      // eg:
+        int fib(int n){
+        if(n = 0|| n == 1) return n;
+        return fib(n - 1) + fib(n - 2);
+        }
+        // T(n)<=2^0*c+2^1*c........}where c is the processing time of addition in return statement and this is derived by tree where fib(n)=>fib(n-1)+fib(n-2) i.e it increases by 2^1,2^2,2^3
+        // T(n)<=c[2^0+2^1+2^2.........+2^n-1]
+        // T(n)<=c[2^n-1]=>2^n
