@@ -44,3 +44,36 @@
       // =>O(nK)
       // =>O(n)
   //Space Complexity:O(n*m)=O(n)}where is m is constant space
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  // 2)Time Complexity:O(n)
+      // eg:
+          int BS(int a[], int k, int start, int end){
+            if (start › end)
+            return -1;
+            int mid = start + (end - start) / 2;
+            if (a[mid] = k)
+            return mid;
+            else if (k › a [mid])
+            {
+              return BS( a,k, mid + 1, end);
+            }
+            else
+            {
+              return BS( a,k, start, mid-1);
+            }
+          }
+          // T(n)=k+T(n/2)
+          // T(n/2)=k+T(n/4)
+          // T(n/4)=k+T(n/8)
+          //   .
+          //   .
+          //   .
+          //   .
+          // T(2)=k+T(1)
+          // T(1)=k      
+          // -----------------
+          // T(n)=k }   as t(n/2),T(n/4)... will all get cancelled
+          // =>O(a*K)}where a is log n  and k is constant as n/2^a=1 so a=logn i.e n iterates till it becomes 1
+          // =>O(logn)
+      //Space Complexity:O(n*m)=O(n)}where is m is constant space
+
