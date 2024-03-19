@@ -1,4 +1,4 @@
-// Printing array using recursion
+1)// Printing array using recursion
 //MY METHOD
 // #include <iostream>
 // using namespace std;
@@ -29,3 +29,14 @@ cout<<arr[i];
 //baaki recursion sambhal lega
 print(arr, n, i+1);
 ｝
+2)//Finding maximum number in an array
+    findMax(int arr[], int n, int i, int& maxi) {//if we dont use & then it is passed by value and after completion of that function erases it local variable so we have to pass by reference
+    
+        if(i>=n){
+    return;
+        }
+        if(arr[i]>maxi){
+            maxi=arr[i];
+        }
+    findMax(arr,n,i+1,maxi);
+}
