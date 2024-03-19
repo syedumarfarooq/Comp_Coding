@@ -40,4 +40,8 @@ print(arr, n, i+1);
         }
     findMax(arr,n,i+1,maxi);
 }
+int main(){
+int maxi=INT_MIN;
+findmax(arr,n,i,maxi);
+cout<<maxi;//if & was not used in the above function then the int min value would have been printed as the local variable as we have used & it has the maximum which is found using the function
 https://drive.google.com/file/d/1Vryx3b6RaSOq2Uv0FWDIkMfnbjqIhLq0/view?usp=sharing
