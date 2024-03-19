@@ -27,6 +27,6 @@ public:
         if(n==1||n==0){
             return 1;//in this the 0th stair can be reached in 1 way not 0, so n==0 return 1; if n==0 returns 0 then the way to reach 0th stair will 0 and that we will be a false statement there must be a way to reach to 0th stair so that the next stairs can be reached
         }
-        return climbStairs(n-1)+climbStairs(n-2); // in this to reach final stair either u have to be on n-1 or n-2 as it can jump only one or two stairs so we add the combination of reaction n-1 and n-2
+        return climbStairs(n-1)+climbStairs(n-2); // in this to reach final stair either u have to be on n-1 or n-2 as it can jump only one or two stairs so we add the combination of  n-1 and n-2
     }
 };
