@@ -16,3 +16,6 @@
     // 3.processing(optional)//(printing or calcutaion)
     // --Magical line to ace recursion
        // solve 1 case and recursion will take care of other cases
+_________________IMP_______________    
+WHENEVER YOU PASS A VARIABLE IN A FUNCTION AND U WANT TO STORE THAT DATA PASS IT BY REFERENCE&
+//if it is not passed by reference it will create a new variable of same name at different address so the intial variable will not be changed and after completion of that function that variable is deleted
