@@ -17,4 +17,4 @@ int main(){
   printSubsequence(str,output,i);
   return 0;
 }
-
+//without recursion can be solved using bitmasking H.W
