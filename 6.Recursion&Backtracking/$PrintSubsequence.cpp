@@ -7,7 +7,7 @@ void printSubsequence(string str,string output,int i){
   }
   //exclude
   printSubsequence(str,output,i+1);//if you are excluding then your and send the same output string
-  //include
+  //include//do not write the code for include first as it changes the output values
   output.push_back(str[i]);//if you want to include then you concatinate str[i] into the string and then go to next step
   printSubsequence(str,output,i+1);//or printSequence(str,output+str[i],i+1);
 }
