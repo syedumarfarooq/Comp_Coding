@@ -1,5 +1,6 @@
 // Input : abc
 // Output : a, b, c, ab, bc, ac, abc," "
+INCLUSION AND EXCLUSION PATTERN
 void printSubsequence(string str,string output,int i){
   if(i>=str.length()){
     cout<<output<<endl;//the contains the answer
