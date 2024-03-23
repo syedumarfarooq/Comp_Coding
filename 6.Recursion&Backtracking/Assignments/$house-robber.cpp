@@ -18,6 +18,7 @@
 // Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
 // Total amount you can rob = 2 + 9 + 1 = 12.
 TIME LIMIT EXCEEDED USE DYNAMIC PROGRAMMING
+QUESTION NOT UNDERSTOOD COMPLETELY AS THE RECURSION TREE IS NOT UNDERSTABEL BUT ONE THING SOLVE FOR ONE CASE 
 class Solution {
 public:
     int robHelper(vector<int>& nums,int i){
