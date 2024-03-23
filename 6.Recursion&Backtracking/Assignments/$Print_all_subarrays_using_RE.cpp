@@ -1,25 +1,24 @@
-Print all subarrays using recursion
-eg:input:1,2,3,4,5
-  output:
-1 
-1 2 
-1 2 3 
-1 2 3 4 
-1 2 3 4 5 
-2 
-2 3 
-2 3 4 
-2 3 4 5 
-3 
-3 4 
-3 4 5 
-4 
-4 5 
-5 
+// Print all subarrays using recursion
+// eg:input:1,2,3,4,5
+//   output:
+// 1 
+// 1 2 
+// 1 2 3 
+// 1 2 3 4 
+// 1 2 3 4 5 
+// 2 
+// 2 3 
+// 2 3 4 
+// 2 3 4 5 
+// 3 
+// 3 4 
+// 3 4 5 
+// 4 
+// 4 5 
+// 5 
 
 
-...Program finished with exit code 0
-Press ENTER to exit console.
+
 #include <iostream>
 #include<vector>
 using namespace std;
@@ -47,3 +46,5 @@ int main()
 
     return 0;
 }
+Time Complexity:O(N*N)
+Space Complexity:O(N+2)//2 because the space for printSubarr and main() using 1 is added because only main function and then recursive funciton is called but in this another function is used 
