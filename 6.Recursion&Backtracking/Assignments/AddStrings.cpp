@@ -70,3 +70,5 @@ public:
         return ans;
     }
 };
+Time Complexity:O(N+1);
+Space Complexity:O(N+1);
