@@ -47,3 +47,8 @@ public:
     }
     
 };
+Time Complexity:Oceil(log₁₀N)=>O(log₁₀N)//{where ceil is short for "ceiling," which refers to rounding a number up to the nearest integer
+// log₁₀N is the formula for counting number of digits
+// Time complexity is propotional to number of digits
+// eg:for 3 digits it has to run 4 times 
+Space Complexity:O(log₁₀N)
