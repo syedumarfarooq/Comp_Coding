@@ -62,4 +62,5 @@ bool isMatchHelper(string& s,int si,string& p,int pi){
     }
 };
 Time Complexity:O(2^N)}//same as fibonacci as the function is checking for * is empty and consume a character in the worst case there might a *
+ //because of 2^n it goes exponential as there are 2 calls in one function
 Space complexity:O(n)//was told that maximum dept of a recursion function or max no of recursive call can determine the space complexity
