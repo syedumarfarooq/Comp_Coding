@@ -25,7 +25,7 @@
 TIME LIMIT EXCEEDED USING DYNAMIC PROGRAMMING
 class Solution {
 public:
-    int numRollsToTarget(int n, int k, int target) {//think n a s no of chances to roll the dice the first time you get k different answer and next time k ans till the no of chances are zero
+    int numRollsToTarget(int n, int k, int target) {//think n as no of chances to roll the dice the first time you get k different answer and next time k ans till the no of chances are zero
         if(target<0)return 0;
         if(target==0&&n==0)return 1;
         if(n==0&&target!=0)return 0;
