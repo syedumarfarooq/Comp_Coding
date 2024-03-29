@@ -31,7 +31,7 @@ public:
         if(n==0&&target!=0)return 0;
         if(n!=0&&target==0)return 0;
         int ans=0;
-        for(int i=1;i<=k;i++){//i=1 because we have to minus it from target
+        for(int i=1;i<=k;i++){//i=1 because we have to minus it from target and once a dice is rolled it have have k no of outcomes
             ans+=numRollsToTarget(n-1,k,target-i);
         }
         return ans;
