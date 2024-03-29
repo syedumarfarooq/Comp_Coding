@@ -38,4 +38,4 @@ public:
     }
 };
 Time Complexity:O(k^n)}//as there are k divisions in every step for n step k^n will be time complexity
-Space Complexity:O(n)
+Space Complexity:O(n)//as the depth of the call can go to n steps in worst case check once perfect square and time and space complexity of recursion
