@@ -37,5 +37,5 @@ public:
         return ans;
     }
 };
-Time Complexity:O(k^n)
+Time Complexity:O(k^n)}//as there are k divisions in every step for n step k^n will be time complexity
 Space Complexity:O(n)
