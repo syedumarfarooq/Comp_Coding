@@ -11,19 +11,19 @@
         int* right=new int[len2];
         //copying values of arr into left arr
         int k=start;
-        for(int i=0;i<len1;i++){
+        for(int i=0;i<len1;i++){//O(len1)
             left[i]=arr[k++];
         }
         //copying values of arr into right arr
         k=mid+1;
-        for(int i=0;i<len2;i++){
+        for(int i=0;i<len2;i++){//O(len2)
             right[i]=arr[k++];
         }
         //comparing values of left and right array and placing it in the main array
         int leftIndex=0;
         int rightIndex=0;
         int mainArrayIndex=start;
-        while(leftIndex<len1&&rightIndex<len2){
+        while(leftIndex<len1&&rightIndex<len2){//O(n)
             if(left[leftIndex]<right[rightIndex]){
                 arr[mainArrayIndex++]=left[leftIndex++];
             }
@@ -31,10 +31,10 @@
                 arr[mainArrayIndex++]=right[rightIndex++];
             }
         }
-        while(leftIndex<len1){
+        while(leftIndex<len1){//O(len1)
              arr[mainArrayIndex++]=left[leftIndex++];
         }
-        while(rightIndex<len2){
+        while(rightIndex<len2){//O(len2)
              arr[mainArrayIndex++]=right[rightIndex++];
         }
         
