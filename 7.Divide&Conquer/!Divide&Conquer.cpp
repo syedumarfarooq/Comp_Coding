@@ -1,4 +1,4 @@
-// CLASS 1
+********************************************************// CLASS 1**************************************************************************
 //   1.MERGE SORT
     #include <iostream>
     using namespace std;
@@ -153,6 +153,65 @@ int main()
     mergeSort(arr, 0, arr_size - 1);
  
     printArray(arr, arr_size);
+    return 0;
+}
+********************************************************// CLASS 2**************************************************************************
+2.QUICK SORT
+    #include <iostream>
+using namespace std;
+int partition(int arr[],int s,int e){
+    //choose pivotElement
+    int pivotIndex=s;
+    int pivotElement=arr[s];
+    int count=0;
+    //count the elements less than the pivotElement so that it can be placed to its right position
+    for(int i=s+1;i<=e;i++){
+        if(arr[i]<pivotElement){
+            count++;
+        }
+    }
+    //placing the pivotElement to its right position
+    int rightIndex=s+count;
+    swap(arr[pivotIndex],arr[rightIndex]);
+    pivotIndex=rightIndex;
+    //the array should contain elements in such a way that the elements smaller than pivot elements should
+    //placed on the right and the larger element on the left
+    int i=s;
+    int j=e;
+    while(i<pivotIndex&&j>pivotIndex){
+        while(arr[i]<=pivotElement){
+            i++;
+        }
+        while(arr[j]>pivotElement){
+            j--;
+        }
+        if(i<pivotElement&&j>pivotElement){
+            swap(arr[i],arr[j]);
+        }
+    }
+    return pivotIndex;
+    
+}
+void quickSort(int arr[],int s,int e){
+    if(s>=e){
+        return;
+    }
+    //partition logic and return pivot index
+    int p=partition(arr,s,e);
+    //pivot element left
+    quickSort(arr,s,p-1);
+    //pivot element right
+    quickSort(arr,p+1,e);
+}
+int main()
+{
+    int arr[]={5,4,3,2,1};
+    int n=5;
+    quickSort(arr,0,n-1);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    
     return 0;
 }
 
