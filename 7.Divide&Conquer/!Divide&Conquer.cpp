@@ -68,7 +68,7 @@ explanation:T(n)=2T(n/2)+nk
             .
             T(1)=k+k
             --------------------
-            T(n)=(k)+(i*n*k)//i is the number of iteration of times it is running so n/2^i=1=>i=logn as n is divided by 2 every time for i times the n/2^i will be i
+            T(n)=(k)+(i*n*k)//i is the number of iteration of times it is running to reach the final call so n/2^i=1=>i=logn as n is divided by 2 every time for i times the n/2^i will be i
             T(n)=nlogn
 ------------LEARN IN PLACE MERGE SORT TO NOT TAKE EXTRA SPACE IN MERGE FUNCTION THAT IS CREATING RIGHT AND LEFT ARRAY-----
 // C++ program in-place Merge Sort
