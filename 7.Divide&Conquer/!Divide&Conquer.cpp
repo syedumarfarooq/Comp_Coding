@@ -60,16 +60,16 @@
         return 0;
     }
 Time Complexity:O(nlogn)
-explanation:T(n)=2T(n/2)+nk
-            T(n/2)=2T(n/4)+n/2k}//multiply with 2 so that 2T(n/2) and T(n/2) can get cancelled
-            T(n/4)=2T(n/8)+n/4k}//multiply with 4 so that it can get cancelled
-            .
-            .
-            .
-            T(1)=k+k
-            --------------------
-            T(n)=(k)+(i*n*k)//i is the number of iteration of times it is running to reach the final call so n/2^i=1=>i=logn as n is divided by 2 every time for i times the n/2^i will be i
-            T(n)=nlogn
+// explanation:T(n)=2T(n/2)+nk
+//             T(n/2)=2T(n/4)+n/2k}//multiply with 2 so that 2T(n/2) and T(n/2) can get cancelled and also n/2 will become n
+//             T(n/4)=2T(n/8)+n/4k}//multiply with 4 so that it can get cancelled and also n/4 will become n
+//             .
+//             .
+//             .
+//             T(1)=k+k
+//             --------------------
+//             T(n)=(k)+(i*n*k)//i is the number of iteration of times it is running to reach the final call so n/2^i=1=>i=logn as n is divided by 2 every time for i times the n/2^i will be i
+//             T(n)=nlogn
 ------------LEARN IN PLACE MERGE SORT TO NOT TAKE EXTRA SPACE IN MERGE FUNCTION THAT IS CREATING RIGHT AND LEFT ARRAY-----
 // C++ program in-place Merge Sort
 #include <iostream>
