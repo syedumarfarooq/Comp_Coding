@@ -214,5 +214,10 @@ int main()
     
     return 0;
 }
+TimeComplexity:best and average:O(nlogn)}//same as merge sort explanation given in merge sort
+               worst case:O(n^2)
+    explanation:in worst case the array is in descending order so the function will run n,n-1,n-2.....1=>n(n+1)/2=>n^2+n/2=>n^2
+    //in this the function runs i time so T.C is 2^i+t(n/2^i)+i*n but for best and average case i is n/2,n/4,...so on so logn but in worst case the i 
+    // is n-1,n-2.... so on so n(n+1)/2;
 
 *//*****************
