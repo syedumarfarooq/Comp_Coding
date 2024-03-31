@@ -220,4 +220,33 @@ TimeComplexity:best and average:O(nlogn)}//same as merge sort explanation given 
     //in this the function runs i time so T.C is 2^i+t(n/2^i)+i*n but for best and average case i is n/2,n/4,...1 as n is divided into 2 every time so logn but in worst case the i 
     // is n-1,n-2.... so on so n(n+1)/2;
 
-*//*****************
+*//*********************************************************************************************************************
+// Backtracking
+//     specific form of recursion
+//     in this we explore all solution
+// Q.Permutation
+//  intput="abc" output="abc acb bac bca cba cab "
+    #include <iostream>
+using namespace std;
+void printPermutation(string& str,int i){
+    if(i>=str.length()){
+        cout<<str<<" ";
+        return;
+    }
+    //swapping elements to get all the permutation
+    for(int j=i;j<str.length();j++){
+        swap(str[j],str[i]);
+        printPermutation(str,i+1);
+        //backtracking-to recreate the original input
+        //as we are swapping we are making changes in the main str so we are recreating the original input
+        swap(str[j],str[i]);
+    }
+    return;
+}
+int main()
+{
+    string str="abc";
+    printPermutation(str,0);
+
+    return 0;
+}
