@@ -36,7 +36,7 @@ vector<bool> segSieve(int L,int R){//segment Sieve block
     int j=max(firstmul,prime*prime);//we do this to start marking prime as false so we start from first multiple or the i*i ,method from sieve method which is showed in count primes ,if the firstmul is less than means it can be marked by other previous multiples so we can start from i*i
     while(j<R){
       segSieve[j-L]=false;
-      j+=i;
+      j+=prime;
     }
   }
   return sieve;
