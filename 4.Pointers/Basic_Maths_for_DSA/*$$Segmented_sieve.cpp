@@ -39,6 +39,6 @@ vector<bool> segSieve(int L,int R){//segment Sieve block
       j+=prime;
     }
   }
-  return sieve;
+  return segsieve;
 }
 
