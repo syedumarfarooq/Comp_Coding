@@ -1,3 +1,4 @@
+//Find prime array in the given range is we use normal method we might have to create from 2 to r where r can go up to 10^9
 //Question a range is given L and R which can start from 0-10^9 so u cannot practically create a array of size 10^9 so we create an array of range R-L so that it can be created 
 // vector<bool> sieve(int n) {
 //         if(n==0||n==1) return 0;
