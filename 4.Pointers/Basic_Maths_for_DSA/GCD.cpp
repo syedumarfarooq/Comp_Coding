@@ -19,7 +19,7 @@
 // Output: 1
 // Explanation: GCD of 1 and 1 is 1
 //Formula:Gcd(a,g)=gcd(a-b,b) a>b or  gcd(a%b,b) a>b //we are not using mod as modular operation are heavy operation compared to subtraction
-//                 gcd(b-a,a) a<b  or gcd(b%a,a) a<b
+//                 gcd(a,b-a) a<b  or gcd(a,b%a) a<b
 // compute this until on of the values become zero then the other number is gcd
 class Solution {
   public:
