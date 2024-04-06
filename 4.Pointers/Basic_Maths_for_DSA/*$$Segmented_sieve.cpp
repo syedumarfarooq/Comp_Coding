@@ -13,7 +13,7 @@
 //                 }
 //             }
 //         }
-//         return sieve;
+//         return prime;
 //     }
 vector<bool> segSieve(int L,int R){//segment Sieve block
   //first get a base prime array which are used as initial prime eg:for 25 the base primes are 2,3,5 i.e primes √n after this they are marked false based on the multiples of these primes and also this can be proved from above sieve tabel for finding primes it starts from i*i so before than are all base primes
