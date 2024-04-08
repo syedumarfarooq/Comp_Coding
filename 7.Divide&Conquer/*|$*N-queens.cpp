@@ -188,3 +188,4 @@ unordered_map<int,bool>bottomLeftDiagonal;
     }
 };
 Time Complexity:O(N^N)
+Space Complexity:The space complexity is O(n^2) because output matrix is required, so an extra space of size n*n is needed.
