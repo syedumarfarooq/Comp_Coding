@@ -1,3 +1,4 @@
+Question:IN CASE OF LINKED LIST WHICH IS BETTER QUICK SORT OR MERGE SORT SIMILLARY IN CASE OF ARRAY WHICH IS BETTER QUICK SORT OR MERGE SORT
 *// CLASS 1*********************************************************************************************************************************
 //   1.MERGE SORT
     #include <iostream>
