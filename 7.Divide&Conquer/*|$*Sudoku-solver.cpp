@@ -81,4 +81,6 @@ bool solve(vector<vector<char>>& board){
     void solveSudoku(vector<vector<char>>& board) {
         solve(board);
     }
+Time Complexity:O(9^N)
+Space Complexity:O(N*N)
 };
