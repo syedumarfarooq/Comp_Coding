@@ -218,6 +218,7 @@ int main()
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
+
     
     return 0;
 }
@@ -257,3 +258,7 @@ int main()
 
     return 0;
 }
+Time Complexity:O(n!)
+Explanation:n+n(n-1)+n(n-1)(n-2)--------n(n-1)(n-2).....1
+    n(n-1)(n-2)....1[n/n(n-1)(n-2)....1+n(n-1)(n-2)/n(n-1)(n-2)....1]//as this will be negilible as a number divided by something very big will give a very small number very negligilble
+    O(n!)
