@@ -4,6 +4,7 @@ INCLUSION AND EXCLUSION PATTERN USED
 void printSubsequence(string str,string output,int i){
   if(i>=str.length()){
     cout<<output<<endl;//the contains the answer
+    return;
   }
   //exclude
   printSubsequence(str,output,i+1);//if you are excluding then your and send the same output string
