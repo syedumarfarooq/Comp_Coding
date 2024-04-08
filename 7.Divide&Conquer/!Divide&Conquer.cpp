@@ -70,6 +70,13 @@ Time Complexity:O(nlogn)
 //             --------------------//we can derive i from n/2^i=1
 //             T(n)=(k)+(i*n*k)//i is the number of iteration of times it is running to reach the final call so n/2^i=1=>i=logn as n is divided by 2 every time for i times the n/2^i will be i
 //             T(n)=nlogn
+Space Complexity:O(n)
+    // explanation:(n/2+n/2)+(n/4+n/4)----(1+1)
+    //             2[n/2+n/4+---1]//neglet 2
+    //             n[1/2+1/4+1/8----1]
+    //             n[2]
+    //             O(2n)
+                
 ------------LEARN IN PLACE MERGE SORT TO NOT TAKE EXTRA SPACE IN MERGE FUNCTION THAT IS CREATING RIGHT AND LEFT ARRAY-----
 // C++ program in-place Merge Sort
 #include <iostream>
