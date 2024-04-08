@@ -187,3 +187,4 @@ unordered_map<int,bool>bottomLeftDiagonal;
         return ans;
     }
 };
+Time Complexity:O(N^N)
