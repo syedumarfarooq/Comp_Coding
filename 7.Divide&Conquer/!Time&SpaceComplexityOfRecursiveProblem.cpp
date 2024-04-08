@@ -1,0 +1,3 @@
+FINDING TIME COMPLEXITY USING INTUITION
+TIME COMPLEXITY:(1 call ka time)*total no of calls
+1)
