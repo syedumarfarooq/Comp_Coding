@@ -1,7 +1,7 @@
 // a array is give of time int
 // return the maximum sum of subsequence in which no two elements are adjacent
 // Example:[2,1,4,9]
-  // output:11
+  // output:11=>9+2=11
 #include <iostream>
 #include<vector>
 #include<limits.h>
