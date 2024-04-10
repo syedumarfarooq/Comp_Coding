@@ -38,10 +38,12 @@ public:
         if(index>=candidates.size()){
             return;
         }
+     //mapping can also be used to solve this problem of handling duplicates
+     //unordered_map<int,bool>visited;
         for(int i=index;i<candidates.size();i++){
-            if(i>index&&candidates[i]==candidates[i-1]){
-                continue;
-            }
+            if(i>index&&candidates[i]==candidates[i-1]){ //}     if(visited.find(candidates[i])!=visited.end()){continue;}
+                continue;                                //}or 
+            }                                            //}     visited[candidates[i]]=true;
             output.push_back(candidates[i]);
             combinationSum2Helper(candidates,target-candidates[i],ans,output,i+1);
             output.pop_back();
