@@ -40,6 +40,7 @@ public:
         }
      //mapping can also be used to solve this problem of handling duplicates
      //unordered_map<int,bool>visited;
+     
         for(int i=index;i<candidates.size();i++){
             if(i>index&&candidates[i]==candidates[i-1]){ //}     if(visited.find(candidates[i])!=visited.end()){continue;}
                 continue;                                //}or 
