@@ -40,7 +40,8 @@ public:
         }
      //mapping can also be used to solve this problem of handling duplicates
      //unordered_map<int,bool>visited;
-     //the concept behind this two numbers should not be same at the same level then duplicates forms
+     //the concept behind this two numbers should not be same at the same level then duplicates forms i.e if there are same numbers at a level
+     //then most probabaly it will give same ouput
         for(int i=index;i<candidates.size();i++){
             if(i>index&&candidates[i]==candidates[i-1]){ //}     if(visited.find(candidates[i])!=visited.end()){continue;}
                 continue;                                //}or 
