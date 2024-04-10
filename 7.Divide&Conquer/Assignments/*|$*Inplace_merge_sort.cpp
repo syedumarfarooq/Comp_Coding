@@ -13,7 +13,7 @@ void mergeInPlace(vector<int>& arr, int l, int m, int r)//O(nlogn)
                 }
                 ++i,++j;
             }
-            gap=gap<=1?0:gap/2+(gap%2);//=>ceil(gap)/2)
+            gap=gap<=1?0:gap/2+(gap%2);//=>ceil(gap)/2)//as gap of 1 will be one all time so exception handeled 
         }
        
     }
