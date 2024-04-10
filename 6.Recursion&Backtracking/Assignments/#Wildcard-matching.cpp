@@ -42,7 +42,7 @@ bool isMatchHelper(string& s,int si,string& p,int pi){
         return true;
     }
     if(s[si]==p[pi]||p[pi]=='?'){
-        isMatchHelper(s,si+1,p,pi+1);
+        return isMatchHelper(s,si+1,p,pi+1);
     }
     if(p[pi]=='*'){
         //treat * as empty or null
