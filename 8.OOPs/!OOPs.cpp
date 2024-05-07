@@ -6,3 +6,7 @@ Object
   2)behaviour/method
 Class
   using classes we can create user defined datatyes
+Access Modifiers
+  1)public
+  2)private
+  3)protected
