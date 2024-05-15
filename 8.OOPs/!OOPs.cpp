@@ -13,7 +13,7 @@
 #include <iostream>
 using namespace std;
 class Animal{
-    public:
+    public://anything below it is public
     //state or properties
     int age;        //data members
     string name;    //data members
@@ -109,4 +109,124 @@ int main()
         //but in dynamic memory allocation u have to manually do it
         Animal* b=new Animal():
         delete b;
+    }
+*//Class 2 ***************************************************************************************************************************************************************************
+// 4 Pillars of OOPs
+//     1)Encapsulation
+//     2)Inheritance
+//     3)polymorphism
+//     4)Abstraction
+// Encapsulation-Data hiding
+//Inheritance-
+    // the child class/sub class inherit the properties from parent class/super class
+    #include <iostream>
+using namespace std;
+class Animal{
+    public:
+    int age;
+    int weight;
+    void eat(){
+        cout<<"Eating"<<endl;
+    }
+};
+class Dog:public Animal{
+    
+};
+int main()
+{
+    Dog d1;
+    d1.eat();
+
+    return 0;
+}
+// BASE CLASS KA ACCESS MODIFIER |||| MODE OF INHERITANCE
+//     public,public->public
+//     public,protected->protected
+//     public,private->private
+//     protected,public->protected
+//     protected,protected->protected
+//     protected,private->private
+//     private,public->not accessable
+//     private,protected->not accessable
+//     private,private->not accessable
+Types of inheritance
+    1.single 
+    2.multi-level
+    3.multiple//-class C:public A,public C{};
+    4.hierarchial
+    5.hybrid
+    
+*//IMP ***************************************************************************************************************************************************************************    
+// Multilevel
+    // Scope Resolution operator
+    //Diamond problem question
+    
+    #include <iostream>
+    using namespace std;
+    class A{
+        public:
+        int chemistry;
+        A(){
+            chemistry=100;
+        }
+    };
+    class B{
+        public:
+        int chemistry;
+        B(){
+            chemistry=111;
+        }
+    };
+    class C:public A,public B{
+        
+    };
+    int main(){
+        C obj;
+        cout<<obj.B::chemistry;//scope Resolution operator
+        return 0;
+    }
+// POLYMORPHISM-existing in many forms
+    1.compile-time polymorphism
+    2.run-time polymorphism
+//Compile-time polymorphism it is based on
+    1.function overloading
+    2.operator overloading
+//Function Overloading
+    #include <iostream>
+    using namespace std;
+    class Math{
+        public:
+        int sum(int a,int b){
+            return a+b;
+        }
+        int sum(int a,int b,int c){
+            return a+b+c;
+        }
+        int sum(int a,float b){
+            return 100;
+        }
+    };
+    int main(){
+        Math obj;
+        cout<<obj.sum(1,2.0f);
+        return 0;
+    }
+//Operator Overloading
+    #include <iostream>
+    using namespace std;
+    class Param{
+        public:
+        int val;
+        void operator+(Param& obj2){
+            int value1=this->val;
+            int value2=obj2.val;
+            cout<<(value2-value1)<<endl;
+        }
+    };
+    int main(){
+        Param obj1,obj2;
+        obj1.val=7;
+        obj2.val=2;
+        obj1+obj2;
+        return 0;
     }
