@@ -96,7 +96,7 @@ int main()
     }
     //copy object
     int main(){
-        Animal b=a; or Animal b(a);
+        Animal b=a; or Animal b(a);//copy constructor is called
     }
 //Destructor
     Animal{
