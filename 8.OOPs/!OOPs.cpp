@@ -123,6 +123,7 @@ int main()
 //     4)Abstraction
 // Encapsulation-Data hiding
     //wraping data members and data function in the form of class and encapsulation is achieved by access modifiers
+    //encapsulation is a subset of abstraction
 //Inheritance-
     // the child class/sub class inherit the properties from parent class/super class
     #include <iostream>
