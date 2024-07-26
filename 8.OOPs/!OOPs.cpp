@@ -286,3 +286,5 @@ int main()
     return 0;
 }
 //Abstraction(implementation hiding)
+//it is to achieve generalisation by producing the underline logic in general form to the user by hiding the implementation
+// eg:keeping books in bag in encapsulation and what books are not knowing what books are there are abstraction
