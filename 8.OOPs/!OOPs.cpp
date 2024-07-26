@@ -219,6 +219,7 @@ Types of inheritance
         return 0;
     }
 //Operator Overloading
+//it is used when we want to change how a operator works eg:changing the + function to - function
     #include <iostream>
     using namespace std;
     class Param{
