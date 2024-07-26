@@ -299,3 +299,8 @@ Types of inheritance
     for(int i=0;i<row;i++){
         arr[i]=new int[col];
     }
+    for(int i=0;i<row;i++){//printing the array
+        for(int j=0;j<col;j++){
+            cout<<arr[row][col];
+        }
+    }
