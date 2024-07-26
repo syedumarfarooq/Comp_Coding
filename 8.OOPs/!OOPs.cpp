@@ -241,3 +241,31 @@ Types of inheritance
         return 0;
     }
 *//Class 3 ***************************************************************************************************************************************************************************
+//Run Time Polymorphism
+    //i)Function/method overriding
+    #include <iostream>
+class Animal{
+    public:
+    void speak(){//Virtual
+        cout<<"speaking"<<endl;
+    }
+}
+class Dog:public Animal{
+    public:
+    void speak(){//function/method overriding
+        cout<<"barking"<<endl;
+    }
+}
+int main()
+{
+   Dog a;
+   a.speak();//barking
+   Animal b;
+   b.speak();//speaking
+    //UPCASTING(pointer is a parent type and object is child type)
+   Animal* c=new Dog();//by default parent class function is used but if i want to decide at the run time which function to call then we have
+    //mark the parent function void speak() as virtual i.e virtual void speak()
+    //if virtual is used c.speak() will print barking
+   c.speak();//speaking
+    return 0;
+}
