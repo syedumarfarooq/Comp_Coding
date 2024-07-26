@@ -159,7 +159,8 @@ Types of inheritance
     2.multi-level
     3.multiple//-class C:public A,public C{};
     4.hierarchial
-    5.hybrid
+    5.hybrid//-mixture of all types of inheritance
+    
     
 *//IMP ***************************************************************************************************************************************************************************    
 // Multiple
