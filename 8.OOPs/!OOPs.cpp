@@ -90,7 +90,9 @@ int main()
         //by default constructor runns whenever object is created
     }
     //copy consturctor
-    Animal(Animal& obj){//by default it is pass by value so when ever copy consturctor is called and it is  send by pass by reference 
+    Animal(Animal& obj){//by default it is pass by value so when ever copy consturctor is called (whenever Animal Obj is used
+        //as parameter it calls copy constructor ad it is making a copy everytime so this process of calling keeps on going so 
+        //we & to pass by reference)and it is  send by pass by reference 
         //it keeps on making copy of object and goes inside infinte loop if it is not passed by reference by using &
         this->age=obj.age;
     }
