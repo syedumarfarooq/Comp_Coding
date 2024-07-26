@@ -236,6 +236,7 @@ Types of inheritance
         Param obj1,obj2;
         obj1.val=7;
         obj2.val=2;
-        obj1+obj2;//obj1 is calling the + operator so obj1 is current operator  and obj2 goes in as input parameter
+        obj1+obj2;//obj1 is calling the + operator so obj1 is current operator  and obj2 goes in as input parameter eg:obj1.add(obj)
+        //instead of .add() we use + operator
         return 0;
     }
