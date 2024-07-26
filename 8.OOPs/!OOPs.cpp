@@ -91,7 +91,7 @@ int main()
     }
     //copy consturctor
     Animal(Animal& obj){//by default it is pass by value so when ever copy consturctor is called and it is  send by pass by reference 
-        //it keeps on making copy of object and goes inside infinte loop
+        //it keeps on making copy of object and goes inside infinte loop if it is not passed by reference by using &
         this->age=obj.age;
     }
     //copy object
