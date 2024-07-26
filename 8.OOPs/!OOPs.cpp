@@ -263,9 +263,15 @@ int main()
    Animal b;
    b.speak();//speaking
     //UPCASTING(pointer is a parent type and object is child type)
+    //where animal is pointer and dog is the object;
    Animal* c=new Dog();//by default parent class function is used but if i want to decide at the run time which function to call then we have
     //mark the parent function void speak() as virtual i.e virtual void speak()
     //if virtual is used c.speak() will print barking
    c.speak();//speaking
+    //Downcasting
+    Dog* d=new Animal();//this might show error in some compiler so prevent this we are using Dog* d=(Dog*) new Animal();
+    d.speak();//barking
+    //in upcasting or downcasting and using it without virtual it will call the pointer's method and if we use virtual  keyword
+    //it will the call the function of the object 
     return 0;
 }
