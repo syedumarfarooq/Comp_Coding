@@ -94,6 +94,7 @@ int main()
         //it keeps on making copy of object and goes inside infinte loop
         this->age=obj.age;
     }
+    //copy object
     int main(){
         Animal b=a; or Animal b(a);
     }
