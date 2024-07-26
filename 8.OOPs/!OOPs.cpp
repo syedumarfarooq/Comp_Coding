@@ -52,6 +52,7 @@ int main()
 //  eg:new int;=>return the address of memory location
 // int* a=new int;//created a new int which is present in heap memory
 // int* ptr=new int[5];//in this a array of 5 size is allocated in heap memory and its address is stored in pointer ptr which is in stack memory
+// delete []arr;//to delete 
 // NOTE://in stack memory can be cleaned automatically but in heap it is not cleaned automatically
 //Dynamic Memory
     Animal* suresh=new Animal;
@@ -304,3 +305,8 @@ Types of inheritance
             cout<<arr[row][col];
         }
     }
+    //deleting 
+    for(int i=0;i<row;i++){
+        delete []arr[i];
+    }
+    delete []arr;
