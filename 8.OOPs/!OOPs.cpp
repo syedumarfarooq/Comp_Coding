@@ -295,7 +295,7 @@ Types of inheritance
 
 //Dynamic Memory Allocation
     // 2d array in heap memory
-    int **arr=new int*[row];
+    int **a=new int*[row];
     for(int i=0;i<row;i++){
         arr[i]=new int[col];
     }
