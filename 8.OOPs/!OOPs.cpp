@@ -220,6 +220,7 @@ Types of inheritance
     }
 //Operator Overloading
 //it is used when we want to change how a operator works eg:changing the + function to - function
+//find all the opertors u can overload as not all can be overloaded
     #include <iostream>
     using namespace std;
     class Param{
