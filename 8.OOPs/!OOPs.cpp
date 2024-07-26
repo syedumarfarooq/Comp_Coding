@@ -226,7 +226,7 @@ Types of inheritance
     class Param{
         public:
         int val;
-        void operator+(Param& obj2){
+        void operator+(Param& obj2){//+ here specify which operator to overload
             int value1=this->val;
             int value2=obj2.val;
             cout<<(value2-value1)<<endl;
