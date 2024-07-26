@@ -162,9 +162,10 @@ Types of inheritance
     5.hybrid
     
 *//IMP ***************************************************************************************************************************************************************************    
-// Multilevel
+// Multiple
     // Scope Resolution operator
-    //Diamond problem question
+    //Diamond problem question is when there are two same properties in different class eg:chemistry then scope resolution 
+    //operator is used to tell compiler that we are specificing which property of the object that is which chemistry from a or b class
     
     #include <iostream>
     using namespace std;
