@@ -288,3 +288,6 @@ int main()
 //Abstraction(implementation hiding)
 //it is to achieve generalisation by producing the underline logic in general form to the user by hiding the implementation
 // eg:keeping books in bag in encapsulation and what books are not knowing what books are there is abstraction
+//eg: Sort* s=new QuickSort();
+//in the above example we are giving the user a sort pointer to use but the user will not know the underlying logic that is which
+//sorting technique is used
