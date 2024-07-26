@@ -122,6 +122,7 @@ int main()
 //     3)polymorphism
 //     4)Abstraction
 // Encapsulation-Data hiding
+    //wraping data members and data function in the form of class and encapsulation is achieved by access modifiers
 //Inheritance-
     // the child class/sub class inherit the properties from parent class/super class
     #include <iostream>
@@ -283,3 +284,4 @@ int main()
     //it will the call the function of the object 
     return 0;
 }
+//Abstraction(implementation hiding)
