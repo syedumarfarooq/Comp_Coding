@@ -29,41 +29,41 @@
   *a=5;//error
   int b=5;
   a=&b;//error
-*****const and function*****
-class abc{
-    int x;
-    int *y;
-    public:
-    abc(){
-        x=0;
-        y=new int(0);
+*//****const and function*****
+    class abc{
+        int x;
+        int *y;
+        public:
+        abc(){
+            x=0;
+            y=new int(0);
+        }
+        int getx() const//const will not allow to change any of the member variable
+        {
+            x=5//error
+            return x;
+        }
+        int setx(int val){
+            x=val;
+            
+        }
+        nt gety() const//const will not allow to change any of the member variable
+        {   y=&f;//error
+            return *y;
+        }
+        int sety(int val){
+            *y=val;
+            
+        }
     }
-    int getx() const//const will not allow to change any of the member variable
+    void printABC(const abc &a){//as we are using const object( passed by reference then all the functions/method shoud be const i.e a.getx() and 
+    //a.gety() should be const or else shows error
+    //so u can call only const function inside this function
+    cout<<a.getx()<<a.gety();//
+    }
+    int main()
     {
-        x=5//error
-        return x;
+        abc();
+    
+        return 0;
     }
-    int setx(int val){
-        x=val;
-        
-    }
-    nt gety() const//const will not allow to change any of the member variable
-    {   y=&f;//error
-        return *y;
-    }
-    int sety(int val){
-        *y=val;
-        
-    }
-}
-void printABC(const abc &a){//as we are using const object( passed by reference then all the functions/method shoud be const i.e a.getx() and 
-//a.gety() should be const or else shows error
-//so u can call only const function inside this function
-cout<<a.getx()<<a.gety();//
-}
-int main()
-{
-    abc();
-
-    return 0;
-}
