@@ -109,5 +109,6 @@ new way to write constructor(ctor)
         // }
         abc(int _x,int _y,int _z=0):x(_x),y(new int(_y)),z(_z){//abc(1,2,3)=>1,20,3
             *y=*y*10;
+            //z=10;//error this cannot be reintialized again 
         }
 }
