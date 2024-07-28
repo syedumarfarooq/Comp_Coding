@@ -6,7 +6,7 @@
     cout<<x;
   // lvalue- are the value having memory location eg:int x
   // rvalue- are the value not having memory location eg:const int x=5,int &x=b;
-*****Const with pointers****
+*//****Const with pointers****
 1.CONST data,NON-CONST pointer
   const int *c=new int(2); or  int const *c =new int(2);// both are same pointer and has address of value 2
   const int *a=new int;//data/content  of pointer is constant but the pointer can be reassigned =>CONST data,NON-CONST pointer
@@ -66,4 +66,31 @@
         abc();
     
         return 0;
+    }
+*//*MUTABLE********
+class abc{
+        mutable int x;
+        int *y;
+        public:
+        abc(){
+            x=0;
+            y=new int(0);
+        }
+        int getx() const//const will not allow to change any of the member variable but can be overrided if used  mutable
+        {
+            x=5//no error as using mutable
+            return x;
+        }
+        int setx(int val){
+            x=val;
+            
+        }
+        nt gety() const//const will not allow to change any of the member variable
+        {   y=&f;//error
+            return *y;
+        }
+        int sety(int val){
+            *y=val;
+            
+        }
     }
