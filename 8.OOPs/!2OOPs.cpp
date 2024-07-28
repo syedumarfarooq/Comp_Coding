@@ -94,3 +94,20 @@ class abc{
             
         }
     }
+*//*INTIALISATION LIST**********
+new way to write constructor(ctor)
+//we use this because in old way if any data member is constant they cannot be reintialized inside the constructor but using the new 
+//way we can reintialize 
+ class abc{
+        int x;
+        int *y;
+        const int z;
+        public:
+        // abc(int xx,int uy){
+        //     x=xx;
+        //     y=new int(yy);
+        // }
+        abc(int _x,int _y,int _z=0):x(_x),y(new int(_y)),z(_z){//abc(1,2,3)=>1,20,3
+            *y=*y*10;
+        }
+}
