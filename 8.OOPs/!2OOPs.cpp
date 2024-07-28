@@ -112,3 +112,7 @@ new way to write constructor(ctor)
             //z=10;//error this cannot be reintialized again 
         }
 }
+*//*MACROS********
+// it is evalutaed by preprocessor before compiling (what it does it replaces the value wherever there are used inside the code before compiling)
+#define PI 3.14
+#define MAXX(x,y) (x>y?x:y)
