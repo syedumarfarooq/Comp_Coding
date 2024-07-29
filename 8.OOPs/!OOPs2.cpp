@@ -114,5 +114,45 @@ new way to write constructor(ctor)
 }
 *//*MACROS********
 // it is evalutaed by preprocessor before compiling (what it does it replaces the value wherever there are used inside the code before compiling)
-#define PI 3.14
-#define MAXX(x,y) (x>y?x:y)
+    #define PI 3.14
+    #define MAXX(x,y) (x>y?x:y)
+*//*Shallow and deep copy************
+    class abc{
+    public:
+        int x;
+        int *y;
+        abc(int _x,int _y):x(_x),y(new int(_y))){}
+         //default dumb copy constructor: it does show copy
+            // abc(const abc &obj){
+            //     x=obj.x;
+            //     y=obj.y;
+            // }
+        //deep copy constructor
+        //it creates a deep copy where it will variable stores seperately specifically for this so not sharing like shallow copy
+            abc(const abc &obj){
+                x=obj.x;
+                y=new int(*obj.y);//copy the value of y and putting it into another address in heap
+            }
+        void print() const{
+            cout<<"x"<<x<<"y ptr"<<y<<"*y"<<*y;
+        }
+    }
+    int main(){
+        abc a(1,2);
+        a.print();//y=2
+        abc b=a;//while coping the default constructor  is called which is created by c++ or os
+        //default dumb constructor: it does show copy
+            // abc(const abc &obj){
+            //     x=obj.x;
+            //     y=obj.y;
+            // }
+        b.print();//y=2
+        // both b and a will point to the same y(address same) so they become interdependent if  y is freed from object a then object b 
+        //cannot access it
+        *b.y=20;
+        b.print();//y=20
+        //so whenever y of b is changed it changes y of a because default dumb constructor does shallow copy
+        //to prevent this we use deep copy
+        a.print();//y=20
+        return 0;
+    }
