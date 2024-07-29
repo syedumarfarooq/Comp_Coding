@@ -129,30 +129,40 @@ new way to write constructor(ctor)
             // }
         //deep copy constructor
         //it creates a deep copy where it will variable stores seperately specifically for this so not sharing like shallow copy
-            abc(const abc &obj){
-                x=obj.x;
-                y=new int(*obj.y);//copy the value of y and putting it into another address in heap
-            }
+            // abc(const abc &obj){
+            //     x=obj.x;
+            //     y=new int(*obj.y);//copy the value of y and putting it into another address in heap
+            // }
         void print() const{
             cout<<"x"<<x<<"y ptr"<<y<<"*y"<<*y;
+        }
+        //destructor
+        ~abc(){
+            delete y;
         }
     }
     int main(){
         abc a(1,2);
-        a.print();//y=2
+        // a.print();//y=2
+        delete a;//this will call the destructor
         abc b=a;//while coping the default constructor  is called which is created by c++ or os
         //default dumb constructor: it does show copy
             // abc(const abc &obj){
             //     x=obj.x;
             //     y=obj.y;
             // }
-        b.print();//y=2
+        b.print();//y=2//after destructor this will print empty value of y as a deleted the content inside
+        //but then after 
+        
         // both b and a will point to the same y(address same) so they become interdependent if  y is freed from object a then object b 
         //cannot access it
-        *b.y=20;
-        b.print();//y=20
+        // *b.y=20;
+        // b.print();//y=20 
         //so whenever y of b is changed it changes y of a because default dumb constructor does shallow copy
         //to prevent this we use deep copy
-        a.print();//y=20
-        return 0;
+        // a.print();//y=20 after deep copy y remains 2
+        return 0;//objs goes out of scope here and destructor is called automatically
+        //but this will show error as we are double freeing the same obj when using default copying constructor i.e shallow copy
     }
+*//Global and local variable****************
+
