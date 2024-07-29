@@ -213,7 +213,7 @@ new way to write constructor(ctor)
     class abc{
         public:
         static int x,y;
-        print(){
+        void print(){
             cout<<x<<y;
         }
     }
@@ -234,4 +234,31 @@ new way to write constructor(ctor)
         //abc classes all instances will share the one copy of variable
         return 0;
     }
-    *// static member function:there is no instance of that class being passed into that method
+    *// static member function:there is no instance(this) of that class being passed into that method and that method will be same for all 
+        // instances
+ #include <iostream>
+    class abc{
+        public:
+        static int x,y;
+        static void print(){//this print function will be same for all the instances //if x and y will not be static it will not print
+            //as the variable used inside the function are passed by the instances
+            cout<<x<<y;
+        }
+    }
+    int abc::x;//static members are intialized outside
+    int abc::y;
+    int main()
+    {    
+        abc a;
+        a.x=1;//or abc::x=1;
+        a.y=2;
+        a.print();//1 2
+        abc b;
+        b.x=10;
+        b.y=20;
+        a.print();//10 20
+        b.print();//10 20
+        //by using static all the instances ie a,b we use the same x and y
+        //abc classes all instances will share the one copy of variable
+        return 0;
+    }
