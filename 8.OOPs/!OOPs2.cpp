@@ -234,3 +234,4 @@ new way to write constructor(ctor)
         //abc classes all instances will share the one copy of variable
         return 0;
     }
+    *// static member function:there is no instance of that class being passed into that method
