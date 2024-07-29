@@ -263,3 +263,6 @@ new way to write constructor(ctor)
         //abc classes all instances will share the one copy of variable
         return 0;
     }
+// *//Abstraction************
+    // delivering only essential information to the outer world while masking the outer detail
+    // it is design or programming method that separtes the interface from implementation
