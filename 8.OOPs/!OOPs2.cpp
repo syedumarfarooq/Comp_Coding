@@ -117,6 +117,10 @@ new way to write constructor(ctor)
     #define PI 3.14
     #define MAXX(x,y) (x>y?x:y)
 *//*Shallow and deep copy************
+   // Shallow Copy: Copies the reference to the objects. Both the original and the copied objects share the same memory locations.
+   // Deep Copy: Copies the actual objects. The original and the copied objects do not share the same memory locations,
+    //so changes to one do not affect the other.
+
     class abc{
     public:
         int x;
@@ -164,6 +168,7 @@ new way to write constructor(ctor)
         return 0;//objs goes out of scope here and destructor is called automatically
         //but this will show error as we are double freeing the same obj when using default copying constructor i.e shallow copy
     }
+
 *//Global and local variable****************
     // If there are both global and local variable inside a function local variable will be given preference
     // to access global variable if there is local varible present inside the function we use ::x
@@ -185,3 +190,47 @@ new way to write constructor(ctor)
     // -written inside a function
     // -accessible inside that scope function
 *//Static keyword**********
+    *//static data members:that variable is going to share memory with all the class instances
+    //default behaviour
+    #include <iostream>
+    class abc{
+        public:
+        int x,y;
+        print(){
+            cout<<this->x<<this->y;
+        }
+    }
+    int main()
+    {
+        abc a={1,2};
+        abc b={4,5};
+        a.print();//1,2
+        b.print();//1,2
+        return 0;
+    }
+    //after using static
+    #include <iostream>
+    class abc{
+        public:
+        static int x,y;
+        print(){
+            cout<<x<<y;
+        }
+    }
+    int abc::x;//static members are intialized outside
+    int abc::y;
+    int main()
+    {    
+        abc a;
+        a.x=1;
+        a.y=2;
+        a.print();//1 2
+        abc b;
+        b.x=10;
+        b.y=20;
+        a.print();//10 20
+        b.print();//10 20
+        //by using static all the instances ie a,b we use the same x and y
+        //abc classes all instances will share the one copy of variable
+        return 0;
+    }
