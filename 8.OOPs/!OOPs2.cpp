@@ -252,7 +252,7 @@ new way to write constructor(ctor)
         abc a;
         a.x=1;//or abc::x=1;
         a.y=2;
-        a.print();//1 2
+        a.print();//1 2//or abc::print(); as the object will access same print for all instances u can use a.print or abc::print both r same
         abc b;
         b.x=10;
         b.y=20;
