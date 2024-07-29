@@ -242,6 +242,7 @@ new way to write constructor(ctor)
         static int x,y;
         static void print(){//this print function will be same for all the instances //if x and y will not be static it will not print
             //as the variable used inside the function are passed by the instances
+            //when we dont use static for int x,y no this->x or this->y will be accessible as not static
             cout<<x<<y;
         }
     }
