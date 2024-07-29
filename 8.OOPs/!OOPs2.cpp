@@ -165,4 +165,23 @@ new way to write constructor(ctor)
         //but this will show error as we are double freeing the same obj when using default copying constructor i.e shallow copy
     }
 *//Global and local variable****************
-
+    // If there are both global and local variable inside a function local variable will be given preference
+    // to access global variable if there is local varible present inside the function we use ::x
+    #include<iostream>
+    using namespace std;
+    int x=5;
+    int main(){
+        cout<<::x;//5
+        ::x=15;
+        int x=10;
+        cout<<x;//10
+        cout<<::x;//15
+        return 0;
+    }
+    // global variable
+    // -writen outside a function
+    // -accessible by all function
+    // local variable
+    // -written inside a function
+    // -accessible inside that scope function
+*//Static keyword**********
