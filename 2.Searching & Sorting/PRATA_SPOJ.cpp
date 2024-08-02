@@ -49,7 +49,7 @@ bool isPossibleSol(vector<int>&cooksrank,int sol,int nP){
 int solve(vector<int>&cooksrank,int nP){//where nP are no of paratas
   sort(cooksrank.begin(),cooksrank.end());
   int s=0;
-  int e=cooksrank[cooksrank.end()-1]*(np*(np+1)/2);//r*(n*(n+1)/2);
+  int e=cooksrank[cooksrank.end()-1]*(np*(np+1)/2);//r*(n*(n+1)/2);=>4(1+2+3+4...)=>4+2(4)+3(4)+...
   int ans=-1;
   while(s<=e){
     int mid=s+(e-s)/2;
