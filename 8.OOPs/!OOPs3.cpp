@@ -32,6 +32,7 @@
                         std::cout<<"sparrow flying";
                     }
             };
+        #endif
         *//main.cpp
         #include <iostream>
         #include "bird.h"
