@@ -48,3 +48,16 @@
             return 0;
         }
 *//Inline function************************************************************************
+    // - The code for an inline function is inserted directly into the code of the calling function by compiler while 
+    // compiling, which can result in faster execution and less overhead compared to regulaufunction calls.
+    // -Instead of calling function the statements of functions are pasted in calling function.
+    // -Used with small sized functions(the inline funciton should be small)/So that executables are small 
+    // (handled automatically by compiler optimisation levels).
+    inline void printnum(int num){//works good for small functions and can be used where the function is called many times
+        cout<<num;
+    }
+    int main(){
+        printnum(10);
+    }
+    // now current compiler will decide to add inline if the function is small and will ignore inline if the funciton is large
+*//I function************************************************************************
