@@ -60,4 +60,4 @@
         printnum(10);
     }
     // now current compiler will decide to add inline if the function is small and will ignore inline if the funciton is large
-*//I function************************************************************************
+*//Friend keyword************************************************************************
