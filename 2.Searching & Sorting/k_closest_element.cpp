@@ -42,7 +42,8 @@ class Solution {
 public:
     int lowerbound(vector<int>& nums,int k){//finding the closest number to x >=x
         int s=0,e=nums.size()-1;
-        int ans=e;
+        int ans=e;//bcz if x greater than any of the number present in the array then the h should be the last number
+        //eg:3,5,8,10 k=2,x=15 as 15 closest greater or equal to 15 is not present we should take the last number
         while(s<=e){//finding  closest element to x i.e >=x
             int mid=s+(e-s)/2;
             if(nums[mid]>=k){
