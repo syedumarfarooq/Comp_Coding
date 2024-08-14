@@ -43,7 +43,7 @@ public:
     int bn(vector<int>& nums,int k){
         int s=0,e=nums.size()-1;
         int ans=e;
-        while(s<=e){
+        while(s<=e){//finding smallest closest element  i.e >=x
             int mid=s+(e-s)/2;
             if(nums[mid]>=k){
                 ans=mid;
