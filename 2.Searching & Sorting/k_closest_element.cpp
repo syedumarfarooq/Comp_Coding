@@ -74,6 +74,8 @@ public:
                 l--;
             }
         }
-        return vector<int>(arr.begin()+l+1,arr.begin()+h);//used l+1 because l can go in negative number l=h-1 if h=0 then will show error
+        return vector<int>(arr.begin()+l+1,arr.begin()+h);//as the condition in while loop will make the array contain extra 2 elements to
+     //only get k values we are removing one from the front and one from the back ,as the end in vector is not included we are not doing -1
+     
     }
 };
