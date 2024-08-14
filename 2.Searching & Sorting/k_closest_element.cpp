@@ -40,7 +40,7 @@
 // 2)binary search+ two pointer
 class Solution {
 public:
-    int bn(vector<int>& nums,int k){
+    int lowerbound(vector<int>& nums,int k){//finding the closest number >=x
         int s=0,e=nums.size()-1;
         int ans=e;
         while(s<=e){//finding smallest closest element  i.e >=x
@@ -58,7 +58,7 @@ public:
         return ans;
     }
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
-        int h=bn(arr,x);
+        int h=lowerbound(arr,x);
         int l=h-1;
         while((h-l)<=k){
             if(l<0){
