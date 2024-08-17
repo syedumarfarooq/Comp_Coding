@@ -134,6 +134,7 @@
     //which point child or parent function based on the use of virtual if the parent function used  virtual then the child function(has        
     //same name) as the parent function will point the child function from inside the child but the not virtual function used will point the            
     //parent function itself
+    
 class Bird{
     virtual void fly(){
         cout<<"bird flying";
