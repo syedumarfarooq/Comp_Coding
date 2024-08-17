@@ -128,3 +128,18 @@
     }
 *//virtual in c++********************
 //it is a way to achieve runtime polymorphism
+//if virtual is used in the parent function the compiler will create static arrays table for the parent and will point its methods(functions) 
+//to its parent method( assume the parent and child class has same functions ) and then the child class will also create static arrays table
+//which point child or parent function based on the use of virtual if the parent function used  virtual then the child function(has same name)
+//as the parent function will point the parent function from inside the child but the not virtual function used will point the child function
+//itself
+class Bird{
+    virtual void fly(){
+        cout<<"bird flying";
+    }
+    void sleep(){}
+}
+class Bird:public sparrow{
+    void fly{}//bcz of virtual in parent class this will point the parent function fly i.e bird flying
+    void sleep{}
+}
