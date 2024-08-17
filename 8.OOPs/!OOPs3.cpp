@@ -96,3 +96,33 @@
         return 0;
     }
 *//Can Constructor be made private**********************
+    //Yes constructor can be made private
+    
+    class Box{
+        int width;
+        Box(int _w):width(_w){};
+        public:
+            int getWidth() const{
+                return width;
+            }
+            void setWidth(int _val){
+                width=_val;
+            }
+            friend class BoxFactory;
+    };
+    class BoxFactory{
+        int count;
+        public:
+            Box getABox(int _w){
+                return Box(_w);//this also cannot be accessed if the boxfactory is not made friend
+            }
+    };
+    int main(){
+        // Box b(5);//this will show error as the constructor is private it cannot be initialized
+        //this can be used if u do not want anyone to directly cannot box object 
+        // cout<<b.getWidth();
+        BoxFactory bfact;
+        Box b=bfact.getABox(10);
+        cout<<b.getWidth();
+        return 0;
+    }
