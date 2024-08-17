@@ -76,7 +76,8 @@
             x=_val;
         }
         friend class B;//b is friend of a and can access private members of a
-        friend void print(const A &);
+        friend void print(const A &);//function is a friend
+
     ｝;
     class B{
     public:
