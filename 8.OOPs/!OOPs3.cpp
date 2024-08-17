@@ -154,3 +154,8 @@ int main(){
     b.fly();//sparrow flying;
     b.sleep();//bird sleeping;
 }
+    *//vptr**************
+        1.Vptr( a hidden member pointer) is added by complier to classes with virtual and its derived class
+        2. Depending upon the object type VPtr is bonded to a VTable.
+            eg. Bird *b=new sparrow(); after this the vptr will point to sparrow virtual table
+                //for b.fly() b's vptr will point to the child (sparrow) virtual table as virtual is used
