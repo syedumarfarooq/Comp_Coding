@@ -95,3 +95,4 @@
         b. print (a);
         return 0;
     }
+*//Can Constructor be made private**********************
