@@ -62,6 +62,7 @@
     // now current compiler will decide to add inline if the function is small and will ignore inline if the funciton is large
 *//Friend keyword************************************************************************
     // 1. friend is a keyword in C++ that is used to share the information of a class that was previously hidden.
+    // it is used to access private members of a class
     // 2. For example, the private members of a class are hidden from every other class and cannot be modified except
     // through getters or setters. Similarly, the protected members are hidden from all classes other than its children classes.
     #include <iostream>
