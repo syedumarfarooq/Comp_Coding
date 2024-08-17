@@ -126,3 +126,5 @@
         cout<<b.getWidth();
         return 0;
     }
+*//virtual in c++********************
+//it is a way to achieve runtime polymorphism
