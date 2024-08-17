@@ -75,7 +75,7 @@
         void setX(int _val){
             x=_val;
         }
-        friend class B;
+        friend class B;//b is friend of a and can access private members of a
         friend void print(const A &);
     ｝;
     class B{
