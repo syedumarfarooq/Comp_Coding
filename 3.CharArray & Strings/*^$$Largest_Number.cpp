@@ -26,6 +26,9 @@ public:
         for(auto n:nums){
             snums.push_back(to_string(n));
         }
+     //in strings sorting is done in lexicographically that is alphabatically if "ab" and "ac" are to be sorted in descending order
+     //it first compares the first character as both are same then the second as c is greater and has higher value is ascii table
+     //ac>ab
         sort(snums.begin(),snums.end(),cmp);
         if(snums[0]=="0")return "0";
         string ans="";
