@@ -20,6 +20,8 @@ public:
         string t1=a+b;
         string t2=b+a;
         return t1>t2;// if true then a will be placed before b as cmp(a,b)
+     //so basically it depends on the function in which order the elements will be placed if the function cmp(a,b) return true then the 
+     // a will be placed before b and if false then b will be placed before
      //If cmp(x, y) returns true, it means x should come before y in the list. if false then y continued by x.
 
     }
