@@ -162,28 +162,27 @@ int main(){
     *//virtual constructor**************
         // no a virtual constructor cannot be created
     *//virtual destructor**************
-        yes it can be created
-class Base{
-        Base(){
-        cout<<"base consturctor";
-        }
-    virtual ~Base(){//virtual destructor
-    cout<<"base destructor";
-}
-class Derived{
-        Derived(){
-        cout<<"derived consturctor";
-        }
-    ~Derived(){
-    cout<<"derived destructor";
-}
-int main(){
-    Base *b=new Derived();
-    delete b;//derived destructor
-             //base destructor
-    //if u use virual in base destructor both the destructor with called or else only the base destructor is 
-            //is called
-    return 0;
-}
-
-        
+        // yes it can be created
+            class Base{
+                    Base(){
+                    cout<<"base consturctor";
+                    }
+                virtual ~Base(){//virtual destructor
+                cout<<"base destructor";
+            }
+            class Derived{
+                    Derived(){
+                    cout<<"derived consturctor";
+                    }
+                ~Derived(){
+                cout<<"derived destructor";
+            }
+            int main(){
+                Base *b=new Derived();
+                delete b;//derived destructor
+                         //base destructor
+                //if u use virual in base destructor both the destructor with called or else only the base destructor is 
+                        //is called
+                return 0;
+            }
+*//Memory layout of a program********************
