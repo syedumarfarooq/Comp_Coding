@@ -77,6 +77,9 @@
 //Connect class
 // custom comparator for sort
 bool cmp(char first,char second){
+    //so basically it depends on the function in which order the elements will be placed if the function cmp(a,b) return true then the 
+     // a will be placed before b and if false then b will be placed before
+    //the below sentence is confusing
     //no matter the order of input it places them in such manner where the return condition is satisfied that is it places both the char in such a way that first<second
     return first<second//for increasing
     return first>second//for decreasing
