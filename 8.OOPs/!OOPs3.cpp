@@ -159,3 +159,31 @@ int main(){
         2. Depending upon the object type VPtr is bonded to a VTable.
             eg. Bird *b=new sparrow(); after this the vptr will point to sparrow virtual table
                 //for b.fly() b's vptr will point to the child (sparrow) virtual table as virtual is used
+    *//virtual constructor**************
+        // no a virtual constructor cannot be created
+    *//virtual destructor**************
+        yes it can be created
+class Base{
+        Base(){
+        cout<<"base consturctor";
+        }
+    virtual ~Base(){//virtual destructor
+    cout<<"base destructor";
+}
+class Derived{
+        Derived(){
+        cout<<"derived consturctor";
+        }
+    ~Derived(){
+    cout<<"derived destructor";
+}
+int main(){
+    Base *b=new Derived();
+    delete b;//derived destructor
+             //base destructor
+    //if u use virual in base destructor both the destructor with called or else only the base destructor is 
+            //is called
+    return 0;
+}
+
+        
