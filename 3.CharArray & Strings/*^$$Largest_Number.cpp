@@ -19,7 +19,9 @@ public:
       //at last it return whoever is the greatest first as first>second condition given in the return 
         string t1=a+b;
         string t2=b+a;
-        return t1>t2;
+        return t1>t2;// if true then a will be placed before b
+     //If cmp(x, y) returns true, it means x should come before y in the list. if false then y continued by x.
+
     }
     string largestNumber(vector<int>& nums) {
         vector<string>snums;
