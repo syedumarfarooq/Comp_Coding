@@ -25,6 +25,16 @@ public:
      //If cmp(x, y) returns true, it means x should come before y in the list. if false then y continued by x.
 
     }
+//another way to write the same cmp to get same output
+// static bool cmp(string a,string b){
+//         string t1=b+a;
+//         string t2=a+b;
+//         return t1<t2;//irrespective of the code is the code returs true ab or for false ba
+           // eg;a="2",b="10";
+           // t1=b+a//102
+           // t2=a+b//210
+           // t1<t2//=>true ,a will be placed before b as cmp(a,b)
+//     }
     string largestNumber(vector<int>& nums) {
         vector<string>snums;
         for(auto n:nums){
