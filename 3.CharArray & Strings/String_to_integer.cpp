@@ -70,7 +70,9 @@ public:
         }
         //checking if any alphabet present
         while(i<s.length()&&isdigit(s[i])){
-            if(num>INT_MAX/10 || (num==INT_MAX/10 && s[i]>'7')){//if num/10>intmax then it will reach out of range in the next step so we handle it in previous case and also the range of int is 2147483647 so any number greater than 7 will also reach out of range so this is handled separetly
+            if(num>INT_MAX/10 || (num==INT_MAX/10 && s[i]>'7')){
+             //if num/10>intmax then it will reach out of range in the next step so we handle it in previous case and also the range 
+             // of int is 2147483647 so any number greater than 7 will also reach out of range so this is handled separetly
                 return sign==-1 ? INT_MIN : INT_MAX;
             }
             num=num*10+(s[i]-'0');
