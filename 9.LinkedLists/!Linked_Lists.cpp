@@ -24,6 +24,7 @@
            }
    }
    int main(){
+    //not the right way to create linked list just for understanding
      Node* first=new Node(10);
      Node* second=new Node(10);
 
