@@ -53,25 +53,43 @@ void insertAtTail(Node* &head,Node* &tail,int data){
   tail->next=newNode;
   tail=newNode;
 }
-void insertAtPosition(Node* &head,Node* tail,int position,int data){
-  if(head==NULL){
-    Node* newNode=new Node(data);
-    head=newNode;
-    tail=newNode;
-    return;
-  }
-  int i=0;
-  Node* prevNode=head;
-  while(i<position){
-    prevNode=prevNode->next;
-    i++;
-  }
-  Node* currNode=prevNode->next;
-  Node* newNode=new Node(data);
-  newNode->next=currNode;
-  newNode->prev=prevNode;
-  prevNode->next=newNode;
-  currNode->prev=newNode;
+void insertAtPosition(int data, int position, Node* &head, Node* &tail) {
+        if(head == NULL) {
+                Node* newNode = new Node(data);
+                head = newNode;
+                tail = newNode;
+                return;
+        }
+        //step1: find the position: prev & curr;
+
+        if(position == 0) {
+                insertAtHead(head, tail , data);
+                return;
+        }
+       
+        int len = findLength(head);
+        
+        if(position >= len) {
+                insertAtTail(head, tail, data);
+                return;
+        }
+        //ste1:find prev and curr
+        int i = 1;
+        Node* prev = head;
+        while(i < position) {
+                prev= prev -> next;
+                i++;
+        }
+        Node* curr = prev -> next;
+
+        //step2;
+        Node* newNode = new Node(data);
+
+        //step3:
+        newNode -> next = curr;
+
+        //step4:
+        prev -> next = newNode;
 }
 int main(){
   Node* first=new Node(10);
