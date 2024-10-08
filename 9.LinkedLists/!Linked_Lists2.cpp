@@ -53,100 +53,108 @@ void insertAtTail(Node* &head,Node* &tail,int data){
   tail->next=newNode;
   tail=newNode;
 }
-void insertAtPosition(int data, int position, Node* &head, Node* &tail) {
+void insertAtPosition(Node* &head, Node* &tail, int data, int position) {
         if(head == NULL) {
                 Node* newNode = new Node(data);
                 head = newNode;
                 tail = newNode;
-                return;
         }
-        //step1: find the position: prev & curr;
-
-        if(position == 0) {
-                insertAtHead(head, tail , data);
-                return;
-        }
-       
-        int len = findLength(head);
-        
-        if(position >= len) {
-                insertAtTail(head, tail, data);
-                return;
-        }
-        //ste1:find prev and curr
-        int i = 1;
-        Node* prev = head;
-        while(i < position) {
-                prev= prev -> next;
-                i++;
-        }
-        Node* curr = prev -> next;
-
-        //step2;
-        Node* newNode = new Node(data);
-
-        //step3:
-        newNode -> next = curr;
-
-        //step4:
-        prev -> next = newNode;
-}
-void deleteNode(int position, Node* &head, Node* &tail) {
-        if(head == NULL) {
-                cout << "Cannot delete, LL is empty";
-                return;
-        }
-
-        //deleting first node
-        if(position == 1) {
-                Node* temp = head;
-                head = head -> next;
-                temp -> next = NULL;
-                delete temp;
-                return;
-        }
-        int len  = findLength(head);
-
-
-        //deleting last node
-        if(position == len) {
-                //find prev
+        else {
+                //LL is not empty
+                if(position == 1) {
+                        insertAtHead(head,tail, data);
+                        return;
+                }
+                int len = getLength(head);
+                if(position > len) {
+                        insertAtTail(head, tail, data);
+                        return;
+                }
+                // insertion in middle
+                //step1: find prev && curr
                 int i = 1;
-                Node* prev = head;
-                while(i < position - 1) {
-                        prev = prev->next;
+                Node* prevNode = head;
+                while( i < position - 1) {
+                        prevNode = prevNode ->next;
                         i++;
                 }
-                //step2:
-                prev->next = NULL;
+                Node* curr = prevNode -> next;
+
+                //step2: create a node
+                Node* newNode  = new Node(data);
+
                 //step3:
+                 newNode -> prev = prevNode;
+                prevNode -> next = newNode;
+                newNode ->next = curr;
+                curr -> prev = newNode;
+                
+        }
+}
+
+void deleteFromPos(Node* &head, Node* &tail, int position) {
+        if(head == NULL) {
+                cout << "Linked list is empty";
+                return;
+        }
+        if(head -> next == NULL) {
+                //single node
+                Node* temp = head;
+                head = NULL;
+                tail = NULL;
+                delete temp;
+                return;
+        }
+        int len = getLength(head);
+        if(position > len) {
+                cout << "please enter a valid position " << endl;
+                return;
+        }
+
+        if(position == 1) {
+                //want to delete the first node
+                Node* temp = head;
+                head = head ->next;
+                head -> prev = NULL;
+                temp ->next = NULL;
+                delete temp;
+                return;
+        }
+        
+        if(position == len) {
+                //delete last node
                 Node* temp = tail;
-                //step4:
-                tail = prev;
-                //step5:
+                tail = tail -> prev;
+                temp ->prev = NULL;
+                tail ->next = NULL;
                 delete temp;
                 return;
         }
 
-        //deleting middle node
+        //delete from middle of linked list
 
-        //step  : find prev and curr
-        int i =1;
-        Node* prev = head;
-        while( i < position-1) {
-                prev= prev -> next;
+        //step1: find left, curr, right
+        int i = 1;
+        Node* left = head;
+        while( i < position - 1) {
+                left = left -> next;
                 i++;
         }
-        Node* curr = prev -> next;
+        Node* curr = left -> next;
+        Node* right = curr -> next;
 
         //step2:
-        prev -> next = curr -> next;
+        left -> next = right;
         //step3:
-        curr -> next = NULL;
+        right -> prev = left;
         //step4:
+        curr -> next = NULL;
+        curr ->prev = NULL;
         delete curr;
 
+
 }
+
 int main(){
   Node* first=new Node(10);
   Node* second=new Node(20);
