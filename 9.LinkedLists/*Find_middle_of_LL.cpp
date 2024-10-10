@@ -70,7 +70,7 @@ public:
     ListNode* middleNode(ListNode* head) {
         ListNode* slow=head;
         ListNode* fast=head->next;//changes made
-        while(slow!=NULL&&fast!=NULL){
+        while(slow!=NULL&&fast!=NULL){//check will it work fine without slow!=null
             fast=fast->next;
             if(fast!=NULL){
                 fast=fast->next;
