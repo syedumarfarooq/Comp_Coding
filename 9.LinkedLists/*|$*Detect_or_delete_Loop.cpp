@@ -106,7 +106,7 @@ public:
 // so slow and fast meet at some point in the loop,so the distance from the begining of the loop to meeting point is B if we add A to it
 // we will come back to the starting part of the loop, so we put slow back to head to track A distance(the end of A distance and ending 
 // of A+B meet at the same point that is why we iterate so whenever they are same that means it is the end of A distance and also A is 
-// been added to the B to reach to the begining of the loop) then we iterate one by one then 
+// been added to the B to reach to the begining of the loop we know this using the formula) then we iterate one by one then 
 // at the point they meet again is the initial point of the loop as it has coverd A distance that is it has travelled A distance
 
 *// -remove loop****************
