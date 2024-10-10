@@ -43,4 +43,26 @@
           }
       };
 *// -starting point of loop************
+Explained logic below
+      
+eg:1-2-3-4-5-6
+         |    |
+         9-8-7
+let A be the distance from the head to the starting of the loop
+let C be the number of cycles inside the loop before meeting slow and fast(starts from the begining of the loop and will end at the same point
+      this is counted as one loop or cycles)i.e from 4 to 4
+let B be the distance from the starting of the loop to where slow and fast meet for eg slow and fast meet at 6 after many cycles so the 
+      distance from 4-6 is B
+WKT
+Distance travelled by fast=2*Distance travelled by slow
+so,
+A+xC+B=2(A+yC+B)
+(x-2y)C=A+B
+let x-2y=k
+so,
+A+B=kC,i.e A+B is k cycles
+from the above formula we can predict the initial point of the loop
+so slow and fast meet at some point in the loop,so the distance from the begining of the loop to meeting point is B if we add A to it
+we will come back to the starting part of the loop, so we put slow back to head to track A distance then we iterate one by one then 
+at the point they meet again is the initial point of the loop as it has coverd A distance that is it has travelled A distance
 *// -remove loop****************
