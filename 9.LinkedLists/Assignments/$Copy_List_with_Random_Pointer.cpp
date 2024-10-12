@@ -2,7 +2,6 @@ https://leetcode.com/problems/copy-list-with-random-pointer/description/
 //There a linked list we need to copy the original ll has val,next,random and the random points to the random node from the original ll we 
 //need to copy the ll and point the random same as the original but in the copies ll eg;if a node has a val 3 pointing random to 7 so in the 
 //copy u have to point the new 3 to the new 7
-*// Time Complexity is O(n)*******
 /*
 
 // Definition for a Node.
@@ -19,6 +18,7 @@ public:
     }
 };
 */
+*// Time Complexity is O(n)*******
 
 class Solution {
 public:
@@ -39,3 +39,4 @@ public:
         return helper(head,mp); 
     }
 };
+*// Time Complexity is O(1)*******
