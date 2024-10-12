@@ -14,6 +14,7 @@ class Solution {
         if(head==NULL){
             return head;
         }
+      //skipping nodes
         int i=1;
         Node* it=head;
         while(i<m&&it!=NULL){
@@ -26,6 +27,7 @@ class Solution {
             }
         Node* MthNode=it;
         it=MthNode->next;
+      //deleting nodes
         int j=0;
         while(j<n&&it!=NULL){
 
