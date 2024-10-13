@@ -15,5 +15,10 @@ int main(){
   if(st.empty()){
     cout<<"empty";
   }
+  //printing all elements;
+  while(!st.empty()){
+    cout<<st.top();
+    st.pop();
+  }
   
 }
