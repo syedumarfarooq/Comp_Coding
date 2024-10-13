@@ -175,3 +175,17 @@
                
           return 0;
         }
+*//Reversing string using stack*******
+int main(){
+    string="umar";
+    stack<char> s;
+    for(int i=0;i<string.length();i++){
+        s.push(string[i]);
+    }
+    while(!s.empty()){
+        cout<<s.top();
+        s.pop();
+    }
+    cout<<endl;
+    return 0;
+}
