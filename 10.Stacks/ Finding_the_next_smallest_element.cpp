@@ -22,3 +22,18 @@ vector<int> nextSmallest(vector<int> v){
   }
   return ans;
 }
+// Finding the prev smallest element
+vector<int> nextSmallest(vector<int> v){
+  stack<int> s;
+  s.push(-1);
+  vector<int> ans(v.size());
+  for(int i=0;i<=v.size()-1;i--){
+      int curr=v[i];
+      while(s.top()>=curr){
+        s.pop();
+      }
+      ans[i]=s.top();
+      s.push(curr);
+  }
+  return ans;
+}
