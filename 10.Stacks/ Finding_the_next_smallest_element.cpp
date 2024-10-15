@@ -6,7 +6,7 @@
 //   after 4 the next smallest element is 3
 //   after 3 there is no  smallest element so -1 
 
-
+Time Complexity:O(n)
 
 vector<int> nextSmallest(vector<int> v){
   stack<int> s;
