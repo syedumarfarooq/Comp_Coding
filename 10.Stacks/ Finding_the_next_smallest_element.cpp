@@ -6,7 +6,7 @@
 //   after 4 the next smallest element is 3
 //   after 3 there is no  smallest element so -1 
 
-Time Complexity:O(n)
+Time Complexity:O(n)//=> for every element u enter, u can pop one time O(n+n) worst case u enter all the element in n and then pop everything  
 
 vector<int> nextSmallest(vector<int> v){
   stack<int> s;
