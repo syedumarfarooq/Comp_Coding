@@ -9,7 +9,7 @@ https://leetcode.com/problems/maximal-rectangle/description/
 // Input: matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]
 // Output: 6
 // Explanation: The maximal rectangle is shown in the above picture.
-*//*******
+*//Largest_Rectangle_in_Histogram*******
 class Solution {
     vector<int> nextSmallest(vector<int> v){
   stack<int> s;
