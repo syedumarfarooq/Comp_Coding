@@ -10,6 +10,7 @@ https://leetcode.com/problems/maximal-rectangle/description/
 // Output: 6
 // Explanation: The maximal rectangle is shown in the above picture.
 *//Largest_Rectangle_in_Histogram*******
+ *//can be solved using dp*******
 class Solution {
     vector<int> nextSmallest(vector<int> v){
   stack<int> s;
