@@ -25,7 +25,7 @@
 *//Stack without STL********
         class Stack{
           public:
-          int* arr;
+          int* arr;//we have used vector but we can use ll also
           int top;
           int size;
           Stack(int size){
