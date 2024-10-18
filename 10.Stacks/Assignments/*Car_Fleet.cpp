@@ -44,7 +44,8 @@ public:
         stack<float> st;
         for(auto car:cars){
             float time=(target-car.pos)/((float)car.speed);
-            while(!st.empty() &&time>=st.top()){
+            while(!st.empty() &&time>=st.top()){ //if there is any car which is slower than the present i.e taking more time to reach then 
+              //they all will reach at the same time 
                 st.pop();
             }
             st.push(time);
