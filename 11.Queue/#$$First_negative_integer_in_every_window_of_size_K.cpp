@@ -19,7 +19,7 @@ void solve(int arr[],int n,int k){ //n is size of array
       cout<<arr[q.front()];
     }
     //deleting out of windows elements
-    while((!q.empty())&&(i-q.front()>=k)){
+    while((!q.empty())&&(i-q.front()>=k)){//HW: check if() will work instead of while as it is poping only one element
       q.pop();
     }
     if(arr[i]<0){
