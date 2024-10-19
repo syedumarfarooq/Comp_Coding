@@ -26,11 +26,11 @@ public:
         int balance=0;//how much gas left
         int start=0;//where is the circuit starting from
         for(int i=0;i<gas.size();i++){
-            balance+=gas[i]-cost[i];
+            balance+=gas[i]-cost[i];//if balance is less than zero u cannot travel in front
             if(balance<0){
                 deficit+=balance;
                 start=i+1;//whenever there is deficit we start the circuit from next index as the previous is causing deficit so the ciruit cannot start from anywhere from behind as it is already creating deficit so we are starting from next gas station
-                balance=0;
+                balance=0;//as all the balance is added to deficit
             }
         }
         if(balance+deficit>=0){
