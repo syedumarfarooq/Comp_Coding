@@ -30,7 +30,7 @@ public:
             if(balance<0){
                 deficit+=balance;
                 start=i+1;//whenever there is deficit we start the circuit from next index as the previous is causing deficit so the 
-             //ciruit cannot start from anywhere from behind as it is already creating deficit so we are starting from next gas station
+             //ciruit cannot start from anywhere from behind  or in between as it is already creating deficit so we are starting from next gas station
                 balance=0;//as all the balance is added to deficit
             }
         }
