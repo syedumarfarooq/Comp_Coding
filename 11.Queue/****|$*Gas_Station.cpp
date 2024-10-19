@@ -29,11 +29,13 @@ public:
             balance+=gas[i]-cost[i];//if balance is less than zero u cannot travel in front
             if(balance<0){
                 deficit+=balance;
-                start=i+1;//whenever there is deficit we start the circuit from next index as the previous is causing deficit so the ciruit cannot start from anywhere from behind as it is already creating deficit so we are starting from next gas station
+                start=i+1;//whenever there is deficit we start the circuit from next index as the previous is causing deficit so the 
+             //ciruit cannot start from anywhere from behind as it is already creating deficit so we are starting from next gas station
                 balance=0;//as all the balance is added to deficit
             }
         }
-        if(balance+deficit>=0){
+        if(balance+deficit>=0){//if balance is greater then deficit then only we can complete the circuit as deficit is in -ve and if we add
+         //balance if it is greater than zero then there is sufficiet gas to complete the circuit
             return start;
         }else{
             return -1;
