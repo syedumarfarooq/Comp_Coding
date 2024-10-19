@@ -24,7 +24,7 @@ public:
         deque<int> dq;
         vector<int> ans;
         for(int i=0;i<k;i++){
-            while(!dq.empty()&&nums[i]>=nums[dq.back()]){
+            while(!dq.empty()&&nums[i]>=nums[dq.back()]){//if anything smaller than the ith number than pop
                 dq.pop_back();
             }
             dq.push_back(i);
