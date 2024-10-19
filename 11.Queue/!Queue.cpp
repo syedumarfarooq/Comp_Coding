@@ -192,21 +192,21 @@
     }
     };
 *//Deque STL******
-#include<deque>
-int main(){
-    deque<int> dq;
-    dq.push_front(5);
-    dq.push_front(10);
-    dq.push_back(20);
-    dq.push_back(30);
-    cout<<dq.size();
-    dq.pop_front();
-    dq.pop_back();
-    cout<<dq.front();//=>5
-    cout<<dq.back();//=>20
-    if(dq.empty()){
-        cout<<"deque not empty";
-    }
-    
-    return 0;
-}
+        #include<deque>
+        int main(){
+            deque<int> dq;
+            dq.push_front(5);
+            dq.push_front(10);
+            dq.push_back(20);
+            dq.push_back(30);
+            cout<<dq.size();
+            dq.pop_front();
+            dq.pop_back();
+            cout<<dq.front();//=>5
+            cout<<dq.back();//=>20
+            if(dq.empty()){
+                cout<<"deque not empty";
+            }
+            
+            return 0;
+        }
