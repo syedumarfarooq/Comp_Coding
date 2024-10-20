@@ -23,3 +23,39 @@
 //      Considering missing arrays result coming as 27
      
 //      Sum of all min & max = 6 + 4 + 4 + 4 = 18
+vector<int> sumofminmaxSlidingWindow(vector<int>& nums, int k) {
+        deque<int> dq,dq2;
+     
+        int ans=0;
+        for(int i=0;i<k;i++){
+            while(!dq.empty()&&nums[i]>=nums[dq.back()]){//if anything smaller than the ith number(i.e before) than pop
+                dq.pop_back();
+            }
+             while(!dq2.empty()&&nums[i]<=nums[dq2.back()]){//if anything greater than the ith number(i.e before) than pop
+                dq2.pop_back();
+            }
+            dq.push_back(i);
+             dq2.push_back(i);
+        }
+        ans+=nums[dq.front()]+nums[dq2.front()];
+        for(int i=k;i<nums.size();i++){
+            if(!dq.empty()&&i-dq.front()>=k){
+                dq.pop_front();
+            }
+             if(!dq.empty()&&i-dq2.front()>=k){
+                dq2.pop_front();
+            }
+            while(!dq.empty()&&nums[i]>=nums[dq.back()]){
+                dq.pop_back();
+            }
+             while(!dq2.empty()&&nums[i]<=nums[dq2.back()]){
+                dq2.pop_back();
+            }
+            dq.push_back(i);            
+             dq2.push_back(i);
+        ans+=nums[dq.front()]+nums[dq2.front()];
+
+            
+        }
+        return ans;
+    }
