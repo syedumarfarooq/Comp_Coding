@@ -35,11 +35,11 @@ public:
         
     }
     
-    void push(int x) {
+    void push(int x) {//TC:O(1)
         s1.push(x);
     }
     
-    int pop() {
+    int pop() {//TC:O(n)
         int pop=-1;
         if(!s2.empty()){
             pop=s2.top();
@@ -55,7 +55,7 @@ public:
         return pop;
     }
     
-    int peek() {
+    int peek() {//TC:O(n)
         int front=-1;
         if(!s2.empty()){
             front=s2.top();
