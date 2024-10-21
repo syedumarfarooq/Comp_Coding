@@ -86,9 +86,9 @@
       }
       void push(int data){
         
-        if(front==0&&rear==size-1||rear==front-1){//or if(rear==(front-1)%(size-1)){
-          cout<<"Q is full";                      //       cout<<"Q is full";
-      }                                           //    }
+        if(front==0&&rear==size-1||rear==front-1){
+          cout<<"Q is full";
+       }
         else if(front==-1){
           front=rear=0;
           arr[rear]=data;
@@ -128,9 +128,9 @@
         rear=-1;
       }
       void pushRear(int data){
-        if(front==0&&rear==size-1||rear==front-1){//or if(rear==(front-1)%(size-1)){
-          cout<<"Q is full";                      //       cout<<"Q is full";
-      }                                           //    }
+       if(front==0&&rear==size-1||rear==front-1){
+          cout<<"Q is full";
+       }
             else if(front==-1){
               front=rear=0;
               arr[rear]=data;
