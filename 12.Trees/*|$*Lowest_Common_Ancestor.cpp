@@ -37,7 +37,7 @@ public:
         }else if(leftAns==NULL&&rightAns!=NULL){
             return rightAns;
         }else{
-            return root;
+            return root;//if the left and right both of a root is not null meaning they have found p and q and meet at the lowest commmon anscestor
         }
     
     }
