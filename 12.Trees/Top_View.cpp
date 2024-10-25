@@ -20,7 +20,7 @@ void printTopView(Node* root) {
                 //jo bhi horizontal distance aaya h , check if answer for that hd already exists
                 //or not
 			
-                if(topNode.find(hd) == topNode.end()) {
+                if(topNode.find(hd) == topNode.end()) {//i.e not found
                         //create entry
                         topNode[hd] = frontNode->data;
                 }
