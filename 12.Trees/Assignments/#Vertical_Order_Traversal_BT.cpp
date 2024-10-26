@@ -37,6 +37,7 @@ public:
         queue<pair<TreeNode*,pair<int,int>>>q;//node row,col
         q.push({root,{0,0}});
         map<int,map<int,multiset<int>>>mp;//col.{row,multiset}//multiset because sorts in order and can store repeating values
+     //we used map becase we wanted to answer in column wise and then in row wise as map sort the key in ascending order 
         while(!q.empty()){
             auto front=q.front();q.pop();
             TreeNode*& node=front.first;
