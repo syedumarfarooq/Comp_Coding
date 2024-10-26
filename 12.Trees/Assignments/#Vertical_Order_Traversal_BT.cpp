@@ -40,7 +40,7 @@ public:
      //we used map becase we wanted to answer in column wise and then in row wise as map sort the key in ascending order 
         while(!q.empty()){
             auto front=q.front();q.pop();
-            TreeNode*& node=front.first;
+            TreeNode*& node=front.first;//taking by reference so that it wont take more space as pair inside pair or map inside map
             auto coordinate=front.second;
             int &row=coordinate.first;
             int &col=coordinate.second;
