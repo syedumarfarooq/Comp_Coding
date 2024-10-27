@@ -69,7 +69,7 @@ public:
 			//replace root->val value with inorder predecessor
 			//replacing value to keep bst rules preserved 
 			root->val = inorderPre;
-			//delete inorder predecessor from left subtree
+			//delete inorder predecessor from left subtree as we added it to the root so we need to remove it from the left tree
 			root->left = deleteNode(root->left,inorderPre);
 			return root;
 			
