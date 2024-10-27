@@ -41,7 +41,7 @@ public:
         }
     }
     bool isValidBST(TreeNode* root) {
-        long long int lowerBound=-4294967296;
+        long long int lowerBound=-4294967296;//2^32 
         long long int upperBound=4294967296;
         bool ans=solve(root,lowerBound,upperBound);
         return ans;
