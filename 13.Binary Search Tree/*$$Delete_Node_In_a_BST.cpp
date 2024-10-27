@@ -67,6 +67,7 @@ public:
 			//consists of all the smaller elements so the maximum in it will be the predecessor
 			int inorderPre = maxVal(root->left);
 			//replace root->val value with inorder predecessor
+			//replacing value to keep bst rules preserved 
 			root->val = inorderPre;
 			//delete inorder predecessor from left subtree
 			root->left = deleteNode(root->left,inorderPre);
