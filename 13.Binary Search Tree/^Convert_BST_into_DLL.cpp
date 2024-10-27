@@ -11,5 +11,6 @@ void convertIntoSortedDLL(Node* root,Node* &head){
   convertIntoSortedDLL(root->left,head);
 }
 int main(){
-  convertIntoSortedDLL(root,NULL);
+  Node* head=NULL;
+  convertIntoSortedDLL(root,head);
 }
