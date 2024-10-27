@@ -34,7 +34,7 @@ public:
 		return -1;
 	}
 
-	while(temp -> right != NULL) {
+	while(temp -> right != NULL) {//as in bst the max value is at right
 		temp = temp ->right;
 	}
 	return temp -> val;
