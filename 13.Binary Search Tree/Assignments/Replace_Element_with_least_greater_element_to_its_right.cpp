@@ -10,9 +10,11 @@ https://www.geeksforgeeks.org/problems/replace-every-element-with-the-least-grea
 // The least next greater element of 8 is 18.
 // The least next greater element of 58 is 63 and so on.
 
-*// we are moving from right to left because we are finding the successor as the elements on the right are possible solution we add them first *
+*// 1.we are moving from right to left because as the question says they are on the right  we add them first *
 *// and update the tree and find the successor as the answer for the current node is already in the tree as we are adding from right to left *
 *// and we have to find it in the right side*
+*//2.when a node is placed if it is smaller it is placed in the left the successor can be the parent as it is greater i.e*
+*//successor is the node in which the current node is placed on the left side recently as it being smaller *
 class Node{
     public:
     int data;
