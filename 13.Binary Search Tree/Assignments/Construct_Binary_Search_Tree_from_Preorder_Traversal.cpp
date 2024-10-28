@@ -34,7 +34,7 @@ public:
         TreeNode* root=nullptr;
         if(preorder[i]>min&&preorder[i]<max){
             root =new TreeNode(preorder[i++]);
-            root->left=build(i,min,root->val,preorder);
+            root->left=build(i,min,root->val,preorder);//we are setting a range and adding them
             root->right=build(i,root->val,max,preorder);
         }
         return root;
