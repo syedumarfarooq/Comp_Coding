@@ -46,3 +46,8 @@ NodeData* findLargestBST(Node* root, int &ans) {
 	}
 	return currNodeKaAns;
 }
+int main(){
+	int ans=0;
+	findLargestBst(root,ans);
+	return ans;
+}
