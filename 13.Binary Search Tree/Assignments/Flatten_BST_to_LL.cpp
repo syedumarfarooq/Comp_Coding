@@ -1,3 +1,4 @@
+// flatten bst into ll i.e the left should point to null and the right should point to next node
 void in(Node* root,Node* &prev){
   if(!root)return;
   in(root->left,prev);
