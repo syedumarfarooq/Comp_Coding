@@ -1,5 +1,5 @@
 https://www.interviewbit.com/problems/valid-bst-from-preorder/
-*//Reference:
+*//Reference:https://github.com/syedumarfarooq/Comp_Coding/blob/main/13.Binary%20Search%20Tree/Assignments/Construct_Binary_Search_Tree_from_Preorder_Traversal.cpp
 // You are given a preorder traversal A, of a Binary Search Tree.
 
 // Find if it is a valid preorder traversal of a BST.
