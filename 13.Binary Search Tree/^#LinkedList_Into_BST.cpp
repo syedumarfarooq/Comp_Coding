@@ -5,7 +5,7 @@ Node* sortedLinkedListIntoBst(Node* &head,int n){//head is the starting point of
   Node* leftSubTree=sortedLinkedListIntoBst(head,n-1-n/2);//left node is n-main node(1)-rest of the half;
   Node* root=head;
   root->left=leftSubTree;
-  head=head->right;
+  head=head->right;//students forget this line
   root->right=sortedLinkedListIntoBst(head,n/2);
   return root;
 }
