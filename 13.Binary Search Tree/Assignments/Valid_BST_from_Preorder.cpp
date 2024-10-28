@@ -5,6 +5,7 @@ https://www.interviewbit.com/problems/valid-bst-from-preorder/
 // Find if it is a valid preorder traversal of a BST.
 
 // Note: Binary Search Tree by definition has distinct keys and duplicates in binary search tree are not allowed.
+  *//bst from preorder travel code is used *
   void build(int &i,int min,int max,vector<int> &A){
         if(i>=A.size()){
             return ;
@@ -21,5 +22,5 @@ int solve(int* A, int n1) {
     int min=INT_MIN;int max=INT_MAX;
         int i=0;
         return build(i,min,max,A);
-        return i==A.size();
+        return i==A.size();//if i is not equal to the size means all node are not placed and it is not a bst
 }
