@@ -87,3 +87,4 @@ int main() {
 }
 *//Heapify****
 //convert any array into heap we use heapify function
+//a element whose index is given should be placed in its correct position
