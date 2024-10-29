@@ -114,7 +114,7 @@ void heapify(int arr[], int n, int i) {
 
 void buildHeap(int arr[], int n) {
         //n/2 because the leaf node is always considered heap as they have no children to compare with 
-        
+        //from n/2+1 to n all are leaf nodes
         for(int i = n/2; i>0; i--) {
                 heapify(arr,n, i);
         }
