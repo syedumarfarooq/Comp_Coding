@@ -121,7 +121,8 @@ void buildHeap(int arr[], int n) {//TC:O(n)???H.W but the loop is n/2 and the he
 }
 void heapSort(int arr[], int n) {
         while(n != 1) {
-                swap(arr[1], arr[n--]);
+                swap(arr[1], arr[n--]);//the largest number is put at the back and then heapified excluding the number put at the back
+                // then the root will again contain the larget number then repeat the process
                 heapify(arr,n,1);
         }
 }
