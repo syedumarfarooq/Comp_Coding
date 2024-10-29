@@ -88,3 +88,34 @@ int main() {
 *//Heapify****
 //convert any array into heap we use heapify function
 //a element whose index is given should be placed in its correct position
+#include <iostream>
+using namespace std;
+
+void heapify(int arr[], int n, int i) {
+        int index = i;
+        int leftIndex = 2*i;
+        int rightIndex = 2*i+1;
+        int largest = index;
+
+        if(leftIndex <= n && arr[largest] < arr[leftIndex]) {
+                largest = leftIndex;
+        }
+        if(rightIndex <= n && arr[largest] < arr[rightIndex]) {
+                largest = rightIndex;
+        }
+
+        if(index != largest) {
+                //left ya right child me se koi > hogya currentNode se
+                swap(arr[index], arr[largest]);
+                index = largest;
+                heapify(arr, n, index);
+        }
+}
+
+void buildHeap(int arr[], int n) {
+        //n/2 because the leaf node is always considered heap as they have no children to compare with 
+        
+        for(int i = n/2; i>0; i--) {
+                heapify(arr,n, i);
+        }
+}
