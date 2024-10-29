@@ -21,6 +21,7 @@ https://www.geeksforgeeks.org/problems/merge-two-bst-s/1
 //            6
 // Output: 1 2 2 3 3 4 5 6 6 7
 // Explanation: After merging and sorting the two BST we get 1 2 2 3 3 4 5 6 6 7.
+  *//Space Complexity:O(H)where H is the height of the tree
 class Solution {
   public:
     // Function to return a list of integers denoting the node
