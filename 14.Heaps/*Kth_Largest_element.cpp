@@ -15,6 +15,7 @@ https://leetcode.com/problems/kth-largest-element-in-an-array/description/
 
 // Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
 // Output: 4
+*//SC:O(k)*
 *//Logic*
   // min heap because it contains the kth largest element at the top of k elements in a heap
 class Solution {
