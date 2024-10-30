@@ -91,7 +91,7 @@ int main() {
 #include <iostream>
 using namespace std;
 
-void heapify(int arr[], int n, int i) {
+void heapify(int arr[], int n, int i) {//TC:O(logn)
         int index = i;
         int leftIndex = 2*i;
         int rightIndex = 2*i+1;
