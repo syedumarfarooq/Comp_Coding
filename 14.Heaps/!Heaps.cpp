@@ -112,8 +112,9 @@ void heapify(int arr[], int n, int i) {//TC:O(logn)
         }
 }
 
-void buildHeap(int arr[], int n) {//TC:O(n)???H.W but the loop is n/2 and the heapify TC is logn
-        //n/2 because the leaf node is always considered heap as they have no children to compare with 
+void buildHeap(int arr[], int n) {//TC:O(n)???H.W 
+        //but the loop is n/2 and the heapify TC is logn
+        //i=n/2 because the leaf node is always considered heap as they have no children to compare with 
         //from n/2+1 to n all are leaf nodes
         for(int i = n/2; i>0; i--) {
                 heapify(arr,n, i);
