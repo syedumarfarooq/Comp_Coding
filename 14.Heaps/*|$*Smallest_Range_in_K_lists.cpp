@@ -1,4 +1,4 @@
-// if we take all elements from a column from k list and make a min and maximum range then all the number from that column of every row will lie
+// if we take all elements a from from every k list and make a min and maximum range then all the number  of every row will lie
 // in that range
 //in the end we have to get smallest range for making the minimum and maximum range smaller we have to either increase the minimum or decrease
 //the maximum but as the question say non descending order if we go to next element(as linked list cannot go back)
