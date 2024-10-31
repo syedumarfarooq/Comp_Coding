@@ -74,9 +74,9 @@ public:
                 ans += first.data;
                 first.count--;
             }
-          *//second condition if there are perfect number of first then only we can add 2 second or else once
+          *//second condition 
             // eg:b-8 c-11 without the second condition we would place it ccbbccbbccbbccbbccc which is incorrect i.e three ccc at the end
-            //if we place it ccbccbbccbbccbbccbc
+            //if we place it ccbccbbccbbccbbccbc using the second condition
             if(second.count >= 2 && second.count >= first.count) {
                 ans += second.data;
                 ans += second.data;
