@@ -78,7 +78,10 @@ public:
             // eg:b-8 c-11 without the second condition we would place it ccbbccbbccbbccbbccc which is incorrect i.e three ccc at the end
             //if we place it ccbccbbccbbccbbccbc using the second condition
            //if the count of second is increased then we start adding 2 until then one
-           
+           //as if we keep adding secnd one one then at some point then it will become bigger  as the first is being placed twice
+           //as then the max heap will made it first as it is made first from being printed second it might repeat for example think
+           //c was greater at first it keep on placing 2 2 then b was lil smaller it was placed in number of 2 at some point the c might become
+           //less than c then it might keep placing b b right after placing b when it was lesser and was been placed as one each
             if(second.count >= 2 && second.count >= first.count) {
                 ans += second.data;
                 ans += second.data;
