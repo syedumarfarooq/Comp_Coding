@@ -29,7 +29,7 @@ https://leetcode.com/problems/find-median-from-data-stream/
 // we will use the combination of max and min heap the first half we will put it in maxheap the second half in min heap so that after the 
 // greatest element of the left half there will be a median present after that the smallest number in the second half then it will continue
 *//LEETCODE SOLUTION****
-  //   class MedianFinder {
+//   class MedianFinder {
 // public:
 //     priority_queue<int> maxHeap;
 //     priority_queue<int, vector<int>, greater<int> > minHeap;
@@ -43,14 +43,14 @@ https://leetcode.com/problems/find-median-from-data-stream/
 //         if(a == b) 
 //                 return 0;
 //         if(a > b )
-//                 return 1;
-//         if(a < b)
 //                 return -1;
+//         if(a < b)
+//                 return 1;
 //         return 2;
 //         }       
 //     void addNum(int num) {
         
-//          switch(signum(minHeap.size(), maxHeap.size())) {
+//          switch(signum(maxHeap.size(),minHeap.size())) {
 //                 case 0:if(num > findMedian()) {
 //                         minHeap.push(num);
 //                         }
@@ -81,10 +81,12 @@ https://leetcode.com/problems/find-median-from-data-stream/
 
 //         }
         
+        
+    
 //     }
     
 //     double findMedian() {
-//         switch(signum(minHeap.size(), maxHeap.size())) {
+//         switch(signum(maxHeap.size(),minHeap.size())) {
 //                 case 0:return (minHeap.top() + maxHeap.top())/2.0;
 //                         break;
 //                 case 1: return minHeap.top()*1.0;
@@ -103,4 +105,4 @@ https://leetcode.com/problems/find-median-from-data-stream/
  * obj->addNum(num);
  * double param_2 = obj->findMedian();
  */
-  *//Solution to Understand****
+*//Solution to Understand****
