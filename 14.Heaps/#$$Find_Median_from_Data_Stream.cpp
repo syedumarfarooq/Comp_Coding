@@ -106,3 +106,86 @@ https://leetcode.com/problems/find-median-from-data-stream/
  * double param_2 = obj->findMedian();
  */
 *//Solution to Understand****
+#include <iostream>
+#include<queue>
+#include<vector>
+using namespace std;
+ 
+int signum(int a , int b) {
+        if(a == b) 
+                return 0;
+        if(a > b )
+                return -1;
+        if(a < b)
+                return 1;
+}
+
+void callMedian(double &median, priority_queue<int>& maxHeap, priority_queue<int, vector<int>, greater<int> >& minHeap, int element) {
+
+        switch(signum( maxHeap.size(),minHeap.size())) {
+                case 0:if(element > median) {
+                        minHeap.push(element);
+                        median = minHeap.top();
+                        }
+                        else {
+                        maxHeap.push(element);
+                        median = maxHeap.top();
+                       }
+                        break;
+                case 1: if(element > median ) {//as there is extra element on the right so if the element is
+                //greatere than median we have to add it on the right but this makes the right side which is
+                //the minHeap even bigger by the size of 2 (which myght create in finding median as it comes in 
+                // between) to equate it we remove the top element of minHeap and 
+                // add it to maxHeap by this we can add the element to the minHeap to equate it
+                
+                        int minTop = minHeap.top();
+                        minHeap.pop();
+                        maxHeap.push(minTop);
+                        minHeap.push(element);
+                        median = (minHeap.top() + maxHeap.top())/2.0;
+                        }
+                        else {
+                        //as there is an extra element on the right side i.e is minHeap there no problem in adding element
+                        //to maxHeap i.e on the left side this makes it equal
+                        maxHeap.push(element);
+                        median = (minHeap.top() + maxHeap.top())/2.0;
+                        }
+                        break;
+                case -1: if(element > median) {
+                        //in this the left side maxHeap is greater so if the element is greater than median then we 
+                        //have to add it on the right side which creates no problem as it will equate the side on both
+                        // sides
+                        minHeap.push(element);
+                        median = (minHeap.top() + maxHeap.top())/2.0;
+                         }
+                         else {
+                        int maxTop = maxHeap.top();
+                        maxHeap.pop();
+                        minHeap.push(maxTop);
+                        maxHeap.push(element);
+                        median = (minHeap.top() + maxHeap.top())/2.0;
+                        }
+                        break;
+
+        }
+
+}
+
+int main() {
+        int arr[12] = {5,15,1,3,2,8,7,9,10,6,11,4};
+        int n = 12;
+
+        //5 6 5 6 5 6
+        double median = 0;
+        priority_queue<int> maxHeap;
+        priority_queue<int, vector<int>, greater<int> > minHeap;
+        for(int i=0; i<n; i++) {
+                int element = arr[i];
+                callMedian(median, maxHeap,minHeap, element);
+                cout << "arr[i]->median:  " << median << endl;
+        }cout << endl;
+
+
+
+        return 0;
+}
