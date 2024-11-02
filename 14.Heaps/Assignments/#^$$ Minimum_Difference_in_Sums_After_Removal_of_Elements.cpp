@@ -88,8 +88,10 @@ public:
             }
         }
         ll ans=LONG_LONG_MAX;
-        for(int i=n-1;i<n*2;i++){
+        for(int i=n-1;i<n*2;i++){//from n-1 because the sum of n elements starts from n as the array is zeroed indexed that why n-1
+         //n*2 as the right part only contains n elements and its sum is also considered we go uptil there
             ans=min(ans,prefix[i]-suffix[i+1]);
+         //suffix[i+1] bcz we need sum of two different parts if we choose i for both then this will use same elements
         }
         return ans;
     }
