@@ -47,6 +47,7 @@ public:
             dist+=fuel;
             fuel=0;
             //reached target
+         //checking at top because what if the startfuel is enough to reach target
             if(dist>=target)break;
             //no fuel station within reach with current fuel 
             if(pq.empty()){
