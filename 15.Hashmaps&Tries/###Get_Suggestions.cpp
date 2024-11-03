@@ -13,7 +13,7 @@ class TrieNode{
         public:
         char data;
         TrieNode* children[26];
-        bool isTerminal;//this is just a marker to show a end of one word
+        bool isTerminal;//this is just a marker to show a end of one word explained in detail in tries
 
         TrieNode(char d) {
                 this->data = d;
