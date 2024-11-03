@@ -51,7 +51,8 @@ void insertWord(TrieNode* root, string word) {
 }
 
 
-void storeSuggestions(TrieNode* curr, vector<string>& temp, string &prefix) {
+void storeSuggestions(TrieNode* curr, vector<string>& temp, string &prefix) {//O(m*n)where m is length of string and n is the size of the trie
+	//i.e for all 26 it iterates n times(length of trie)
 	if(curr -> isTerminal)//if we find terminal store word
 	{
 		temp.push_back(prefix);//not returning because there can be a word with this prefix if there are two words love and lovely
@@ -60,7 +61,7 @@ void storeSuggestions(TrieNode* curr, vector<string>& temp, string &prefix) {
 
 	//a to z tak choices dedo
         //if there is a word present then 
-	for(char ch ='a'; ch<='z'; ch++) {
+	for(char ch ='a'; ch<='z'; ch++) {//for every char it check 26 and then for every 26 it again checks its their 26
 		int index = ch-'a';
 
 		TrieNode* next = curr->children[index];
@@ -75,7 +76,7 @@ void storeSuggestions(TrieNode* curr, vector<string>& temp, string &prefix) {
 	
 }
 
-vector<vector<string> > getSuggestions(TrieNode* root, string input) {
+vector<vector<string> > getSuggestions(TrieNode* root, string input) {//O(m*m*n);
 
 	//var/DS
 	TrieNode* prev = root;
@@ -94,7 +95,7 @@ vector<vector<string> > getSuggestions(TrieNode* root, string input) {
 			//iske andar main saare suggestion store krke launga
 			vector<string> temp;
 			prefix.push_back(lastch);
-			storeSuggestions(curr, temp, prefix);
+			storeSuggestions(curr, temp, prefix);//O(m*n)where m is length of string and n is the size of the trie
 			output.push_back(temp);
 			prev = curr;//i may forget
 		}
