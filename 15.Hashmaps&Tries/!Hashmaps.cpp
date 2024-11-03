@@ -78,7 +78,7 @@ int main(){
 // the linked list but we have created the hash function so strong that load factor is <0.7 i.e(n/b) this wont let it happen i.e it wont let many values pointing to the same index
 // as it is alloted to free spaces so this case wont excist 
 // Check Linked List is a circular ll or has a loop present in it
-#//Logic
+*#//Logic
   // we keep on adding node to the map so whenever there is a node which is already added then it is a circular
 
 bool checkCircular(Node* head){
