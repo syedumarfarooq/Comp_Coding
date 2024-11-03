@@ -88,7 +88,8 @@ string longestCommonPrefix(vector<string>& strs) {
             insertWord(root,strs[i]);
         }
          string ans="";
-        string first = strs[0];
+        string first = strs[0];//does not matter which ever string u compare with as it is common prefix so it should be common in every
+ // string
         findLCP(first, ans, root);
         return ans;
         
