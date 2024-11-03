@@ -95,7 +95,7 @@ vector<vector<string> > getSuggestions(TrieNode* root, string input) {
 			prefix.push_back(lastch);
 			storeSuggestions(curr, temp, prefix);
 			output.push_back(temp);
-			prev = curr;
+			prev = curr;//i may forget
 		}
 	}
 	return output;
