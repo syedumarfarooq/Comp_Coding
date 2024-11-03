@@ -40,6 +40,7 @@ void insertWord(TrieNode* root, string word) {
                 child = root->children[index];
         }
         else {
+		
                 //not present
                 child = new TrieNode(ch);
                 root->children[index] = child;
