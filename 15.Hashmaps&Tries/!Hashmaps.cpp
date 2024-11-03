@@ -77,3 +77,20 @@ int main(){
 // 2)assume there are multiple values trying to be inserted at the same place then it creates linked list so atleast then the time complexity is O(N) as trying to access
 // the linked list but we have created the hash function so strong that load factor is <0.7 i.e(n/b) this wont let it happen i.e it wont let many values pointing to the same index
 // as it is alloted to free spaces so this case wont excist 
+// Check Linked List is a circular ll or has a loop present in it
+#//Logic
+  // we keep on adding node to the map so whenever there is a node which is already added then it is a circular
+
+bool checkCircular(Node* head){
+  unordered_map<Node*,bool>visit;
+  Node* temp=head;
+  while(temp!=NULL){
+    if(visit.find(temp)!=v.end()){
+      return true;
+    }else{
+      visit[temp]=true;
+    }
+    temp=temp->next;
+  } 
+  return false;
+}
