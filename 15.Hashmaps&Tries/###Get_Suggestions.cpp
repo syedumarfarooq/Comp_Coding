@@ -53,7 +53,8 @@ void insertWord(TrieNode* root, string word) {
 void storeSuggestions(TrieNode* curr, vector<string>& temp, string &prefix) {
 	if(curr -> isTerminal)//if we find terminal store word
 	{
-		temp.push_back(prefix);
+		temp.push_back(prefix);//not returning because there can be a word with this prefix if there are two words love and lovely
+		//if we return at love then we will not be able access lovely
 	}
 
 	//a to z tak choices dedo
