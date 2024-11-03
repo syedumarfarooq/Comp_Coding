@@ -64,7 +64,7 @@ public:
 }
 void findLCP(string& first,string& ans,TrieNode* root){
     //yha main galti karunga
-            if(root->isTerminal) {//if the first string is empty;
+            if(root->isTerminal) {//if ans string is empty the root will be marked terminal;
                     return;
             }
     for(int i=0;i<first.length();i++){
