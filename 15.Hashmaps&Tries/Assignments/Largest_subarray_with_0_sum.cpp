@@ -13,7 +13,8 @@ https://www.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1
   // in this we are creating an entry of it total sum for every elements of the array i.e for ith element i+i-1+i-2+....
   // we are doing this because if a sum after some calculation becomes same then the calculation happened in between is giving answer zero 
 // that is why we are storing sum of all the indexes if sum of any element repeat it means the inbetween is getting cancelled 
-// another case can be the sum from intial is becoming zero then we can directly store index as from intial only the sum is zero 
+// another case can be the sum  is becoming zero then we can directly store index as from intial the sum is zero this means the entire sum
+  // of the array until i is zero
 
 class Solution {
   public:
