@@ -44,7 +44,7 @@ class Solution {
         
              it->next=NULL;*//*Giving error in compiler but this code is currect to run this code without error in gfg platform use
                *//if(it){*
-              * // it->next=NULL;*
+              *// it->next=NULL;*
                *// }*
         
        
