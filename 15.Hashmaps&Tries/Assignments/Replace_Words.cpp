@@ -15,6 +15,8 @@ https://leetcode.com/problems/replace-words/description/
 
 // Input: dictionary = ["a","b","c"], sentence = "aadsfasf absbs bbab cadsfafs"
 // Output: "a a b c"
+*//logic****
+ // we add all the root word inside the trie so that we can check every word of the sentence in the trie if yes then we can replace it
 class TrieNode{
     public:
     char data;
@@ -39,7 +41,7 @@ class Trie{
         insertUtil(root->children[index],word,i+1);
     }
     bool searchUtil(TrieNode *root,string &word,int&i){
-        //whenever at the
+        //whenever we find a terminal node that means we have achieved a root word return that root word index
         if(root->isTerminal){
             return true;
         }
@@ -94,6 +96,7 @@ public:
         //pick each word and find in trie wether the root is available or not
         int start=0,end=0;
         while(end<sentence.size()){
+         //this will check for a space and check root word for that word
             if(sentence[end]==' '||end==sentence.size()-1){
                 int len=end==sentence.size()-1?sentence.size():end-start;
                 string word=sentence.substr(start,len);
