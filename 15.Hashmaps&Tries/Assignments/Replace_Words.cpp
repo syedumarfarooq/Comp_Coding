@@ -55,16 +55,7 @@ class Trie{
         }
         return false;
     }
-    bool startWithUtil(TrieNode *root,string &word,int i){
-        if(i>=word.size()){
-            return true;
-        }
-        int index=word[i]-'a';
-        if(root->children[index]){
-            return startWithUtil(root->children[index],word,i+1);
-        }
-        return false;
-    }
+    
 
     public:
     Trie(){
@@ -79,9 +70,7 @@ class Trie{
         return gotIt ? i :-1;
         
     }
-    bool startsWith(string prefix){
-        return startWithUtil(root,prefix,0);
-    }
+    
 };
 class Solution {
 public:
