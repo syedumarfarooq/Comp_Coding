@@ -49,7 +49,7 @@ class Trie{
             return root->isTerminal;
         }
         int index=word[i++]-'a';
-        // cout<<i<<endl;
+        
         if(root->children[index]){
             return searchUtil(root->children[index],word,i);
         }
@@ -92,7 +92,7 @@ public:
                 int trieMatchIndex=trie.search(word);
                cout<<trieMatchIndex<<endl;
                 ans+=trieMatchIndex!=-1?word.substr(0,trieMatchIndex):word;
-                // cout<<ans<<endl;
+               
                 if(sentence[end]==' '){
                     ans+=" ";
                 }
