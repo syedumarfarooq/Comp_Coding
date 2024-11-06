@@ -27,6 +27,12 @@ https://leetcode.com/problems/palindrome-pairs/description/
 *//LOGIC**
  // we are reversing every word and adding into the trie then we are matching every word in trie if it matches then we store its string number
 // which is stored at the end of every string 
+ 
+//  there are 2 cases to handle what if the input word matches with hapf the string in the trie and another is what is trie ended and still
+// input word is left which is explained in detail below eg;"lls","s" is s is the input word and trie is s-l-l this will iterate through s 
+ // only then we have to check the rest of the trie if it palindrome
+ // eg input:bd,dbcc if dbcc is the input word then it check trie for d-b it matches but it reaches end then we have to check the rest
+ // of the input word is it palindrome if yes then we mark it as palindrome and store its stringNumber
 class TrieNode{
     public:
     char data;
