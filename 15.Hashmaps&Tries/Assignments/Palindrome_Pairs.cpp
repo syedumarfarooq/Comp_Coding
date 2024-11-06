@@ -24,6 +24,9 @@ https://leetcode.com/problems/palindrome-pairs/description/
 // Input: words = ["bat","tab","cat"]
 // Output: [[0,1],[1,0]]
 // Explanation: The palindromes are ["battab","tabbat"]
+*//LOGIC**
+ // we are reversing every word and adding into the trie then we are matching every word in trie if it matches then we store its string number
+// which is stored at the end of every string 
 class TrieNode{
     public:
     char data;
