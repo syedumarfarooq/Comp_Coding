@@ -63,7 +63,7 @@ public:
         vector<int> dp(n+1,0);
         dp[0]=nums[0];
         for(int i=1;i<=n;i++){
-            int temp=0;
+            int temp=0;//for i=1 there is no i-2 so we are using 0
             if(i-2>=0){//we are doing this only for i=1 if we minus i-2 error so
                temp=dp[i-2];
             }
