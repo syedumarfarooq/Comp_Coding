@@ -93,7 +93,7 @@ public:
             for(int j=0;j<coins.size();j++){
                 if(i-coins[j]>=0&&dp[i-coins[j]]!=INT_MAX){
                     int ans=dp[i-coins[j]];
-                    dp[i]=min(dp[i],ans+1);
+                    dp[i]=min(dp[i],ans+1);//what if there is already a value in dp[i] as after every j iteration dp[i] i is changed 
                 }
                 
             }
