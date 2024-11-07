@@ -109,5 +109,8 @@ public:
 *//In many question top down approach will give TLE but bottom down approach will not
 *//Every question can be solved using both top down and bottom up
 *//Space optimisation is not generic for all questions
-      
-      
+      // converting topdown to buttom up to space optimisation to improve time and space complexity
+      // as in top down TC was exponential means that the number of operations required to solve a problem grows exponentially with the input
+      // size but in buttom down TC O(n) and in top down SC was space of dp array and call stack and in bottom up only dp array and in 
+      // space optimisation SC is O(1)
+*//Basically first start with recursion then top down then bottom up then space optimisation if possible
