@@ -38,7 +38,55 @@ int fib(int n){//basic recursion code
           //return dp[n]
   //1.3 right after base case write one condition i.e to check if answer already exist
       //eg:fibonnace if(dp[n]1=-1)return dp[n] // that is if answer exist do not calculate then directly return answer
-
+*//Solving fibonacci using dp*****
+class Solution {
+public:
+    //recurive solution
+    // int recSolve(int n){
+    //     if(n==1||n==0){
+    //         return n;
+    //     }
+    //     int ans=recSolve(n-1)+recSolve(n-2);
+    //     return ans;
+    // }
+    //using dp
+    // recursion+memoisation
+    int topDownSolve(int n,vector<int>&dp){
+        if(n==1||n==0){
+            return n;
+        }
+      //check if answer already exist
+        if(dp[n]!=-1){
+            return dp[n];
+        }
+        dp[n]=topDownSolve(n-1,dp)+topDownSolve(n-2,dp);
+        return dp[n];
+    }
+  //tabulation method or bottom up solve
+  int bottomUpSolve(int n){
+    // step1:create a dp array
+    vector<int>(n+1,-1);
+    //step2:base case used reference from topdownSolve
+    dp[0]=0;
+    if(n==0){//using this because if n=0 if it access dp[1] it will cause error as dp will be created for one size
+      return dp[0];
+    }
+    dp[1]=1;
+    //step3:topDown approach me n kaise travel krra ha hai uska ulta
+    for(int i=2;i<=n;i++){
+      dp[i]=dp[i-1]+dp[i-2];
+    }
+    return dp[n];
+    
+  }
+    int fib(int n) {
+        //create dp array
+        vector<int> dp(n+1,-1);
+        int ans=topDownSolve(n,dp);
+        return ans;
+    }
+};
+*//In many question top down approach will give TLE but bottom down approach will not
 
       
       
