@@ -85,7 +85,7 @@ https://leetcode.com/problems/coin-change/description/
  class Solution {
 public:
     int solveTab(vector<int>& coins,int amount){
-        vector<int> dp(amount+1,INT_MAX);
+        vector<int> dp(amount+1,INT_MAX);//here dp[i] determines the minimum number of coins neede so we are using intmax to compare
         dp[0]=0;
 
         
