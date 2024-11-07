@@ -68,8 +68,8 @@ https://leetcode.com/problems/house-robber/
 //                temp=dp[i-2];
 //             }
 //              int include=temp +nums[i];
-//                 int exclude=dp[i-1]+0;
-//                 dp[i]=max(include,exclude);
+//              int exclude=dp[i-1]+0;
+//              dp[i]=max(include,exclude);
         
 //         }
 //         return dp[n];
@@ -95,10 +95,10 @@ public:
                temp=prev2;
             }
              int include=temp +nums[i];
-                int exclude=prev1+0;
-                curr=max(include,exclude);
-                prev2=prev1;
-                prev1=curr;
+             int exclude=prev1+0;
+             curr=max(include,exclude);
+             prev2=prev1;
+             prev1=curr;
 
         
         }
