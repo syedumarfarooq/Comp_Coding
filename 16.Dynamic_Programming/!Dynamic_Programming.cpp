@@ -69,7 +69,7 @@ public:
 //     // step1:create a dp array
 //     vector<int>(n+1,-1);
 //     //step2:base case used reference from topdownSolve
-//     dp[0]=0;
+//     dp[0]=0;//add in dp whatever base case in topdown solve
 //     if(n==0){//using this because if n=0 if it access dp[1] it will cause error as dp will be created for one size
 //       return dp[0];
 //     }
