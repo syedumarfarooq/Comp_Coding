@@ -51,43 +51,63 @@ public:
     // }
     //using dp
     // recursion+memoisation
-    int topDownSolve(int n,vector<int>&dp){
-        if(n==1||n==0){
-            return n;
-        }
-      //check if answer already exist
-        if(dp[n]!=-1){
-            return dp[n];
-        }
-        dp[n]=topDownSolve(n-1,dp)+topDownSolve(n-2,dp);
-        return dp[n];
-    }
+*//Top Down Solve***
+    // int topDownSolve(int n,vector<int>&dp){
+    //     if(n==1||n==0){
+    //         return n;
+    //     }
+    //   //check if answer already exist
+    //     if(dp[n]!=-1){
+    //         return dp[n];
+    //     }
+    //     dp[n]=topDownSolve(n-1,dp)+topDownSolve(n-2,dp);
+    //     return dp[n];
+    // }
   //tabulation method or bottom up solve
-  int bottomUpSolve(int n){
-    // step1:create a dp array
-    vector<int>(n+1,-1);
-    //step2:base case used reference from topdownSolve
-    dp[0]=0;
-    if(n==0){//using this because if n=0 if it access dp[1] it will cause error as dp will be created for one size
-      return dp[0];
-    }
-    dp[1]=1;
-    //step3:topDown approach me n kaise travel krra ha hai uska ulta
-    for(int i=2;i<=n;i++){
-      dp[i]=dp[i-1]+dp[i-2];
-    }
-    return dp[n];
-    
-  }
-    int fib(int n) {
-        //create dp array
-        vector<int> dp(n+1,-1);
-        int ans=topDownSolve(n,dp);
-        return ans;
-    }
-};
+*//BottomUpSolve***
+//   int bottomUpSolve(int n){
+//     // step1:create a dp array
+//     vector<int>(n+1,-1);
+//     //step2:base case used reference from topdownSolve
+//     dp[0]=0;
+//     if(n==0){//using this because if n=0 if it access dp[1] it will cause error as dp will be created for one size
+//       return dp[0];
+//     }
+//     dp[1]=1;
+//     //step3:topDown approach me n kaise travel krra ha hai uska ulta
+//     for(int i=2;i<=n;i++){
+//       dp[i]=dp[i-1]+dp[i-2];
+//     }
+//     return dp[n];
+//   }
+*//Space Optimisation***
+   // int spaceOptSolve(int n){
+        // step1:create a dp array
+//     vector<int>(n+1,-1);
+//     int prev2=0;
+//     int prev1=1;
+//     if(n==0)return prev2;
+//     if(n==1)return prev1;
+//     int curr;
+//     //step3:topDown approach me n kaise travel krra ha hai uska ulta
+//     for(int i=2;i<=n;i++){
+//       curr=prev1+prev2;
+//       prev2=prev1;
+//       prev1=curr;
+//     }
+//     return dp[n];
+  // }
+
+//   
+//     int fib(int n) {
+//         //create dp array
+//         vector<int> dp(n+1,-1);
+//         int ans=topDownSolve(n,dp);
+//         return ans;
+//     }
+// };
 *//In many question top down approach will give TLE but bottom down approach will not
 *//Every question can be solved using both top down and bottom up
-
+*//Space optimisation is not generic for all questions
       
       
