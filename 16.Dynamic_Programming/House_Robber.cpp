@@ -57,22 +57,53 @@ https://leetcode.com/problems/house-robber/
 //     }
 // };
   *//Tabulation
-  class Solution {
+//   class Solution {
+// public:
+//     int solveUsingTabulation(vector<int>& nums,int n){//n->represents the index of current house
+//         vector<int> dp(n+1,0);
+//         dp[0]=nums[0];
+//         for(int i=1;i<=n;i++){
+//             int temp=0;//for i=1 there is no i-2 so we are using 0
+//             if(i-2>=0){//we are doing this only for i=1 if we minus i-2 error so
+//                temp=dp[i-2];
+//             }
+//              int include=temp +nums[i];
+//                 int exclude=dp[i-1]+0;
+//                 dp[i]=max(include,exclude);
+        
+//         }
+//         return dp[n];
+        
+        
+//     }
+//     int rob(vector<int>& nums) {
+//         int n=nums.size()-1;
+        
+//         return solveUsingTabulation(nums,n);
+//     }
+// };
+ *//Space Optimisation
+ class Solution {
 public:
     int solveUsingTabulation(vector<int>& nums,int n){//n->represents the index of current house
-        vector<int> dp(n+1,0);
-        dp[0]=nums[0];
+        int prev2=0;
+        int prev1=nums[0];
+        int curr=0;
         for(int i=1;i<=n;i++){
-            int temp=0;//for i=1 there is no i-2 so we are using 0
+            int temp=0;
             if(i-2>=0){//we are doing this only for i=1 if we minus i-2 error so
-               temp=dp[i-2];
+               temp=prev2;
             }
              int include=temp +nums[i];
-                int exclude=dp[i-1]+0;
-                dp[i]=max(include,exclude);
+                int exclude=prev1+0;
+                curr=max(include,exclude);
+                prev2=prev1;
+                prev1=curr;
+
         
         }
-        return dp[n];
+        return prev1;//we used prev1 insted of curr if nums had only one element
+        //then we should print nums[0] itself and in the loop prev1 is set to curr
         
         
     }
