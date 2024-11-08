@@ -18,7 +18,9 @@
 //   answer for the doubt is that if there k-1 multiply with f(3) but f(4) is not made with singlt f(3) it is made with f(2) the rest
 // one element is present in that f(2)*k-1 for some elements  which are same for eg:GBRG,GBRB is present in f(3)*(k-1) and GBRR is present in 
 // f(2)*(k-1) as we are diving the same and different in two coloumns
+  *//Solution
 #include<iostream>
+#include<vector>
 using namespace std;
 *//Using recursion TLE
 // int solveUsingRecursion(int n,int k){
@@ -32,10 +34,50 @@ using namespace std;
 //   int ans=(solveUsingRecursion(n-2,k)+solveUsingRecursion(n-1,k))*(k-1);
 //   return ans;
 // }
+  *//Using memoisation
+  // int solveUsingMem(int n,int k,vector<int>&dp){
+  //   if(n==1){
+  //     return k;
+  //   }
+  //   if(n==2){
+  //     return (k+k*(k-1));
+  //   }
+  //   if(dp[n]!=-1){
+  //     return dp[n];
+  //   }
+  //   dp[n]=(solveUsingMem(n-2,k,dp)+solveUsingMem(n-1,k,dp))*(k-1);
+  //     return dp[n];
+  // }
+  *//Using Tabular
+  //int solveUsingTab(int n,int k){
+  //   vector<int> dp(n+1,0);
+  //   dp[1]=k;
+  //   dp[2]=k+k*(k-1);
+  //   for(int i=3;i<=n;i++){
+  //       dp[i]=(solveUsingTab(i-2,k,dp)+solveUsingTab(i-1,k,dp))*(k-1);
+      
+  //   }
+  // return dp[n];
+  // }
+  *//Space Optimisation
+  // int solveSO(int n,int k){
+  // int prev2=k;
+  // int prev1=k+k*(k-1);
+  // int curr;
+  //   for(int i=3;i<=n;i++){
+  //      curr=(prev2+prev1)*(k-1);
+  //       prev2=prev1;
+  //      prev1=curr;
+  //   }
+  // return prev1;
+  // }
 int main(){
   int n=4;
   int k=3;
-  int ans=solveUsingRecursion(n,k);
+  // int ans=solveUsingRecursion(n,k);//for using recursion
+  // vector<int> dp(n+1,-1);//for solveUsingMem
+  // int ans=solveUsingMem(n,k,dp);//for solveUsingMem
+  //int ans=solveUsingTab(n,k);//for solveUsingTab
   cout<<"ans:"<<ans<<endl;
   return 0;
 }
