@@ -114,3 +114,4 @@ public:
       // size but in buttom down TC O(n) and in top down SC was space of dp array and call stack and in bottom up only dp array and in 
       // space optimisation SC is O(1)
 *//Basically first start with recursion then top down then bottom up then space optimisation if possible
+*//If only one parameter is changing within the function then it is 1DDP if two are changing then 2DDP
