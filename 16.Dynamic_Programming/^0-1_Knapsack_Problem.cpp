@@ -126,45 +126,92 @@ https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1?itm_source=gee
 // };
  *//Using space optimisation
  // as from above we need only two array one is current to save value and prev one which is to retrieve value to find include and exclude
+ // class Solution {
+ //  public:
+ //    // Function to return max value that can be put in knapsack of capacity.
+    
+
+ //    int solveUsingSO(int capacity,int n,vector<int> &val, vector<int> &wt){
+ //        //index= index of last element , and we are traversing right to left
+ //        vector<int> prev(capacity+1,0);
+ //        vector<int> curr(capacity+1,0);
+ //        for(int w=wt[0];w<=capacity;w++){
+ //            if(wt[0]<=capacity){
+ //                prev[w]=val[0];
+ //            }else{
+ //                prev[w]=0;
+ //            }
+ //        }
+        
+ //    for(int index=1; index<=n; index++) {
+ //        for(int w=0; w<=capacity; w++) {
+ //          //include and exclude
+ //          int include = 0;
+ //          if(wt[index] <= w)
+ //            include = val[index] + prev[w - wt[index]];
+        
+ //          int exclude = 0 + prev[w];
+        
+ //          curr[w]= max(include, exclude);
+          
+ //        }
+ //        //shift
+ //          prev=curr;//might make mistake here
+ //    }
+  
+ //  return prev[capacity]; 
+ //    }
+ //    int knapSack(int capacity, vector<int> &val, vector<int> &wt) {
+ //        int n=val.size()-1;
+        
+ //        int ans=solveUsingSO(capacity,n,val,wt);
+ //        return ans;
+ //    }
+*//Space Optimization part 2 we are using only one array from 2 arrays
  class Solution {
   public:
     // Function to return max value that can be put in knapsack of capacity.
     
 
-    int solveUsingSO(int capacity,int n,vector<int> &val, vector<int> &wt){
+    int solveUsingSO2(int capacity,int n,vector<int> &val, vector<int> &wt){
         //index= index of last element , and we are traversing right to left
-        vector<int> prev(capacity+1,0);
         vector<int> curr(capacity+1,0);
         for(int w=wt[0];w<=capacity;w++){
             if(wt[0]<=capacity){
-                prev[w]=val[0];
+                curr[w]=val[0];
             }else{
-                prev[w]=0;
+                curr[w]=0;
             }
         }
-        
+        //for finding out the include and exclude we need current value and some value from left
+        //so as we are overriding some value of left for finding include and exclude but if we want to access old values
+        //we cannot so if we move from right to left the right values get overrided first and then we can continue
+        //but if we move from left to right it overides some of the values when we move to next value trying to access tthe
+        //previous unoverided values it is not possible
+        //if we move from right to left we can access the left values without overiding the values which we might need in
+        //the later iterations
     for(int index=1; index<=n; index++) {
-        for(int w=0; w<=capacity; w++) {
+        for(int w=capacity; w>=0; w--) {
           //include and exclude
+          
           int include = 0;
           if(wt[index] <= w)
-            include = val[index] + prev[w - wt[index]];
+            include = val[index] + curr[w - wt[index]];
         
-          int exclude = 0 + prev[w];
+          int exclude = 0 + curr[w];
         
           curr[w]= max(include, exclude);
           
         }
-        //shift
-          prev=curr;//might make mistake here
+       
     }
   
-  return prev[capacity]; 
+  return curr[capacity]; 
     }
     int knapSack(int capacity, vector<int> &val, vector<int> &wt) {
         int n=val.size()-1;
         
-        int ans=solveUsingSO(capacity,n,val,wt);
+        int ans=solveUsingSO2(capacity,n,val,wt);
         return ans;
     }
 };
