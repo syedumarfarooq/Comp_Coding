@@ -86,43 +86,83 @@ https://leetcode.com/problems/partition-equal-subset-sum/
 //     }
 // };
   *//Using Tabulation method
-  class Solution {
-public:
-    bool solveUsingTabulation(vector<int>&nums,int target){
-        vector<vector<int>>dp(nums.size()+1,vector<int>(target+1,0));
-        //if target ==0 then that can be asolution 
-        for(int i=0;i<nums.size();i++){
-            dp[i][0]=1;
-        }
-        //the dp tells for which index and target there can be a posible solution 
+//   class Solution {
+// public:
+//     bool solveUsingTabulation(vector<int>&nums,int target){
+//         vector<vector<int>>dp(nums.size()+1,vector<int>(target+1,0));
+//         //if target ==0 then that can be asolution 
+//         for(int i=0;i<nums.size();i++){
+//             dp[i][0]=1;
+//         }
+//         //the dp tells for which index and target there can be a posible solution 
         
-        //opposite of top down method or memoisation
-        for(int index=nums.size()-1;index>=0;index--){
-            //for a index to be a possible solution then the next index with or without included should be a possible solution 
-            //as we are coming from the last index the solution is possible only if the current index and next index together gives us a possible solution
-            for(int t=1;t<=target;t++){
-                bool include=0;
-                if(t-nums[index]>=0)
-                  include=dp[index+1][t-nums[index]];
-                bool exclude=dp[index+1][t];
-                dp[index][t]=(include||exclude);
+//         //opposite of top down method or memoisation
+//         for(int index=nums.size()-1;index>=0;index--){
+//             //for a index to be a possible solution then the next index with or without included should be a possible solution 
+//             //as we are coming from the last index the solution is possible only if the current index and next index together gives us a possible solution
+//             for(int t=1;t<=target;t++){
+//                 bool include=0;
+//                 if(t-nums[index]>=0)
+//                   include=dp[index+1][t-nums[index]];
+//                 bool exclude=dp[index+1][t];
+//                 dp[index][t]=(include||exclude);
                  
-            }
-        }
+//             }
+//         }
         
-       return dp[0][target];
-    }
-    bool canPartition(vector<int>& nums) {
-        int sum=0;
-        for(int i=0;i<nums.size();i++){
-            sum+=nums[i];
-        }
-        if(sum&1){//tend to forget
-            return false;//bcz if the sum is odd we cannot find equal subset
-        }
-        int target=sum/2;
-        int index=0;
-        bool ans=solveUsingTabulation(nums,target);
-        return ans;
-    }
-};
+//        return dp[0][target];
+//     }
+//     bool canPartition(vector<int>& nums) {
+//         int sum=0;
+//         for(int i=0;i<nums.size();i++){
+//             sum+=nums[i];
+//         }
+//         if(sum&1){//tend to forget
+//             return false;//bcz if the sum is odd we cannot find equal subset
+//         }
+//         int target=sum/2;
+//         int index=0;
+//         bool ans=solveUsingTabulation(nums,target);
+//         return ans;
+//     }
+// };
+  *//Solved using space optimisation
+//   class Solution {
+// public:
+//     bool solveUsingSO(vector<int>&nums,int target){
+//         vector<int>curr(target+1,0); 
+//         vector<int>next(target+1,0); 
+//         //if target ==0 then that can be asolution 
+//         for(int i=0;i<nums.size();i++){
+//             next[0]=1;
+//         }
+       
+//         for(int index=nums.size()-1;index>=0;index--){
+//             for(int t=1;t<=target;t++){
+//                 bool include=0;
+//                 if(t-nums[index]>=0)
+//                   include=next[t-nums[index]];
+//                 bool exclude=next[t];
+//                 curr[t]=(include||exclude);
+                 
+//             }
+//             //shifting
+//             next=curr;
+//         }
+        
+//        return next[target];
+//     }
+//     bool canPartition(vector<int>& nums) {
+//         int sum=0;
+//         for(int i=0;i<nums.size();i++){
+//             sum+=nums[i];
+//         }
+//         if(sum&1){//tend to forget
+//             return false;//bcz if the sum is odd we cannot find equal subset
+//         }
+//         int target=sum/2;
+//         int index=0;
+//         bool ans=solveUsingSO(nums,target);
+//         return ans;
+//     }
+// };
