@@ -97,3 +97,51 @@ https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/
 //     }
 // };
   *//Solved Using Tabulation
+class Solution {
+public:
+    int solveUsingTabulation(vector<int>& arr,map<pair<int,int>,int> &maxi,int left,int right){
+        int n = arr.size();
+        vector<vector<int> > dp(n+1, vector<int>(n+1, 0));
+        //in memoisation left is moving from 0 to n-1 and right is moving from n-1 to 0 so we do the opposite in tabulation method
+        for(int left = n-1; left>=0; left--) {
+            for(int right=0; right<=n-1; right++) {
+
+                if(left>=right)
+                    continue;
+                else {
+                    //valid range
+                      int ans = INT_MAX;
+
+                    for(int i=left; i<right; i++) {
+                        ans = min(ans, 
+                        maxi[{left,i}]*maxi[{i+1, right}] 
+                        + dp[left][i]
+                        + dp[i+1][right]);
+                    }
+                    dp[left][right] =  ans;
+                    
+                }
+
+            }
+        }
+    return dp[0][n-1];
+    }
+    int mctFromLeafValues(vector<int>& arr) {
+        map<pair<int,int>,int> maxi;
+        //pre computation
+        //we are creating a data structure in which with O(1) we can find the 
+        // maximum number in that range
+        // i and j are ranges and it stores the maximum number in that range i.e for every range there will be a maximum stored in the map
+        for(int i=0;i<arr.size();i++){
+            maxi[{i,i}]=arr[i];
+            for(int j=i+1;j<arr.size();j++){
+                maxi[{i,j}]=max(arr[j],maxi[{i,j-1}]);
+            }
+        }
+        int n=arr.size();
+        
+        
+        int ans=solveUsingTabulation(arr,maxi,0,n-1);
+        return ans;
+    }
+};
