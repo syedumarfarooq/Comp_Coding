@@ -150,7 +150,7 @@ int solveUsingTabSO(string a, string b) {
             //every row starts here
             //yaha galti karoge
             curr[b.length()] = a.length()-i;//j is out of bound so remaining elements in word1 will be the number of operation i.e deleteing
-            
+            //after shifting the curr[b.length()] will be overridden so we calculate whenever there is new rwo
             for(int j =b.length()-1; j>=0; j--) {
                 int ans = 0;
                 if(a[i] == b[j]) {
