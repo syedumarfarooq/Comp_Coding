@@ -41,10 +41,11 @@ public:
         if(a[i]==b[j]){
             ans=solveUsingRecursion(a,b,i+1,j+1);//if it matches no need for any operation
         }else{
-            int insert=1+solveUsingRecursion(a,b,i,j+1);//if we insert a new element in word1 that maches the char then we have to only move
-          //j+1 
+            int insert=1+solveUsingRecursion(a,b,i,j+1);//if we insert a new element(just imagining)in word1 that matches the char then we have to only move
+          //j+1 thinking that it is matched eg:horse and hotr for before r if we insert t the i index will stay the same and only the j will move
             int deleted=1+solveUsingRecursion(a,b,i+1,j);//if we delete a element in a we just move the i pointer
-            int replaced=1+solveUsingRecursion(a,b,i+1,j+1);// if we replace a element in a we move both i and j 
+            int replaced=1+solveUsingRecursion(a,b,i+1,j+1);// if we replace a element in a we move both i and j bcz we replace the word1 with the char
+         //which is same as the word2 character
             ans=min(insert,min(deleted,replaced));//we find the minimum operation taken to match the word
         }
         return ans;
@@ -59,3 +60,114 @@ public:
         return solveUsingRecursion(word1,word2,0,0);
     }
 };
+*//Solve using memoisation
+class Solution {
+public:
+    int solveUsingMem(string& a, string& b, int i, int j, vector<vector<int> >& dp) {
+
+        //base case
+        if( i == a.length()) {
+            return b.length()-j;
+        }
+
+        if(j == b.length()) {
+            return a.length()-i;
+        }
+
+        if(dp[i][j] != -1) 
+            return dp[i][j];
+
+        int ans = 0;
+        if(a[i] == b[j]) {
+            ans = solveUsingMem(a,b,i+1,j+1, dp);
+        }
+        else {
+            //operation perform karo 
+            int insert = 1 + solveUsingMem(a,b,i,j+1, dp);
+            int deleted = 1 + solveUsingMem(a,b,i+1,j, dp);
+            int replace = 1 + solveUsingMem(a,b,i+1, j+1, dp);
+            ans = min(insert, min(deleted, replace));
+        }
+        dp[i][j] =  ans;
+        return dp[i][j];
+    }
+
+    int minDistance(string word1, string word2) {
+        if(word1.length()==0){
+            return word2.length();
+        }
+        if(word2.length()==0){
+            return word1.length();
+        }
+     //here the 2d array will give u the minimum operations need from that i index to j index
+        vector<vector<int> > dp(word1.length(), vector<int>(word2.length(), -1));
+        return solveUsingMem(word1,word2,0,0,dp);
+    }
+};
+*//Solve using Tabulation
+int solveUsingTab(string a, string b) {
+        vector<vector<int> > dp(a.length()+1, vector<int>(b.length()+1,0));
+
+        for(int j =0; j<=b.length(); j++) {//if the the index or word1 has gone out of bound then it should perform operation equal to elements
+         // left in word2
+            dp[a.length()][j] =  b.length()-j;
+        }
+
+        for(int i =0; i<=a.length(); i++) {
+            dp[i][b.length()] = a.length() - i;
+        }
+
+        for(int i = a.length()-1; i>=0; i--) {
+            for(int j =b.length()-1; j>=0; j--) {
+                int ans = 0;
+                if(a[i] == b[j]) {
+                    ans = dp[i+1][j+1];
+                }
+                else {
+                    //operation perform karo 
+                    int insert = 1 + dp[i][j+1];
+                    int deleted = 1 + dp[i+1][j];
+                    int replace = 1 + dp[i+1][j+1];
+                    ans = min(insert, min(deleted, replace));
+                }
+                dp[i][j] =  ans;
+                
+            }
+        }
+        return dp[0][0];
+    }
+*//Space optimisation
+int solveUsingTabSO(string a, string b) {
+        //vector<vector<int> > dp(a.length()+1, vector<int>(b.length()+1,0));
+        vector<int> curr(b.length()+1, 0);
+        vector<int> next(b.length()+1, 0);
+
+        for(int j =0; j<=b.length(); j++) {
+            next[j] =  b.length()-j;
+        }
+
+        for(int i = a.length()-1; i>=0; i--) {
+            //every row starts here
+            //yaha galti karoge
+            curr[b.length()] = a.length()-i;//j is out of bound so remaining elements in word1 will be the number of operation i.e deleteing
+            
+            for(int j =b.length()-1; j>=0; j--) {
+                int ans = 0;
+                if(a[i] == b[j]) {
+                    ans = next[j+1];
+                }
+                else {
+                    //operation perform karo 
+                    int insert = 1 + curr[j+1];
+                    int deleted = 1 + next[j];
+                    int replace = 1 + next[j+1];
+                    ans = min(insert, min(deleted, replace));
+                }
+                curr[j] =  ans;
+            }
+            //shift
+            next = curr;
+        }
+        return next[0];
+    }
+
