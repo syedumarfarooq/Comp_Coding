@@ -167,6 +167,8 @@ int solveUsingTabSO(string a, string b) {
             }
             //shift
             next = curr;
+         //as we are going from last to 0 next is moving upwards so next=curr
+         //if we are going from 0 to last next is moving downwards then curr=next
         }
         return next[0];
     }
