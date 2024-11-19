@@ -113,7 +113,7 @@ int solveUsingTab(string a, string b) {
             dp[a.length()][j] =  b.length()-j;
         }
 
-        for(int i =0; i<=a.length(); i++) {
+        for(int i =0; i<=a.length(); i++) {//if the j reaches the last index then it should perform operation equal to elements left in word1
             dp[i][b.length()] = a.length() - i;
         }
 
