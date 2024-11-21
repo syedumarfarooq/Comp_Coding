@@ -78,7 +78,8 @@ int solveUsingTab(vector<int>& arr) {
                 //excude
                 int exclude = 0 + dp[curr+1][prev + 1];
 
-                dp[curr][prev + 1] = max(include, exclude);   
+                dp[curr][prev + 1] = max(include, exclude); //as the dp[curr][prev+1] depends or only curr and curr+1 row so it can be done with 2 array
+             
             }
         }
         return dp[0][0];
