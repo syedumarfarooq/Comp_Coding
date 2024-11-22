@@ -132,4 +132,5 @@ int solveUsingTabSO(vector<int>& arr) {
         }
         return ans.size();
     }
-// if there is number greater than the last value than only it will be added or else it will be replaced
+// if there is number greater than the last value than only it will be added or else it will be replaced and at last we have to return the 
+// length of the aswer so it wont matter if the elements match we have to get only the longest length
