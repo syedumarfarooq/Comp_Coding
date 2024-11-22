@@ -84,3 +84,51 @@ int solveUsingTab(vector<int>& arr) {
         }
         return dp[0][0];
     }
+*//Solve using space optimisation
+int solveUsingTabSO(vector<int>& arr) {
+        int n = arr.size();
+        //vector<vector<int> > dp(n+1, vector<int>(n+1, 0));
+        vector<int> currRow(n+1, 0);
+        vector<int> nextRow(n+1, 0);
+
+        for(int curr = n-1; curr>=0; curr--) {
+            for(int prev = curr - 1; prev >= -1; prev--) {
+                //include
+                int include = 0;
+                if(prev == -1 || arr[curr] > arr[prev])
+                    include = 1 + nextRow[curr + 1];
+
+                //excude
+                int exclude = 0 + nextRow[prev + 1];
+
+                currRow[prev + 1] = max(include, exclude);   
+            }
+            //shift
+            nextRow = currRow;
+        }
+        return nextRow[0];
+    }
+*//Solve using O(nlogn) 
+*//logic:we are traversing through the array and adding elements in the ans if the element is greater than last element we add it into the 
+// answer array if the element is less then we replace it with the number just greater than the element present in the answer array
+ int solveOptimal(vector<int>& arr) {
+        if(arr.size() == 0)
+            return 0;
+        vector<int> ans;
+        ans.push_back(arr[0]);//adding first element into the answer
+
+        for(int i=1; i<arr.size(); i++) {
+            if(arr[i] > ans.back()) {
+                //include
+                ans.push_back(arr[i]);
+            }
+            else {
+                //overwrite
+                //find index of just bada element
+                int index = lower_bound(ans.begin(), ans.end(), arr[i]) - ans.begin();//Returns an iterator to the first element not less than 
+             // the given value. or function gives you the number that is just greater than or equal to the given value in a sorted range.
+                ans[index] = arr[i];
+            }
+        }
+        return ans.size();
+    }
