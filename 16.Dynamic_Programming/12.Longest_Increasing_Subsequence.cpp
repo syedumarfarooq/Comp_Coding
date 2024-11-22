@@ -127,6 +127,7 @@ int solveUsingTabSO(vector<int>& arr) {
                 //find index of just bada element
                 int index = lower_bound(ans.begin(), ans.end(), arr[i]) - ans.begin();//Returns an iterator to the first element not less than 
              // the given value. or function gives you the number that is just greater than or equal to the given value in a sorted range.
+             //lower bound gives address as output so that we minus it with the ans.begin() which is the address of the first element
                 ans[index] = arr[i];
             }
         }
