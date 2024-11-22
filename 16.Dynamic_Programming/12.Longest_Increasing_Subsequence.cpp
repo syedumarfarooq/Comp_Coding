@@ -132,3 +132,4 @@ int solveUsingTabSO(vector<int>& arr) {
         }
         return ans.size();
     }
+// if there is number greater than the last value than only it will be added or else it will be replaced
