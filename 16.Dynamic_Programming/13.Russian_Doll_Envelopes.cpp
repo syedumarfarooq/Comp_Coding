@@ -72,19 +72,26 @@ public:
         ans.push_back(arr[0]);//adding first element into the answer
 
         for(int i=1; i<arr.size(); i++) {
-            if(check(arr[i],ans.back())) {//had to add this because 
+            if(check(arr[i],ans.back())) {//had to add this because for this example [[1,3],[3,5],[6,7],[6,8],[8,4],[9,5]] it was give 5 as
+             //output but it is 3 it was comparing the 0th index of all array and comparing so last two also got added but height of them
+             //are small we cannot add them so we use check function to check both height and width both should be greater
                 //include
                 ans.push_back(arr[i]);
             }
             else {
                 //overwrite
                 //find index of just bada element
-                auto it = lower_bound(ans.begin(), ans.end(), arr[i], [](const vector<int>& a,const vector<int>& b) {//made changes here
-                    return a[1] < b[1];
+                auto it = lower_bound(ans.begin(), ans.end(), arr[i], [](const vector<int>& a,const vector<int>& b) {
+                 //had to add this because this else part will run only if the width is same as last because the the array is already 
+                 //sorted based on width so the next array will be greater or equal 
+                    return a[1] < b[1];//this is just a lambda function compare the heigth for finding the lower bound so it returns
+                 //the iterator of the array whose height is just greater than the current height rathter than comparing it with the
+                 //width
+                 *//at first we didn't add const to the lambda function parameters so it was showing error
+                 //  If you don't use const, the compiler might get confused because it thinks your lambda could try to change the data, even though lower_bound 
+                 // only wants to read it. That's why it gives an error when const is missing: it's about making sure the data is treated as read-only while it's
+                 // being used in certain functions.
                 });
-                //Returns an iterator to the first element not less than 
-             // the given value. or function gives you the number that is just greater than or equal to the given value in a sorted range.
-             //lower bound gives address as output so that we minus it with the ans.begin() which is the address of the first element
                 *it = arr[i];
             }
         }
