@@ -1,4 +1,5 @@
 https://leetcode.com/problems/longest-increasing-subsequence/
+*// when to know to apply lis if u want to include current element based on previous elements creteria then we use lis
 // Given an integer array nums, return the length of the longest strictly increasing 
 // subsequence
 // .
