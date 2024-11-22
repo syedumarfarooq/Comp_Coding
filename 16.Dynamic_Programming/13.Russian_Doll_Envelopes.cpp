@@ -57,6 +57,7 @@ public:
     }
 };
 *//solve optimal using binary search lowebound
+ *//explained in https://github.com/syedumarfarooq/Comp_Coding/blob/main/16.Dynamic_Programming/12.Longest_Increasing_Subsequence.cpp
 class Solution {
 public:
  bool check(vector<int>& curr, vector<int>& prev) {
