@@ -40,3 +40,32 @@ public:
         return solve(prices,0,1,2);//sending 2 as limit because we can only do 2 transaction
     }
 };
+*//Solved using memoisation
+class Solution {
+public:
+    int solveMem(vector<int>&prices,int i,int buy,int limit,vector<vector<vector<int>>>&dp){
+        if(i>=prices.size()||limit==0){
+            return 0;
+        }
+        if(dp[i][buy][limit]!=-1){
+            return dp[i][buy][limit];
+        }
+        int profit=0;
+        if(buy){
+            int buyItProfit= -prices[i]+solveMem(prices,i+1,0,limit,dp);
+            int skipProfit=solveMem(prices,i+1,1,limit,dp);
+            profit=max(buyItProfit,skipProfit);
+        }else{
+            int sellItProfit= prices[i]+solveMem(prices,i+1,1,limit-1,dp);
+            int skipProfit=solveMem(prices,i+1,0,limit,dp);
+            profit=max(sellItProfit,skipProfit);
+        }
+        dp[i][buy][limit]=profit;
+        return dp[i][buy][limit];
+    }
+    int maxProfit(vector<int>& prices) {
+        //as there variable are changing we are making 3d dp
+       vector<vector<vector<int>>>dp(prices.size(),vector<vector<int>>(2,vector<int>(3,-1)));//as limit can have 3 values 0,1,2 so size is 3 
+        return solveMem(prices,0,1,2,dp);
+    }
+};
