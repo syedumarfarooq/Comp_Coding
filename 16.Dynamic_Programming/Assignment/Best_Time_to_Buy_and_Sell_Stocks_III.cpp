@@ -140,7 +140,7 @@ public:
     }
 };
 *//another method space optimisation
- // in this we are creating 3 d only but the size is taken so as the curr depends on the next row itself
+ // in this we are creating 3 d only but the size is taken so as 2 ,the curr depends on the next row itself
 class Solution {
 public:
     int solveTab(vector<int>&prices){
