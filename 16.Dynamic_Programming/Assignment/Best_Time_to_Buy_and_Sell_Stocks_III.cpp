@@ -69,3 +69,73 @@ public:
         return solveMem(prices,0,1,2,dp);
     }
 };
+*//Solved using tabulation
+class Solution {
+public:
+    int solveTab(vector<int>&prices){
+        vector<vector<vector<int>>>dp(prices.size()+1,vector<vector<int>>(2,vector<int>(3,0)));
+        for(int i=prices.size()-1;i>=0;i--){
+            for(int buy=0;buy<2;buy++){
+                for(int limit=1;limit<3;limit++){//starting from limit 1 as for limit=0 we have to return 0 as
+                //we are intialising everthing with 0 so we can start from 1
+                    int profit=0;
+                        if(buy){
+                            int buyItProfit= -prices[i]+dp[i+1][0][limit];
+                            int skipProfit=dp[i+1][1][limit];
+                            profit=max(buyItProfit,skipProfit);
+                        }else{
+                            int sellItProfit= prices[i]+dp[i+1][1][limit-1];
+                            int skipProfit=dp[i+1][0][limit];
+                            profit=max(sellItProfit,skipProfit);
+                        }
+                        dp[i][buy][limit]=profit;
+                }
+
+            }
+        }
+        
+        
+        return dp[0][1][2];
+    }
+    int maxProfit(vector<int>& prices) {
+        //as there variable are changing we are making 3d dp
+       
+        return solveTab(prices);
+    }
+};
+*//space optimisation
+class Solution {
+public:
+    int solveTab(vector<int>&prices){
+        // vector<vector<vector<int>>>dp(prices.size()+1,vector<vector<int>>(2,vector<int>(3,0)));
+        vector<vector<int>>next(2,vector<int>(3,0));
+        vector<vector<int>>curr(2,vector<int>(3,0));
+        for(int i=prices.size()-1;i>=0;i--){
+            for(int buy=0;buy<2;buy++){
+                for(int limit=1;limit<3;limit++){
+                    int profit=0;
+                        if(buy){
+                            int buyItProfit= -prices[i]+next[0][limit];
+                            int skipProfit=next[1][limit];
+                            profit=max(buyItProfit,skipProfit);
+                        }else{
+                            int sellItProfit= prices[i]+next[1][limit-1];
+                            int skipProfit=next[0][limit];
+                            profit=max(sellItProfit,skipProfit);
+                        }
+                        curr[buy][limit]=profit;
+                }
+
+            }
+            next=curr;
+        }
+        
+        
+        return curr[1][2];
+    }
+    int maxProfit(vector<int>& prices) {
+       
+       
+        return solveTab(prices);
+    }
+};
