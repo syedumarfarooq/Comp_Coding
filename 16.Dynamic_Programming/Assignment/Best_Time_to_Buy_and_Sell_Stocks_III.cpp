@@ -139,3 +139,39 @@ public:
         return solveTab(prices);
     }
 };
+*//another method space optimisation
+ // in this we are creating 3 d only but the size is taken so as the curr depends on the next row itself
+class Solution {
+public:
+    int solveTab(vector<int>&prices){
+        vector<vector<vector<int>>>dp(2,vector<vector<int>>(2,vector<int>(3,0)));
+       
+        for(int i=prices.size()-1;i>=0;i--){
+            for(int buy=0;buy<2;buy++){
+                for(int limit=1;limit<3;limit++){
+                    int profit=0;
+                        if(buy){
+                            int buyItProfit= -prices[i]+dp[1][0][limit];
+                            int skipProfit=dp[1][1][limit];
+                            profit=max(buyItProfit,skipProfit);
+                        }else{
+                            int sellItProfit= prices[i]+dp[1][1][limit-1];
+                            int skipProfit=dp[1][0][limit];
+                            profit=max(sellItProfit,skipProfit);
+                        }
+                        dp[0][buy][limit]=profit;
+                }
+
+            }
+            dp[1]=dp[0];
+        }
+        
+        
+        return dp[0][1][2];
+    }
+    int maxProfit(vector<int>& prices) {
+       
+       
+        return solveTab(prices);
+    }
+};
