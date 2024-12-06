@@ -83,7 +83,7 @@ class Solution {
 public:
     int solveUsingTab(vector<int>&prices){
         vector<vector<int>>dp(prices.size()+1,vector<int>(2,0));
-        for(int i=prices.size()-1;i>=0;i--){
+        for(int i=prices.size()-1;i>=0;i--){//O(n*2)=>O(n)
             for(int buy=0;buy<2;buy++){
                 int profit=0;
                 if(buy){
