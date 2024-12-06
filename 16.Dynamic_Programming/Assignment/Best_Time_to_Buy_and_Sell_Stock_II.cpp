@@ -21,6 +21,7 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 // Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
 // Total profit is 4.
 *//logic
+ //go through best time to buy and sell stocks 1 before solving this
   // we are taking a variable buy which tells us that we can buy or not and we can sell only if we have bought it,we calculate profit 
 // the profit formula is sellprice-buy price so while buying the profit formula becomes -buyprice+sell price it all the same
 *//using recursion
