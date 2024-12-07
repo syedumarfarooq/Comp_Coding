@@ -88,7 +88,7 @@ eg:[1,5,2]
 2,0|2,1|2,2
 *//based on my understanding as in top down we start from 0-n in this we start from n-0 
 *//we have answers placed in all the diagonal places with thier respective nums[i] as base condition
-  *//and we know for any index we have to have previous column in same row and new row same column
+  *//and we know for any index we have to have previous column in same row and next row same column
   *//so we have to start from 0,2 so that we can iterate and get answers
   *//we are taking i as nums.size() rather than nums.size()-1 because of start as in the last row we dont need to find anything
   *//as we are keeping start as nums.size()-1 for easily starting the top down process 
