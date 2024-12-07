@@ -98,4 +98,5 @@ public:
   //as we are going from bottom to top and end kinda 0 to end so it will be in the end
 //eg:for 1,2 we need 1,1 and 2,2 as they are base case they will contain max difference in them
   //then we find 0,1 with help of 0,0 and 1,1 the 0,2 with the help of 0,1 and 1,2 so this is how this works
-*//try space optimising as we use only two rows start and start+1
+*//try space optimising using nums.size() number of vectors
+
