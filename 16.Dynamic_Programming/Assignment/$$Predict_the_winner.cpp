@@ -76,6 +76,7 @@ public:
     }
 };
 *//as for finding the max score difference  of either of player if the difference comes positive then the player 1 has won if not player 2 
+// as diff=p1 -p2 if p1 is greater the difference will be > 0 
 *//for negativeon the starting and ending index we need [row+1][col] and [row][col+1] so if we start col from 0 then we have to access col
 *//-1 which gives error and row we start from i=nums.size() for end=i then we decrease one after every for loop 
 eg:[1,5,2]
