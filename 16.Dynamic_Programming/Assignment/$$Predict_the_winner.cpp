@@ -49,3 +49,51 @@ public:
     }
 };
 *//solve using tabulation
+class Solution {
+public:
+    int solveTab(vector<int>& nums){
+        vector<vector<int>>dp(nums.size(),vector<int>(nums.size(),0));
+        for(int i=0;i<nums.size();i++){
+            dp[i][i]=nums[i];
+        }
+        int i=nums.size();
+        for(int start=nums.size()-1;start>=0;start--){
+            for(int end=i;end<nums.size();end++){
+                 int diffByStart=nums[start]-dp[start+1][end];
+                 int diffByEnd=nums[end]-dp[start][end-1];
+                 dp[start][end]=max(diffByStart,diffByEnd);
+            }
+            --i;
+        }
+        
+       
+        
+        return dp[0][nums.size()-1];
+    }
+    bool predictTheWinner(vector<int>& nums) {
+        
+        return solveTab(nums)>=0;
+    }
+};
+*//as for finding the max score difference  of either of player if the difference comes positive then the player 1 has won if not player 2 
+*//for negativeon the starting and ending index we need [row+1][col] and [row][col+1] so if we start col from 0 then we have to access col
+*//-1 which gives error and row we start from i=nums.size() for end=i then we decrease one after every for loop 
+eg:[1,5,2]
+0,0|0,1|0,2
+------------
+1,0|1,1|1,2
+------------
+2,0|2,1|2,2
+*//based on my understanding as in top down we start from 0-n in this we start from n-0 
+*//we have answers placed in all the diagonal places with thier respective nums[i] as base condition
+  *//and we know for any index we have to have previous column in same row and new row same column
+  *//so we have to start from 0,2 so that we can iterate and get answers
+  *//we are taking i as nums.size() rather than nums.size()-1 because of start as in the last row we dont need to find anything
+  *//as we are keeping start as nums.size()-1 for easily starting the top down process 
+  *//if we keep end =i as nums.size and end<nums.size() it wont run for the last row so it will simply skip the i is decremented
+  *//for next row in the start is nums.size()-2 the end=i comes to nums.size()-1 then we find max difference for that index
+  *//and continue until we find the answer which is present in the 0th row and last index 
+  *//as we are going from bottom to top and end kinda 0 to end so it will be in the end
+*//eg:for 1,2 we need 1,1 and 2,2 as they are base case they will contain max difference in them
+  *//then we find 0,1 with help of 0,0 and 1,1 the 0,2 with the help of 0,1 and 1,2 so this is how this works
+  
