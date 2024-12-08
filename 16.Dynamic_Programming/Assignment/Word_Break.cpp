@@ -89,6 +89,8 @@ public:
     }
     bool solveTab(string s, vector<string>& wordDict){
         vector<int>dp(s.size()+1,true);//used true here intentionally or else it wont work 
+     //as it start from check last character and slowly increases the length of the start so when the some word matches in dictionay
+     //it check dp[i+1] if we place false while intialising it will show false
         for(int start=s.size()-1;start>=0;start--){
             string word="";
             bool flag=false;
