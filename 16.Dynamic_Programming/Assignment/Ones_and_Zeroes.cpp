@@ -35,7 +35,7 @@ public:
         int zeros=numStrs[i].first;
         int ones=numStrs[i].second;
         int include=0,exclude=0;
-        if(m-zeros >=0 && n-ones >=0){
+        if(m-zeros >=0 && n-ones >=0){//include only when they have enough number of zeors and ones i.e m n
             include=1+solve(numStrs,i+1,m-zeros,n-ones);
         }
         exclude=solve(numStrs,i+1,m,n);
