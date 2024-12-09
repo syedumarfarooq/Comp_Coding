@@ -129,3 +129,44 @@ public:
         return solveMem(nums1,nums2);
     }
 };
+*//Space optimisation
+ as dp[index][swapped] is depending on dp[index+1][0] and dp[index+1][1]
+class Solution {
+public:
+    int solveMem(vector<int>& nums1, vector<int>& nums2){
+        
+        vector<int> curr(2,0);
+        vector<int> next(2,0);
+        for(int index=nums1.size()-1;index>=1;index--){
+            for(int swapped=1;swapped>=0;swapped--){
+                int ans=INT_MAX;
+
+                int prev1=nums1[index-1];
+                int prev2=nums2[index-1];
+                if(swapped){
+                    swap(prev1,prev2);
+                }
+                //noswap
+                if(prev1<nums1[index]&&prev2<nums2[index]){
+                    ans=next[0];
+                }
+                //swap
+                if(prev1<nums2[index]&&prev2<nums1[index]){
+                    ans=min(ans,1+next[1]);
+                }
+                curr[swapped]=ans;
+                
+            }
+            next=curr;
+        }
+        return curr[0];
+        
+    }
+    int minSwap(vector<int>& nums1, vector<int>& nums2) {
+        nums1.insert(nums1.begin(),-1);
+        nums2.insert(nums2.begin(),-1);
+        bool swapped=0;//this is to indicate if the previous indexed were swapped
+        
+        return solveMem(nums1,nums2);
+    }
+};
