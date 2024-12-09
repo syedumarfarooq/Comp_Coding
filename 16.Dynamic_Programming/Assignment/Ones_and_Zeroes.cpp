@@ -98,6 +98,7 @@ public:
     }
     int solveTab(vector<pair<int,int>>&numStrs,int i,int m,int n){
         vector<vector<vector<int>>>dp(numStrs.size()+1,vector<vector<int>>(m+1,vector<int>(n+1,0)));
+     //here dp[i][m][n] tells for the value of m and n  the maximum subset of str that can be included up and until i i.e from end to i
         for(int i=numStrs.size()-1;i>=0;i--){
             for(int j=0;j<=m;j++){
                 for(int k=0;k<=n;k++){
@@ -118,7 +119,7 @@ public:
     int findMaxForm(vector<string>& strs, int m, int n) {
         vector<pair<int,int>>numStrs;
         convertStrsToNumStrs(strs,numStrs);
-        vector<vector<vector<int>>>dp(strs.size(),vector<vector<int>>(m+1,vector<int>(n+1,-1)));
+        
         return solveTab(numStrs,0,m,n);
     }
 };
