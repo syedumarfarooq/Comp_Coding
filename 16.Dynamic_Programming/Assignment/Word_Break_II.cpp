@@ -16,7 +16,8 @@ https://leetcode.com/problems/word-break-ii/
 // eg;Input: s = "pineapplepenapple", wordDict = ["apple","pen","applepen","pine","pineapple"]
 // if the word is pine the right part will contain endpart ["apple pen apple","applepen apple"] two different combination we take each part
 // add space in between the word and endPart and push_back it into the ans
-  *//this question is can be solved using tries
+  *//this question is can be solved using trie please try it on ur own
+  *//applying botttom up solution is a lil difficult and not recummended and memoisation makes more sense
 *//solve using recursion
   class Solution {
 public:
