@@ -75,12 +75,12 @@ public:
                 }
             }
         }
-        dp[{start,end}]=ans;//as the dp[start,end] is giving a vector of multiple TreeNodes so that is why we are storing it in map 
+        dp[{start,end}]=ans;//as the dp[start,end] is giving a vector of multiple Trees so that is why we are storing it in map 
         return dp[{start,end}];
     }
     vector<TreeNode*> generateTrees(int n) {
         if(n==0) return {};
-         map<pair<int,int>,vector<TreeNode*>>dp;//as the dp[start,end] is giving a vector of multiple TreeNodes so that is why we are storing it in map 
+         map<pair<int,int>,vector<TreeNode*>>dp;//as the dp[start,end] is giving a vector of multiple Trees so that is why we are storing it in map 
         return allPossibleBstMem(1,n,dp);
 
     }
