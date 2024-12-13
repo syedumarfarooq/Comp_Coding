@@ -18,6 +18,8 @@ https://leetcode.com/problems/longest-palindromic-subsequence/description/
 *//Logic
   // as we did learn in longest common subsequence between two strings then for this we we reverse the same string and check the longest common
 // subsequence between the original string and reverse string then it is the longest palindromic subsequence 
+ //as the a palindromic sstring if reverse will give the same answer as input so one string is original and one is reverse of original
+ //so the longest common subsequence between these two is the longest palindromic subsequence
   class Solution {
 public:
 int solveUsingTabSO(string a, string b) {//code from https://github.com/syedumarfarooq/Comp_Coding/blob/main/16.Dynamic_Programming/9.*%7C%24*Longest_Common_Subsequence.cpp
