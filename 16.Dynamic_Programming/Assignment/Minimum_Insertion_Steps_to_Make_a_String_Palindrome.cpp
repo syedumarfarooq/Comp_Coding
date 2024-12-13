@@ -7,6 +7,50 @@ https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrom
 // Input: s = "zzazz"
 // Output: 0
 // Explanation: The string "zzazz" is already palindrome we do not need any insertions.
+*//logic
+  // we used the code of longestPalindromeSubsequence where it gives the len of longest palindome subsequence we are using this to find the
+//number of insertion to do to make it palindrome i.e s.size-lengthOfLongestPalindromeSubsequence will give u the length of character
+// which are extra and so if we add those number elements on there opposite side so that they make palindrome then we can make the whole 
+//string palindrome
+  // eg:"zbzazz" the lengthOfLongestPalindromeSubsequence is 4 that is zzazz and s.size-lengthOfLongestPalindromeSubsequence which is 1 and
+  // that character is b if we add another b zbzazbz then this would make the whole string palindrome so the extra elements and
+//  if we added those extra number of elements in the right position we can make the whole string palindrome
+*//solved using space optimisation
+  class Solution {
+public:
+    int solveUsingTabSO(string a, string b) {
+        vector<int> curr(b.length()+1, 0);
+        vector<int> next(b.length()+1, 0);
+
+        for(int i = a.length()-1; i>=0; i--) {
+            for(int j = b.length()-1; j>=0; j--) {
+                int ans = 0;
+                if(a[i] == b[j])
+                    ans =  1 + next[j+1];
+                else {
+                    ans =  0 + max(curr[j+1], next[j]);
+                }
+                curr[j] =  ans;      
+            }
+            //shift
+            next = curr;
+        }
+        return next[0];
+    }
+    int longestPalindromeSubseq(string s) {
+        string first=s;
+        reverse(s.begin(),s.end());
+        string second=s;
+        return solveUsingTabSO(first,second);
+    }
+    int minInsertions(string s) {
+        //length of the part which is already palindromic
+        int longestPalindromicSubsequence_Length=longestPalindromeSubseq(s);
+        int insertionsToDo=s.size()-longestPalindromicSubsequence_Length;
+        return insertionsToDo;
+    }
+};
+*//MY SOLUTION
 *//good word u wrote the solution all by urself without any help ,good, be deligent
 *//logic
 //   in this i am taking two pointer start and end and move both it they are same if not i add a element in the start and check and add a 
