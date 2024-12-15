@@ -13,7 +13,7 @@ https://leetcode.com/problems/stone-game/
 // If Bob takes 3, then the board is [4, 5], and Alice takes 5 to win with 10 points.
 // If Bob takes the last 5, then the board is [3, 4], and Alice takes 4 to win with 9 points.
 // This demonstrated that taking the first 5 was a winning move for Alice, so we return true.
-*//logic
+*//logic love babbar
 //   1.no tie as ther are total number of stones are odd
 //   2.alice starts first
 //   3.there will be atleast one way by which alice will win irrespective of what ever she chooses
@@ -30,3 +30,51 @@ public:
         return true;
     }
 };
+*//logic youtube
+ // in this we are adding alice pile and subracting bobs pile if the result is >0 then return true if not false
+//for alice turn there is max because we have to optimal i.e they choose bigger number
+ //for bob as we are taking in negative number we have to be minimum to be optimal so if number is bigger and after we appy negative sign
+ //it becomes more lesser, the more lesser the more optimal 
+ // in this we are taking element from start and checking and also from the end to check all posibilites
+ *//solved using recursion
+class Solution {
+public:
+    int solve(vector<int>& piles,int start,int end,int turn){
+        if(start>end)return 0;
+        if(start==end)return turn?piles[start]:-piles[start];
+        int ans=INT_MIN;
+        if(turn){
+            ans=max(piles[start]+solve(piles,start+1,end,!turn),piles[end]+solve(piles,start,end-1,!turn));
+        }else{
+            ans=max(-piles[start]+solve(piles,start+1,end,!turn),-piles[end]+solve(piles,start,end-1,!turn));
+        }
+        return ans;
+    }
+    bool stoneGame(vector<int>& piles) {
+        return solve(piles,0,piles.size()-1,1)>0;
+    }
+};
+*//solve using memoisation
+class Solution {
+public:
+    int solve(vector<int>& piles,int start,int end,int turn,vector<vector<vector<int>>>&dp){
+        if(start>end)return 0;
+        if(start==end)return turn?piles[start]:-piles[start];
+        if(dp[start][end][turn]!=-1){
+            return dp[start][end][turn];
+        }
+        int ans=INT_MIN;
+        if(turn){
+            ans=max(piles[start]+solve(piles,start+1,end,!turn,dp),piles[end]+solve(piles,start,end-1,!turn,dp));
+        }else{
+            ans=min(-piles[start]+solve(piles,start+1,end,!turn,dp),-piles[end]+solve(piles,start,end-1,!turn,dp));
+        }
+        dp[start][end][turn]=ans;
+        return dp[start][end][turn];
+    }
+    bool stoneGame(vector<int>& piles) {
+        vector<vector<vector<int>>>dp(piles.size(),vector<vector<int>>(piles.size(),vector<int>(2,-1)));
+        return solve(piles,0,piles.size()-1,1,dp)>0;
+    }
+};
+*//solved using tabulation
