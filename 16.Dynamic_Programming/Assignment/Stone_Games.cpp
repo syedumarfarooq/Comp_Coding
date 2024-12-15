@@ -51,7 +51,7 @@ public:
         return ans;
     }
     bool stoneGame(vector<int>& piles) {
-        return solve(piles,0,piles.size()-1,1)>0;
+        return solve(piles,0,piles.size()-1,1)>0;//1=>alice turn 0=>bob
     }
 };
 *//solve using memoisation
