@@ -18,7 +18,7 @@ https://leetcode.com/problems/longest-increasing-subsequence/
 *//Logic
   // we are using the include and exclude method we compare the current element with previous if it is greater we add it and return the longest
 // increasing subsequence and if it is greater than prev we move the pointer front and let the recursion do its work, if curr< prev we 
- // exclude and check
+ // exclude and check in this we move the current pointer only not the prev one
   *//Solved Using recursion
   class Solution {
 public:
