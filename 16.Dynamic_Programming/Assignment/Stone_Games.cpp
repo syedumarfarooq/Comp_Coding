@@ -14,11 +14,12 @@ https://leetcode.com/problems/stone-game/
 // If Bob takes the last 5, then the board is [3, 4], and Alice takes 4 to win with 9 points.
 // This demonstrated that taking the first 5 was a winning move for Alice, so we return true.
 *//logic
-  1.no tie as ther are total number of stones are odd
-  2.alice starts first
-  3.there will be atleast one way by which alice will win irrespective of what ever she chooses
-4.and the question say they play optimaly so they choose bigger numbers
+//   1.no tie as ther are total number of stones are odd
+//   2.alice starts first
+//   3.there will be atleast one way by which alice will win irrespective of what ever she chooses
+// 4.and the question say they play optimaly so they choose bigger numbers
 //for every test case there is a possible way alice will win so return true 
+  *//try solving this once
 *//solved
   class Solution {
 public:
