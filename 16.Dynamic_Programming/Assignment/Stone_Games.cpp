@@ -78,3 +78,36 @@ public:
     }
 };
 *//solved using tabulation
+ *//as value of dp depends on dp[i+1][j] and dp[i][j-1] same as predict the winner so copying from there
+ //https://github.com/syedumarfarooq/Comp_Coding/blob/main/16.Dynamic_Programming/Assignment/%24%24Predict_the_winner.cpp
+class Solution {
+public:
+    int solve(vector<int>& piles){
+        vector<vector<vector<int>>>dp(piles.size()+1,vector<vector<int>>(piles.size()+1,vector<int>(2,0)));
+        for(int i=0;i<piles.size();i++){
+            dp[i][i][1]=piles[i];
+            dp[i][i][0]=-piles[i];
+        }
+        int i=piles.size();
+        for(int start=piles.size()-1;start>=0;start--){
+            for(int end=i;end<piles.size();end++){
+                for(int turn=0;turn<2;turn++){
+                    int ans=INT_MIN;
+                    if(turn){
+                        ans=max(piles[start]+dp[start+1][end][0],piles[end]+dp[start][end-1][0]);
+                    }else{
+                        ans=min(-piles[start]+dp[start+1][end][1],-piles[end]+dp[start][end-1][1]);
+                    }
+                    dp[start][end][turn]=ans;
+                }
+            }
+            i--;
+        }
+        
+        return dp[0][piles.size()-1][1];
+    }
+    bool stoneGame(vector<int>& piles) {
+        
+        return solve(piles)>0;
+    }
+};
