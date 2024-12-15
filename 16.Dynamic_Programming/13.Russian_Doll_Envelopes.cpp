@@ -87,7 +87,9 @@ public:
                  //sorted based on width so the next array will be greater or equal 
                     return a[1] < b[1];//this is just a lambda function compare the heigth for finding the lower bound so it returns
                  //the iterator of the array whose height is just greater than the current height rathter than comparing it with the
-                 //width
+                 //width 
+                 //so basically it does is compare every element with arr[i] then if a[1]< b[1] then it will continue a[1]>b[1] it returns
+                 // false and sends the iterator of element where the a[1] is greater
                  *//at first we didn't add const to the lambda function parameters so it was showing error
                  //  If you don't use const, the compiler might get confused because it thinks your lambda could try to change the data, even though lower_bound 
                  // only wants to read it. That's why it gives an error when const is missing: it's about making sure the data is treated as read-only while it's
