@@ -15,6 +15,7 @@ https://leetcode.com/problems/stone-game-ii/
   // so in this alice takes the maximum it can from all the possibilities and bob have to choose maximum so that alice next piles sum should be 
 // returned MINIMUM as bob returns alices points based on how many it chose so bob chooses in a way that alice will get minimum 
   //this is how they stay optimal
+  //for every sub function it is return maximum so it is playing optimal
 *//solved using recursion
   class Solution {
 public:
