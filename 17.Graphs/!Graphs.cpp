@@ -30,6 +30,7 @@
 #include<vector>
 #include<unordered_map>
 #include<list>
+#include<queue>
 using namespace std;
 template <typename T>
 class Graph {
@@ -59,13 +60,44 @@ public:
       cout << endl;
     }
   }
-}
+void bfs(int src, unordered_map<int, bool>& visited) {//level traversal
+    queue<int> q;
+    
+    q.push(src);
+    visited[src] = true;//using visited bcz if not it might go into infinite loop eg;0->1 , 1->2,3,0 if we dont use visited 0->1 1->0 this will go in infinite loop
+
+    while(!q.empty()) {
+      int frontNode= q.front();
+      q.pop();
+      cout << frontNode << ", ";
+
+      //insert neighbours
+      for(auto neighbour: adjList[frontNode]) {
+        if(!visited[neighbour] ) {
+          q.push(neighbour);
+          visited[neighbour] = true;
+        }
+      }
+    }
+  }
+  void dfs(int src, unordered_map<int, bool>& visited) {
+      cout << src << ", ";
+      visited[src] = true;
+  
+      for(auto neighbour: adjList[src]) {
+        if(!visited[neighbour] ) {
+          dfs(neighbour, visited);
+        }
+      }
+    }
+};
 int main() {
 
   Graph<int> g;//Template T 
   //Graph<char> g;//we can use char in our char g.addEdge('a','b',0);
   //n -> number of nodes in graph
   //Undirected graph
+  unordered_map<int, bool> visited;
   int n = 5;
   g.addEdge(0,1,0);
   g.addEdge(1,3,0);
@@ -73,5 +105,56 @@ int main() {
   g.addEdge(2,4,0);
 
   g.printAdjacencyList();
+  //BFS
+  for(int i=0; i<n; i++) {
+    if(!visited[i]) {
+      g.bfs(i, visited);//u should make all the nodes src and check so that we can print all the graphs
+    }
+  }
+   cout << endl << "Printing DFS Traversal: " << endl;
+  unordered_map<int, bool> visited2;
+  for(int i=0; i<n; i++) {//we are running for loop for disconnected graphs making every node src and checking if it is already visited it wont run
+    if(!visited2[i]) {
+      g.dfs(i, visited2);
+    }
+  }
 }
-*//
+*//Disconnected graph 
+  for(int i=0; i<n; i++) {
+    if(!visited[i]) {
+      g.bfs(i, visited);//u should make all the nodes src and check so that we can print all the graphs
+    }
+  }
+*//Ways to traverse a Graph
+1.BFS
+  // void bfs(int src, unordered_map<int, bool>& visited) {//T.c:O(V+E)
+  //   queue<int> q;
+    
+  //   q.push(src);
+  //   visited[src] = true;
+
+  //   while(!q.empty()) {
+  //     int frontNode= q.front();
+  //     q.pop();
+  //     cout << frontNode << ", ";
+
+  //     //insert neighbours
+  //     for(auto neighbour: adjList[frontNode]) {
+  //       if(!visited[neighbour] ) {
+  //         q.push(neighbour);
+  //         visited[neighbour] = true;
+  //       }
+  //     }
+  //   }
+  // }
+2.DFS
+  // void dfs(int src, unordered_map<int, bool>& visited) {
+  //   cout << src << ", ";
+  //   visited[src] = true;
+
+  //   for(auto neighbour: adjList[src]) {
+  //     if(!visited[neighbour] ) {
+  //       dfs(neighbour, visited);
+  //     }
+  //   }
+  // }
