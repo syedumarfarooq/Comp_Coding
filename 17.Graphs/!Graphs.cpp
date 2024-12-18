@@ -80,7 +80,7 @@ void bfs(int src, unordered_map<int, bool>& visited) {//level traversal
       }
     }
   }
-  void dfs(int src, unordered_map<int, bool>& visited) {
+  void dfs(int src, unordered_map<int, bool>& visited) {//Since DFS visits each node once and traverses each edge once, the total time complexity is:O(V+E)
       cout << src << ", ";
       visited[src] = true;
   
