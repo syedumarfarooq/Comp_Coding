@@ -148,6 +148,8 @@ int main() {
   //   }
   // }
 2.DFS
+//   DFS does not repeatedly traverse all edges for every node (which would lead to V×E).
+// Instead, each edge is checked only once, so the contributions are added, not multiplied.
   // void dfs(int src, unordered_map<int, bool>& visited) {
   //   cout << src << ", ";
   //   visited[src] = true;
