@@ -8,6 +8,9 @@ eg:1->2,1->3,2->3
   //in that it does not matter as they both are disconnected both answer can be written in any way as they are not dependent on each other
   // eg:1,2,3 are one graph 4,5,6 are second graph the topological sort can be 1,2,3,4,5,6 or 4,5,6,1,2,3 as they both are independent it does 
 // not matter
+	*//why only on DAG
+	// If a graph contains a cycle, a node would depend on itself (directly or indirectly), making it impossible to find a valid ordering.
+	// eg:0-1-2-0 0 is indirectly dependent on itself
   *//using dfs
 void topoSortDfs(int src, unordered_map<int, bool>& visited, stack<int>& ans) {
 		
@@ -41,6 +44,8 @@ int main(){
 //The key reason we store the nodes while returning (backtracking) in a topological sort using DFS is because the node being stored at that 
 // point is fully processed and all its dependencies (children) have already been visited and stored.
 // This ensures that the most dependent nodes are added last to the stack, which is the desired property of a topological sort.
+*//to find if a directed graph is cyclic using bsf we use the below method if the answer length != number of nodes then it is cyclic
+	// or else acyclic
 *//using bfs//kahn's algorithm
   //we push something in queue when they have 0 indegree and once added we remove it from the graph (i.e we just reduce the indegree by 1
   // so the next one becomes 0 degree
