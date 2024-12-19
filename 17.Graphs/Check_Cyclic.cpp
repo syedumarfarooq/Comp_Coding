@@ -141,6 +141,7 @@ unordered_map<int,bool> dfsVisited) {
 // this may think it is cyclic from our logic but it is not so while comig back if we mark false then for 2-4 then it will mark true again
 // eg;1-2-3-4 we call dfs for 1,2,3,4,1 but for the second time 1 appers it is already visited and dfs visited then only we consider it as
 // cycle
+// i.e if it is(node) present in the same Call stack(dfs 1,2,3 is a call stack) we say its cyclic if it is in different we dont
 		return false;
 	}
 };
