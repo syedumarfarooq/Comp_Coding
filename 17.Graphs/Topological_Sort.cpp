@@ -78,7 +78,8 @@ void topoSortBfs(int n, vector<int>& ans) {
 			q.pop();
 
 			ans.push_back(fNode);
-			//or we can do count++
+			//or we can do count++ if we are not using ans vector to return the length of the answer so that we can check
+			// if it is a valid topological sort or not
 
 			for(auto nbr: adjList[fNode]) {
 				indegree[nbr]--;
