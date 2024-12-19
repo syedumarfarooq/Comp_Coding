@@ -46,6 +46,7 @@ int main(){
 // This ensures that the most dependent nodes are added last to the stack, which is the desired property of a topological sort.
 *//to find if a directed graph is cyclic using bsf we use the below method if the answer length != number of nodes then it is cyclic
 	// or else acyclic
+*//if i get a invalid topological sort of a graph using topSortBSF then it a cyclic if not cyclic
 *//using bfs//kahn's algorithm
   //we push something in queue when they have 0 indegree and once added we remove it from the graph (i.e we just reduce the indegree by 1
   // so the next one becomes 0 degree
