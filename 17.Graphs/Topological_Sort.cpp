@@ -23,6 +23,21 @@ void topoSortDfs(int src, unordered_map<int, bool>& visited, stack<int>& ans) {
   // node in the whole graph
 		ans.push(src);
 	}
+int main(){
+	// unordered_map<int,bool> visited;
+	// stack<int> ans;
+	// for(int i=0; i<n; i++) {
+	// 	if(!visited[i] ){
+	// 		g.topoSortDfs(i,visited,ans);
+	// 	}
+	// }
+
+	// cout << "Top Sort: " << endl;
+	// while(!ans.empty()) {
+	// 	cout << ans.top();
+	// 	ans.pop();
+	// }
+}
 //The key reason we store the nodes while returning (backtracking) in a topological sort using DFS is because the node being stored at that 
 // point is fully processed and all its dependencies (children) have already been visited and stored.
 // This ensures that the most dependent nodes are added last to the stack, which is the desired property of a topological sort.
@@ -43,6 +58,8 @@ void topoSortBfs(int n, vector<int>& ans) {
 		}
 
 		//put all nodes inside queue, which has indegree=0
+	//as we are adding all the nodes in the queue with indegree 0 then even if it is disconnected it will be added as indegree 0 for
+	//both the components
 		for(int i=0; i<n; i++) {
 			if(indegree[i] == 0) {
 				q.push(i);
@@ -68,3 +85,21 @@ void topoSortBfs(int n, vector<int>& ans) {
 		}
 		
 	}
+int main(){
+	// vector<int> ans;
+	// //connected or disconnected 
+	// g.topoSortBfs(n, ans);
+
+	// if(ans.size() == n) {
+	// 	cout << "It is a valid topo sort" << endl;
+	// }
+	// else {
+	// 	cout << "Cycle Present or Invalid topo sort " << endl;
+	// }
+
+	
+	// cout << "Printing Topological Sort using BFS: " << endl;
+	// for(auto i: ans) {
+	// 	cout << i << ", ";
+	// }cout << endl;
+}
