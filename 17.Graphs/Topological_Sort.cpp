@@ -103,3 +103,6 @@ int main(){
 	// 	cout << i << ", ";
 	// }cout << endl;
 }
+*// in Cyclic graph topological sort is never complete i.e it wont have all the node because if there is a cycle all those indegree will be 1
+*// and they wont be added
+*//so Topolical sort Length != ans.size() in cyclic graph
