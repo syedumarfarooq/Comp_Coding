@@ -113,7 +113,7 @@ bool checkCyclicUsingDfs(int src, unordered_map<int,bool>& visited, int parent) 
 		return false;
 	}
 
-*//chech cyclic for directed graph using dfs
+*//chech cyclic for directed graph using dfs // bfs will be taught in later duration as it needs some prerequisites
 //in this we are making visited and dfs_visited if node is visited and dfs is called for that node if the node and dfs_visited are true
 // we consider it as cyclic and if we have to make dfs_visited false if we are backtracking after reaching the last node as if 
 //dfs_visited can be accessed by some other parent 
