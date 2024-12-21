@@ -56,6 +56,7 @@ private:
 	}
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+	    //build adjacency list
         unordered_map<int,list<int>> adjLists;
         for(auto task:prerequisites){
             int u=task[0];
