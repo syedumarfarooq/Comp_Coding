@@ -1,6 +1,10 @@
 *//Dijkstra_algorithm
 //we can implement this using MIN_HEAP or SET(sorted and unique)
 //using these two because we can find minimum element in O(1) time i.e constant time using these two data structures
+//In this we are starting with the src marking the distance as 0 then take all its neighbours and update its distance and then remove the
+//top element then find the next minimum distance element find its neighbour and update their distance and so on until all elements are 
+//removed from the set
+*//code
 //   #include <iostream>
 // #include<unordered_map>
 // #include<list>
@@ -37,7 +41,7 @@
 *//shortest Path Using dijkstra
   void shortestDistDijkstra(int src, int n) {
 		vector<int> dist(n,INT_MAX);
-		set<pair<int,int> > st;
+		set<pair<int,int> > st;//distance,node
 		//intiial steps
 		dist[src] = 0;
 		st.insert(make_pair(0,src));
