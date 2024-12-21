@@ -4,6 +4,7 @@
 //In this we are starting with the src marking the distance as 0 then take all its neighbours and update its distance and then remove the
 //top element then find the next minimum distance element find its neighbour and update their distance and so on until all elements are 
 //removed from the set 
+//it is a greedy aproach minimum distance node's from that node we update the distance of its neighbour
 // so basically we are finding the minimum distance to reach every node from the src
 *//code
 //   #include <iostream>
