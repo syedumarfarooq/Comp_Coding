@@ -3,7 +3,8 @@
 //using these two because we can find minimum element in O(1) time i.e constant time using these two data structures
 //In this we are starting with the src marking the distance as 0 then take all its neighbours and update its distance and then remove the
 //top element then find the next minimum distance element find its neighbour and update their distance and so on until all elements are 
-//removed from the set
+//removed from the set 
+// so basically we are finding the minimum distance to reach every node from the src
 *//code
 //   #include <iostream>
 // #include<unordered_map>
