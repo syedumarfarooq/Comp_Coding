@@ -42,7 +42,7 @@
 // 		}
 // 	}
 *//shortest Path Using dijkstra
-  void shortestDistDijkstra(int src, int n) {
+  void shortestDistDijkstra(int src, int n) {//TC:O(ElogV)//as for every egde we insert or remove from set i.e logn
 		vector<int> dist(n,INT_MAX);
 		set<pair<int,int> > st;//distance,node
 		//intiial steps
