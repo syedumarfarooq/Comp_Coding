@@ -61,6 +61,7 @@
 			for(auto nbr: adjList[node]) {
 				if(nodeDistance + nbr.second < dist[nbr.first]) {
 					//mujhe distance update krna h 
+					//as we cannot directly update value in set so we find remove and reinsert with different value
 					//finding entry in set
 					auto result = st.find(make_pair(dist[nbr.first], nbr.first));
 					//if found, then remove
