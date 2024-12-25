@@ -13,6 +13,8 @@ https://leetcode.com/problems/path-with-minimum-effort/
 // in this we take the maximum difference of previous node and between current node and previous node and update the distance array only if it 
 // is less than the previous value i.e distance array stores the minimum among the maximum difference and the pq with contain the maximum difference
 
+//so the current node effort is max (difference of current and front node or max difference of front node) and if the max of this is less
+  // than the dist[coordinates] then replace with new values and insert in pq
 *//code
   class Solution {
 public:
