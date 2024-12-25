@@ -21,7 +21,7 @@ https://leetcode.com/problems/word-ladder/
 *//code
   class Solution {
 public:
-    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {//TC:O(wordlist.length())=>O(n)
+    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {//TC:O(wordlist.length()*length of each word)=>O(n*l)
       //as we are only inserting into the queue if the word is present in the wordList worst case we we have to add all the elements present
       //in the wordList once
         queue<pair<string,int>> q;//currString,countToReachFromBeginWord
