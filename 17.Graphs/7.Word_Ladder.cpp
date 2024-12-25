@@ -15,6 +15,9 @@ https://leetcode.com/problems/word-ladder/
 //this acts like a visited marking where we can only insert the word if it not used we do this by checking the wordlist if it inserted once
 // we remove it from the wordlist and from the frontNode we try changing every element of the currString with every character and check
 // if anything matches we enter it in the queue
+  *//why bfs
+  // BFS explores level by level, ensuring that the first time we encounter endWord, it is via the shortest path. This guarantees optimality 
+// for unweighted graphs like this word transformation problem.
 *//code
   class Solution {
 public:
