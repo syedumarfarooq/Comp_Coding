@@ -6,6 +6,7 @@
 //top element then find the next minimum distance element find its neighbour and update their distance and so on until all elements are 
 //removed from the set 
 //it is a greedy aproach minimum distance node's from that node we update the distance of its neighbour
+	//greedy is at a particular time if something feels optimal  then we take it without thinking 
 // so basically we are finding the minimum distance to reach every node from the src
 *//code
 //   #include <iostream>
