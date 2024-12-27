@@ -29,7 +29,9 @@
 // 		}
 // 	}
   void floydWarshal(int n) {
-  		vector<vector<int> > dist(n , vector<int>(n,1e9));
+  		vector<vector<int> > dist(n , vector<int>(n,1e9));//using 10^9 bcz if we use int_max in some case we migh add int_max with something 
+  *//if we add something into INT_MAX it turns into negative as it wrapps around and goes to INT_MIN in our case we were getting negative
+  // number and as it max minimum we were getting values in negative and near to INT_MIN
   		//diagnol pr zero mark krdo as the distance from one node to itself is 0
   		for(int i=0; i<n; i++) {
   			dist[i][i] = 0;
