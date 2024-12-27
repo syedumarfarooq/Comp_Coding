@@ -53,7 +53,7 @@
 	// 		cout << endl;
 	// 	}
 	// }
-void bellmanFordAlgo(int n, int src) {
+void bellmanFordAlgo(int n, int src) {//TC:O(nE)//n-1 relaxation for all edges
 		//assuming directed weightted graph
 		vector<int> dist(n, INT_MAX);
 		dist[src] = 0;
