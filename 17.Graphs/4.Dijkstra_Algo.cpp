@@ -43,14 +43,17 @@
 // 		}
 // 	}
 *//shortest Path Using dijkstra
-  void shortestDistDijkstra(int src, int n) {//TC:O(ElogV)//worst case for every egde we insert or remove vertex from set i.e logn
+  void shortestDistDijkstra(int src, int n) {//TC:O((v+E)logV)//we can neglect v as it is one
+	// worst case for every egde we insert or remove vertex from set i.e logn
+	//at most we can add v vertex in the set and its e edges and for every edge we might update the set so logv
+	
 		vector<int> dist(n,INT_MAX);
 		set<pair<int,int> > st;//distance,node
 		//intiial steps
 		dist[src] = 0;
 		st.insert(make_pair(0,src));
 
-		while(!st.empty() ) {
+		while(!st.empty() ) {//O(v)
 			//fetch the smallest or first eklement from set
 			auto topElement = *(st.begin());
 			int nodeDistance = topElement.first;
@@ -60,7 +63,7 @@
 			st.erase(st.begin());
 
 				//neighbour traverse
-			for(auto nbr: adjList[node]) {
+			for(auto nbr: adjList[node]) {//O(E)
 				if(nodeDistance + nbr.second < dist[nbr.first]) {
 					//mujhe distance update krna h 
 					//as we cannot directly update value in set so we find remove and reinsert with different value
@@ -72,7 +75,7 @@
 					}
 					//updation in dist array and set
 					dist[nbr.first] = nodeDistance + nbr.second;
-					st.insert(make_pair(dist[nbr.first], nbr.first));
+					st.insert(make_pair(dist[nbr.first], nbr.first));//O(logV)
 				}
 			}
 			
