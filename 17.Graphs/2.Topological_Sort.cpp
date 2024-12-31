@@ -28,7 +28,7 @@ void topoSortDfs(int src, unordered_map<int, bool>& visited, stack<int>& ans) {
 	}
 int main(){
 	// unordered_map<int,bool> visited;
-	// stack<int> ans;
+	*// stack<int> ans;
 	// for(int i=0; i<n; i++) {
 	// 	if(!visited[i] ){
 	// 		g.topoSortDfs(i,visited,ans);
