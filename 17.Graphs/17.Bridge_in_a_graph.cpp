@@ -20,13 +20,20 @@
 // atlast irrespective of value if the value is less than the parent then there is a another way to access that node and it is not a bridge
 // that is why we dont add 1
 //  so we conclude the  lowest insetion time is not the shortest insertine time they are not same 
+  *//so while returning it will do two things if lowest insertion time of child is less than the parent then it will update itself with the
+  // same value as the childs insertion time as it is the minimum 
+  *//as also checks if the current node insertion time(not lowest) is less than the childs lowest insertion time then it says there
+  // is no other way to child node i.e it is a bridge we are doing this  bcz in some cases the lowest insertion time of parent may update  
+  // and is still less than the childs lowest insertion time(which is also updated) and this will be counted as a bridge and it is clearly 
+  // not as insertion value never changes we should take that for considering it as a bridge
+  
   *//logic
   // we are marking the source and time as 1 and 1 for source then we start iterating all its neihbour if the neighbour is parent we continue
   // if the neighbour is not visited then we apply dfs(i.e iterating all elements) while returing we update the lowest insertion time 
   // based on the children if the child's lowest insertion time is less than the parent then there is another way then the parent will surely
   // have another way from the children if there is children and that children has another path from another parent then the value will be updated
-  // if so then we dont consider it as a bridge if the parent lowest insertion value is less then the childs then the child has no other parents
-  // i.e it is a bridge
+  // if so then we dont consider it as a bridge if the parent  insertion value is less then the childs lowest insertion value then the child 
+  // has no other parents i.e it is a bridge
 *//code
   // class graph {
   //   public:
@@ -56,7 +63,7 @@
                     //low update
                     low[src] = min(low[src], low[nbr]);
                     //check for bridge
-                    if(low[nbr] > low[src]) {
+                    if(low[nbr] > tin[src]) {//important may forget
                         cout << nbr<<"--"<<src <<" is a bridge" << endl;
                     }
                 }
