@@ -63,7 +63,7 @@
                     //low update
                     low[src] = min(low[src], low[nbr]);
                     //check for bridge
-                    if(low[nbr] > tin[src]) {//important may forget
+                    if(low[nbr] > tin[src]) {*//important may forget
                         cout << nbr<<"--"<<src <<" is a bridge" << endl;
                     }
                 }
