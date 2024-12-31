@@ -63,7 +63,8 @@
         //reverse all edges
         unordered_map<int,list<int> > adjNew;//storing it in new adj list
         
-        for(auto t: adjList) {
+        for(auto t: adjList) {//tc:O(n^2) //as in worst case every node is connected to every other node so for n node we are traversing n
+         // nodes
             for(auto nbr: t.second) {
                 int u = t.first;
                 int v = nbr;
@@ -76,7 +77,7 @@
         int count = 0;
         unordered_map<int,bool> visited2;//visited for traversing using dfs
 
-        while(!s.empty()) {
+        while(!s.empty()) {//linear time complexity dfs
             int node = s.top();
             s.pop();
             if(!visited2[node]) {
