@@ -2,20 +2,18 @@
 *//Steps
 // 1.crete a parent data structure with n number of elements where n is total number of nodes
 // intialized the data structure with with itself making them individual component
+  // it is used to keep track of the root (representative) of each node.
 // 2.create a rank array of n size
 // and intialize with zero
 // 3.convert the adjacency list into linear data structure as(u,v,w) and sorted ,by weights
 *//logic
 // 1.start algo processing from lowest 'w' edge
 // 2.for the lowest w edge u and u find parent for both u,v
-// 3.if p1 and p2 are different that means there are in a different component MERGE them
+// 3.if p1 and p2 are different that means there are in a different component and they have different root so MERGE them
 // after merging their parent is decided based on the rank whose ever parents rank is greater they will be made parent amoung the two 
 //for both the nodes
 // if rank is same any one will be the parent between u,v's parents after making them parent u have to increase the node's rank by 1 who 
 // became a parent
-//4.if 2 and 3 have parents 1 and 3 and have rank 2 and 0  respectively, as the rank of 1 as parent is more so we have to make 1 as parent
-// for both 2 and 3 but the problem is in original graph there is no edge between 3 and 1 so we merge 3 to 2 as 2 has a connection with 1
-// but the parent remains 1
 // 5.if p1 and p2 are equal ignore
 *//CODE
 class Solution {
@@ -25,6 +23,11 @@ class Solution {
         if(parent[node]==node)
             return node;
         return parent[node]=findParent(parent,parent[node]);//path compression
+      //To check if two nodes are in the same component, we trace the path upward to the root. bcz of that we compress path to find the root
+      // easily
+      //if two nodes are in the same component, adding the edge between them would create a cycle in the Minimum Spanning Tree (MST) 
+      //if cycle is present then it is not a tree
+
     }
     void unionSet(int u,int v,vector<int>&parent,vector<int>&rank){
         u=findParent(parent,u);
@@ -57,7 +60,7 @@ class Solution {
             parent[u]=u;
         }
         vector<vector<int>>edges;
-        getMeEdges(V,adj,edges);
+        getMeEdges(V,adj,edges);//converting the adjacency into linear data structure
         sort(edges.begin(),edges.end(),mycomp);
         int ans=0;
         for(auto edge:edges){
@@ -65,11 +68,11 @@ class Solution {
             int v=edge[1];
             int w=edge[2];
             
-            u=findParent(parent,u);
+            u=findParent(parent,u);//find root or representive of u node
             v=findParent(parent,v);
-            if(u!=v){
+            if(u!=v){//only if there parents are disconnected we merge  them
                 unionSet(u,v,parent,rank);
-                ans+=w;
+                ans+=w;//we add the weight of the edge whoes root are differnts and have been made same by adding the edge in the unionSet()
             }
         }
         return ans;
