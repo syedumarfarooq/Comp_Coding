@@ -13,6 +13,8 @@ https://leetcode.com/problems/number-of-operations-to-make-network-connected/
 //   2.for number of connected compoenents we can find using the krushkal's alogs parent array
 //   if the array has a node which is parent of itself then it is a ultimate parent (i.e it is a root node) as that node is not dependent
 //   onto any other node or not part of any other component
+  *//additional info
+  // we can count the  number of connected components (i.e how many disjoint componenets) using dfs but this is a different way
   *//code
   class Solution {
 public:
