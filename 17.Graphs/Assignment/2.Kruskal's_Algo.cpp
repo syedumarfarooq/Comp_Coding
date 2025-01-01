@@ -16,11 +16,7 @@
 // became a parent
 // 5.if p1 and p2 are equal ignore
   https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1
-  //A directed graph of V vertices and E edges is given in the form of an adjacency list adj. Each node of the graph is labelled with a 
-  // distinct integer in the range 0 to V - 1.
-  // A node is a terminal node if there are no outgoing edges. A node is a safe node if every possible path starting from that node leads to
-  // a terminal node.
-  // You have to return an array containing all the safe nodes of the graph. The answer should be sorted in ascending order.
+// Given a weighted, undirected, and connected graph with V vertices and E edges, your task is to find the sum of the weights of the edges in the Minimum Spanning Tree (MST) of the graph. The graph is represented by an adjacency list, where each element adj[i] is a vector containing vector of integers. Each vector represents an edge, with the first integer denoting the endpoint of the edge and the second integer denoting the weight of the edge.
 *//CODE
 class Solution {
   public:
