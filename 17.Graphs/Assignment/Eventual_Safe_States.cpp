@@ -12,6 +12,8 @@
   //contains cycle
   //so basically when we iterate and go to the end and if we find no cycle we return while returning we mark it as a safe node
   //if there is a cycle we return true and wont reach that part of the code which marks it a safe node
+*//Conclusion
+// in the end if the node is not a part of cycle or will not enter into a cycle path then it is a safe node
 *//Code
 class Solution {
   public:
