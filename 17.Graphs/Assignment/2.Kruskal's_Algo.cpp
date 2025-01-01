@@ -15,6 +15,12 @@
 // if rank is same any one will be the parent between u,v's parents after making them parent u have to increase the node's rank by 1 who 
 // became a parent
 // 5.if p1 and p2 are equal ignore
+  https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1
+  //A directed graph of V vertices and E edges is given in the form of an adjacency list adj. Each node of the graph is labelled with a 
+  // distinct integer in the range 0 to V - 1.
+  // A node is a terminal node if there are no outgoing edges. A node is a safe node if every possible path starting from that node leads to
+  // a terminal node.
+  // You have to return an array containing all the safe nodes of the graph. The answer should be sorted in ascending order.
 *//CODE
 class Solution {
   public:
