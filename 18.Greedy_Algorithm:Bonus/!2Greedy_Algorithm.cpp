@@ -10,7 +10,7 @@
   public:
     // Function to return the minimum cost of connecting the ropes.
     int minCost(vector<int>& arr) {
-        priority_queue<int, vector<int>, greater<int> > pq;
+        priority_queue<int, vector<int>, greater<int> > pq; 
         for(int i=0; i<arr.size(); i++) {
             pq.push(arr[i]);
         }
@@ -29,3 +29,67 @@
           return cost;
     }
 };
+*//Question 5
+// Fraction Knapsack
+// Given the weights and profits of N items, in the form of {profit, weight} put these items in a knapsack of capacity W to get the maximum total profit in the knapsack. In Fractional Knapsack, we can break items for maximizing the total value of the knapsack.
+// Input: arr[] = {{60, 10}, {100, 20}, {120, 30}}, W = 50
+// Output: 240 
+// Explanation: By taking items of weight 10 and 20 kg and 2/3 fraction of 30 kg. 
+// Hence total price will be 60+100+(2/3)(120) = 240
+*//logic
+// 1.we are using the profit/weight value for each items i.e if profit is 60 and 10 weight then the profit/weight value is 6 so we want
+// the maximum profit with least weight so  using  the profit/weight we will sort them in decreasing order
+// 2.then we choose every item and check if the weight can be accomodated by remaining knapsack capacity then we use the entire item
+// if not we will take fraction of it for example if 20 weight is left and we have a item of 30 weigth and 120 profit 
+// we will find the profit/weight ratio (i.e 120/30 =4 ; 4*20(remaining weight)=80 ,so 80 will be added ) and then multiply with the remaining weight
+*//code
+// #include <iostream>
+// #include<vector>
+// #include<algorithm>
+// using namespace std;
+
+bool cmp(pair<int,int> a, pair<int,int> b) {//sorting them in decreasing using the profit weight ration
+  double ratio1 = ((1.0)*a.first) / a.second;
+  double ratio2 = ((1.0)*b.first) / b.second;
+  return ratio1 > ratio2;
+}
+
+int main() {
+  int val[] = {60, 100, 120};
+  int wt[] = {10, 20, 30};
+  int n= 3;
+  int capacity = 50;
+
+  vector<pair<int,int> > data;
+  for(int i=0; i<n; i++) {
+    data.push_back({val[i], wt[i]});
+  }
+
+  sort(data.begin(), data.end(), cmp);
+  int totalValue = 0;
+  //check eac items k entire itm lelu ya frraction lu
+  for(int i=0;i<n; i++) {
+    pair<int,int> item = data[i];
+    int itemValue = item.first;
+    int itemWeight = item.second;
+    //entire inclusioon wala case
+    if(itemWeight <= capacity) {
+      //add kardo value ko
+      totalValue += itemValue;
+      //update krdo capacity ko
+      capacity = capacity - itemWeight;
+    }
+    else {
+      //fraction include krdo
+      //update value
+      double ratio = ((1.0)*itemValue) / itemWeight;
+      int valueToAdd = ratio * capacity;
+      totalValue += valueToAdd;
+
+      //udpate capacity;
+      capacity = 0;//we used up all the capacity
+    }
+  }
+  cout << "Answer is: "<< totalValue << endl;
+  return 0;
+}
