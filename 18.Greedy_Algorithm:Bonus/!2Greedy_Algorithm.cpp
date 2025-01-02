@@ -31,6 +31,7 @@
 };
 *//Question 5
 // Fraction Knapsack
+  https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1
 // Given the weights and profits of N items, in the form of {profit, weight} put these items in a knapsack of capacity W to get the maximum total profit in the knapsack. In Fractional Knapsack, we can break items for maximizing the total value of the knapsack.
 // Input: arr[] = {{60, 10}, {100, 20}, {120, 30}}, W = 50
 // Output: 240 
@@ -43,54 +44,46 @@
 // if not we will take fraction of it for example if 20 weight is left and we have a item of 30 weigth and 120 profit 
 // we will find the profit/weight ratio (i.e 120/30 =4 ; 4*20(remaining weight)=80 ,so 80 will be added ) and then multiply with the remaining weight
 *//code
-// #include <iostream>
-// #include<vector>
-// #include<algorithm>
-// using namespace std;
-
-bool cmp(pair<int,int> a, pair<int,int> b) {//sorting them in decreasing using the profit weight ration
+class Solution {
+  public:
+  bool static cmp(pair<int,int> a, pair<int,int> b) {//sorting them in decreasing using the profit weight ration
   double ratio1 = ((1.0)*a.first) / a.second;
   double ratio2 = ((1.0)*b.first) / b.second;
   return ratio1 > ratio2;
 }
-
-int main() {
-  int val[] = {60, 100, 120};
-  int wt[] = {10, 20, 30};
-  int n= 3;
-  int capacity = 50;
-
-  vector<pair<int,int> > data;
-  for(int i=0; i<n; i++) {
-    data.push_back({val[i], wt[i]});
-  }
-
-  sort(data.begin(), data.end(), cmp);
-  int totalValue = 0;
-  //check eac items k entire itm lelu ya frraction lu
-  for(int i=0;i<n; i++) {*// in this code we might get an error and it is a silly mistake told by the instructor to solve it by the running
-    // fine for basic text case the instructor gave hit it might be type casting error not garuented
-    pair<int,int> item = data[i];
-    int itemValue = item.first;
-    int itemWeight = item.second;
-    //entire inclusioon wala case
-    if(itemWeight <= capacity) {
-      //add kardo value ko
-      totalValue += itemValue;
-      //update krdo capacity ko
-      capacity = capacity - itemWeight;
+    // Function to get the maximum total value in the knapsack.
+    double fractionalKnapsack(vector<int>& val, vector<int>& wt, int capacity) {
+                 vector<pair<int,int> > data;
+          for(int i=0; i<val.size(); i++) {
+            data.push_back({val[i], wt[i]});
+          }
+        
+          sort(data.begin(), data.end(), cmp);
+          double totalValue = 0.0;
+          //check eac items k entire itm lelu ya frraction lu
+          for(int i=0;i<data.size(); i++) {
+            pair<int,int> item = data[i];
+            int itemValue = item.first;
+            int itemWeight = item.second;
+            //entire inclusioon wala case
+            if(itemWeight <= capacity) {
+              //add kardo value ko
+              totalValue += itemValue;
+              //update krdo capacity ko
+              capacity = capacity - itemWeight;
+            }
+            else {
+              //fraction include krdo
+              //update value
+              double ratio = ((1.0)*itemValue) / itemWeight;
+              double valueToAdd = ratio * capacity;
+              totalValue += valueToAdd;
+        
+              //udpate capacity;
+              capacity = 0;//we used up all the capacity
+              break;
+             }
+        }
+        return totalValue;
     }
-    else {
-      //fraction include krdo
-      //update value
-      double ratio = ((1.0)*itemValue) / itemWeight;
-      int valueToAdd = ratio * capacity;
-      totalValue += valueToAdd;
-
-      //udpate capacity;
-      capacity = 0;//we used up all the capacity
-    }
-  }
-  cout << "Answer is: "<< totalValue << endl;
-  return 0;
-}
+};
