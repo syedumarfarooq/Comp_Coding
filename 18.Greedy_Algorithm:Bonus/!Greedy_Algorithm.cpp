@@ -44,3 +44,52 @@ int solve(int n, int arr[], int dept[]) {
 
 //   return 0;
 // }
+*//Question 2
+ https://www.geeksforgeeks.org/problems/shop-in-candy-store1145/1
+//  In a candy store, there are n different types of candies available and the prices of all the N different types of candies are provided to you. You are now provided with an attractive offer.
+// For every candy you buy from the store and get K other candies ( all are different types ) for free. Now you have to answer two questions. Firstly, you have to find what is the minimum amount of money you have to spend to buy all the n different candies. Secondly, you have to find what is the maximum amount of money you have to spend to buy all the n different candies.
+// In both the cases you must utilize the offer i.e. you buy one candy and get k other candies for free.
+ 
+class Solution
+{
+public:
+    int findMin(int candies[],int N,int K){
+        int buy=0;
+        int free=N-1;
+        int amount=0;
+        while(buy<=free){
+            amount+=candies[buy];
+            buy++;
+            int count=K;
+            while(count!=0 &&free>=buy){
+                count--;
+                free--;
+            }
+            
+        }
+        return amount;
+    }
+    int findMax(int candies[],int N,int K){
+        int buy=N-1;
+        int free=0;
+        int amount=0;
+        while(free<=buy){
+            amount+=candies[buy];
+            buy--;
+            int count=K;
+            while(count!=0 && free<=buy){
+                count--;
+                free++;
+            }
+            
+        }
+        return amount;
+    }
+    vector<int> candyStore(int candies[], int N, int K)
+    {
+        sort(candies,candies+N);
+        int mini=findMin(candies,N,K);
+        int maxi=findMax(candies,N,K);
+        return {mini,maxi};
+    }
+};
