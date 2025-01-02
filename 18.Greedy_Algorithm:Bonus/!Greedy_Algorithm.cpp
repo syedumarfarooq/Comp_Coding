@@ -106,8 +106,8 @@ public:
 *//logic
  // in this we have to find  the largest rectangle that is not defended so we will find the maximum difference between two rows and colums between the towers so that we can multiply
  // and find number of boxes
-// eg: in 5x5 the towers are on 1,1 and  4,3 the max difference between towers defence (i.e from one tower to another)is 2 and 1 so 3 boxes are the  boxes undefended 
- //so like that we take to consider all possible chances and get maximum among them
+// eg: in 5x5 the towers are on 1,1 and  4,3 the  difference between towers  (i.e from one tower to another)is 2 and 1 so 3 boxes are the  boxes undefended 
+ //so like that we have to consider all possible chances and get maximum among them
  //we also have to consider the rectangle from the starting colum to next tower what if they make bigger rectangle for that we keep reference points an imaginary tower
  //at 0 and 6 which are out of bound 
 #include <iostream>
