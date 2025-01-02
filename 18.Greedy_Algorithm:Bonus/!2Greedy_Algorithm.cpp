@@ -68,7 +68,8 @@ int main() {
   sort(data.begin(), data.end(), cmp);
   int totalValue = 0;
   //check eac items k entire itm lelu ya frraction lu
-  for(int i=0;i<n; i++) {
+  for(int i=0;i<n; i++) {*// in this code we might get an error and it is a silly mistake told by the instructor to solve it by the running
+    // fine for basic text case the instructor gave hit it might be type casting error not garuented
     pair<int,int> item = data[i];
     int itemValue = item.first;
     int itemWeight = item.second;
