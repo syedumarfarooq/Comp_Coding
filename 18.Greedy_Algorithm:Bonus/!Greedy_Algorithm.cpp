@@ -135,7 +135,8 @@ int main() {
 
   //size of 2D grid
   rowC.push_back(x+1);//pushing the ending element also as tower because to find refernce of the ending point
-  colC.push_back(y+1);//size +1 as if we want to find distance between 2 points i.e from 2 to end i.e we have to minus 6-2-1 to get three so we add +1 to the end as we can find the max
+  colC.push_back(y+1);//size +1 as if we want to find distance between 2 points eg:a tower is placed at 2 so from 2 to end i.e we have to minus 6-2-1 to get three so we add +1 to the 
+ // end as we can find the max
   sort(rowC.begin(), rowC.end());//they can be in any order so sorting them to find difference between each other so we can find max difference and largest box possible
   sort(colC.begin(), colC.end());
 
