@@ -87,3 +87,40 @@ class Solution {
         return totalValue;
     }
 };
+*//Question 6
+https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1
+// Given an array arr[] of positive integers, where each value represents the number of chocolates in a packet. Each packet can have a variable number of chocolates. There are m students, the task is to distribute chocolate packets among m students such that -
+//       i. Each student gets exactly one packet.
+//      ii. The difference between maximum number of chocolates given to a student and minimum number of chocolates given to a student is minimum and return that minimum possible difference.
+// Examples:
+// Input: arr = [3, 4, 1, 9, 56, 7, 9, 12], m = 5
+// Output: 6
+// Explanation: The minimum difference between maximum chocolates and minimum chocolates is 9 - 3 = 6 by choosing following m packets :[3, 4, 9, 7, 9].
+*//logic
+  // in this we are using sliding window first we sort all the chocolate packets
+  //as for the difference to be minimum the elements (minimum and maximum) should be closer to each other for the difference to be little
+  //so that is why we sort and apply sliding window method 
+//then we make a window of size =  no. of students then the first element of the window will be the minimum and the last element will be 
+  //maximum
+//we start finding the difference of all the window by shifting one value then return the minimum difference
+*//code
+  class Solution {
+  public:
+    int findMinDiff(vector<int>& arr, int m) {
+        // code here
+        int n=arr.size();
+        sort(arr.begin(), arr.end() );
+
+      //check differences in m-size window
+      int i = 0;
+      int j = m-1;
+      int diff = INT_MAX;
+      while(j<n) {
+        int newDiff = arr[j] - arr[i];
+        diff = min(diff, newDiff);
+        j++;
+        i++;
+      } 
+      return diff;
+    }
+};
