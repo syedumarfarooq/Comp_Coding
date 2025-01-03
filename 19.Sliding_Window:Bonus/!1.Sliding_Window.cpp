@@ -49,3 +49,48 @@ public:
         return ans;
     }
 };
+*//Question 3:Minimum Size Subarray Sum
+https://leetcode.com/problems/minimum-size-subarray-sum/
+// Given an array of positive integers nums and a positive integer target, return the minimal length of a 
+// subarray
+//  whose sum is greater than or equal to target. If there is no such subarray, return 0 instead.
+// Example 1:
+// Input: target = 7, nums = [2,3,1,2,4,3]
+// Output: 2
+// Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+*//logic
+// 1.start with 1 size window from the extreme left start =0 and end=1
+// 2.increament end till u achieve the target 
+// 3.once u achieve target try minimizing the window by incrementing the start if the sum becomes less then again increment the end to achieve target
+// 4.save the length whenever u reach the target
+// do the above two steps until u reach out of bound
+*//code
+  class Solution {
+public:
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int i = 0;
+        int j = 0;
+        int sum  = 0;
+        int len = INT_MAX;
+
+        while( j < nums.size()) {
+            //include ciurrent number 
+            sum = sum + nums[j];
+            //mere paas ek window ka sum ready h 
+            while(sum >= target) {
+                //minimise -> sum me se decrease karo, len bhi update krelna, i/start ko aage badhana padega
+
+                len = min(len, j-i+1);
+                sum = sum - nums[i];
+                i++;
+            }
+            j++;
+        }
+
+        if(len == INT_MAX)
+            return 0;
+        else
+            return len;
+
+    }
+};
