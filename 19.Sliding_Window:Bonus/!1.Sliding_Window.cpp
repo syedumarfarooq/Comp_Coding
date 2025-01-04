@@ -2,6 +2,8 @@
 // 1.Fixed window size
 // 2.Variable window size
 // start with a small window and gradually expand or shrink based on certain condition
+  // based on question 3 and 4 we infer that we get variable window size type question we will start the widow from begining until specific
+  // condition is met then minimize it
 // 3.two Pointers
 // 4.Optimised Sliding Window(i.e using extra data structure)
 *//Question 1 :Sliding Window Maximum
