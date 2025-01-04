@@ -96,3 +96,23 @@ public:
 
     }
 };
+*//READ THIS ARTICLE
+  https://leetcode.com/discuss/general-discussion/1122776/summary-of-sliding-window-patterns-for-subarray-substring
+// Hi everyone!
+// I'm a university student who recently studied a lot of sliding window for summer intern interviews. I really appreciate people who write posts like this - they helped me so much. So I would also like to share some ideas, about sliding window, and what is not sliding window.
+// Sliding Window is very common in interviews and many questions that look like "(Longest/Shortest/Number of) (Substrings/Subarrays) with (At most/Exactly) K elements that fit (some condition)" have a common pattern. They are usually O(n).
+*// Sliding Window Questions
+// 3. Longest Substring Without Repeating Characters
+// 340. Longest Substring with At Most K Distinct Characters
+// 76. Minimum Window Substring
+// 1004. Max Consecutive Ones III
+// 904. Fruit Into Baskets
+// 424. Longest Repeating Character Replacement
+// 930. Binary Subarrays with Sum
+// 992. Subarrays with K Different Integers
+// 1248. Count Number of Nice Subarrays
+// 1358. Number of Substrings Containing All Three Characters
+*//Not sliding window/not this pattern
+// Subarray Sum Equals K
+// Longest Subarray with Absolute Difference <= Limit
+// Longest Palindromic Substring
