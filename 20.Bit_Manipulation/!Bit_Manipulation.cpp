@@ -37,3 +37,13 @@ void clearIthBit(int& n, int i) {
   n = n & mask;
   
 }
+*//update i'th bit based on given input
+  //in this we are making a mask in which the i'th bit has the target and we perform OR 
+  //if the i'th bit is 0 and the target is 1 or 0 the above method with work perfectly
+  //if there is 1 in the i'th bit then the above method wont work so we clear that bit and make 0 then perform the operation
+void updateIthBit(int& n, int i, int target) {
+  clearIthBit(n,i);//if the i'th element is 1 we clear it and make it 0 
+  int mask = target << i;//i'th bit will have either 0 or 1 depending on target
+  n = n | mask;
+  cout << "after updating " << n << endl;
+}
