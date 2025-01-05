@@ -65,4 +65,22 @@ https://github.com/syedumarfarooq/Comp_Coding/blob/main/4.Pointers/Basic_Maths_f
   cout << "after clearing in range " << n << endl;
 }
 *//Question 4:
-//a opponent is starting on n'th stare and u are standing at 0th stare u can only climb 2^n number of stares so what is the minimum number of steps to reach oponent
+//a opponent is standing on n'th stare and u are standing at 0th stare u can only climb 2^n number of stares so what is the minimum number of steps to reach oponent
+  //and every 2^n step taken is considered as one step
+// i.e u can climb either 2,4,8,16.... steps and so 2^2 is also considered one step and 2^4 is also considered one step
+*//logic 
+  // 2,4,8 are 10,100,1000 respectively if the oponent is standing at 6th position i will take 2 steps i.e 2 and 4 i.e 10+100 which is 6:110 if we count the number of set i.e no of 1 
+  // in the end postion we can find number of steps as the end position is total of 2^n steps
+//so basically we have to count the number of set of n'th position where oposition is standing 
+//we got this intiution as every 2^n number has only one set bit i.e 10,100,1000 bit so the end position  will be the addition of all the steps that is of either 10,100,1000....
+// so for every step there will be 1 bit present, in the end position if we find out the number of 1 in the end postion we will know how many 2^n steps it has taken
+  //so simply we can use the countsetbits to find the miniumn number of 2^k steps taken to reach the end 
+int countSetBitsFast(int n) {
+  int count = 0;
+  while(n != 0) {
+    //remove last set bit
+    n = (n & (n-1));
+    count++;
+  }
+  return count;
+}
