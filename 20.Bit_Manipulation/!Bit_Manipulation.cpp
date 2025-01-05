@@ -47,3 +47,14 @@ void updateIthBit(int& n, int i, int target) {
   n = n | mask;
   cout << "after updating " << n << endl;
 }
+*//clearing last i bits
+  // in this we are making a mask which has 0 for the last i'th bits and then if we perform & operation to it all the last i'th will be cleared that i.e if 1 then becomes 0
+  //we can create 111111111111 then <<i to make it 1111111100000 and 
+  //11111....111111 is -1 as binary one is 000000000...1 then we do 1's compliement then it become 111111...10 and for 2's complement if we add one to one's complement it 
+  //becomes 11111111...11111
+  // To convert a positive number into its negative representation we perfom 1 and 2's compliment to it
+void clearLastIBits(int n, int i) {
+  int mask = (-1 << i);
+  n = n & mask;
+  cout << "after clearing last i bits: " << n << endl;
+}
