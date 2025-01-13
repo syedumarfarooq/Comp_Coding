@@ -15,7 +15,8 @@ https://leetcode.com/problems/building-h2o/
 // Output: "HHO"
 // Explanation: "HOH" and "OHH" are also valid answers.
 *//logic
-  // in this we are creating a lock in which turn 1 and turn 2 are mean to release hydrongen and turn 2 releases oxygen if any other thread run any other function then they have to wait
+  // in this we are creating a lock in which turn 1 and turn 2 are mean to release hydrongen and turn 2 releases oxygen if any the threads (hydrogen,oxygen)
+  // and not meeting the condition then they have to wait, there are can beany number of thread waiting
 *//code
   class H2O {
     std::mutex m;
