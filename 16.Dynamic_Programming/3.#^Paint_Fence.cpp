@@ -8,7 +8,8 @@
 //   eg:k=3  if same RBB, RGG,BRR,BGG,GRR,GBB and if different RRB,RRG,BBR,BBG,GGR,GGB,RBR,RBG,GBR,GBG,RGR,RGB,BRB,BRG,BGR,BGB,GRB,GRG
 //   same for n=4 XXXX, we are taking last two fences and they can either be same or differnt
 //   for n=4 for first 2 f(2) fence will be taken care by recursion but the next two can be same or differnt
-//   1)if same f(2)*(k-1) for every element of f(2) we cannot add all three colors for eg:first two are RG we cannot put GG so 
+//   1)if last two fence are same then the first two will be calculated by recursion so f(2) is given by recursion f(2)*(k-1) for every element of f(2) we cannot add all three colors 
+ // for eg:first two are RG we cannot put GG so 
 //     for every f(2) we multiply with k-1 orelse it can make 3 adjecent fences which 
 //   2)if different f(3)*k-1 for EVERY element of f(3) we cannot add all three colors what if there are already 2 same present in f2
 // so,f(4)=f(2)*(k-1)+f(3)*(k-1)
