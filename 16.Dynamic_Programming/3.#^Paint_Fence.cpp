@@ -15,10 +15,14 @@
 // so,f(4)=f(2)*(k-1)+f(3)*(k-1)
 //    f(4)=(f(2)+f(3))*(k-1)
 //    f(n)=[f(n-2)+f(n-1)]*(k-1)
-//   I got a doubt for f(4) what if f(3) is all different colors can we can multiply with all three colors so k-1 will not work
+//  doubt1) I got a doubt for f(4) what if f(3) is all different colors can we can multiply with all three colors so k-1 will not work
 //   answer for the doubt is that if there k-1 multiply with f(3) but f(4) is not made with singlt f(3) it is made with f(2) the rest
 // one element is present in that f(2)*k-1 for some elements  which are same for eg:GBRG,GBRB is present in f(3)*(k-1) and GBRR is present in 
 // f(2)*(k-1) as we are diving the same and different in two coloumns
+//  doubt2)for f(4) as we are using f(2) for the case where last two fences have same color and f(3) for the case wehre last two fences have differnt color
+// for same color we can take f(2) as it will give all the combination and the rest we have to multiply k-1, but for differnt color case this is different
+// because if we take f(2) even for the different case then we have to find the ways to paint rest 2 fences with different color for that we have to find the differnt case of f(2) 
+//  which is not possible as f(2) contains both same and differnt ways so we use f(3) and choose the last element which is differnt from the last element of f(3) i.e k-1
   *//Solution
 #include<iostream>
 #include<vector>
@@ -55,7 +59,7 @@ using namespace std;
   //   dp[1]=k;
   //   dp[2]=k+k*(k-1);
   //   for(int i=3;i<=n;i++){
-  //       dp[i]=(solveUsingTab(i-2,k,dp)+solveUsingTab(i-1,k,dp))*(k-1);
+  //       dp[i]=(dp[i-2]+dp[i-1])*(k-1);
       
   //   }
   // return dp[n];
