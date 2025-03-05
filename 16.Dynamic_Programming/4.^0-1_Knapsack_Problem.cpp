@@ -184,12 +184,13 @@ https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1?itm_source=gee
             }
         }
         //for finding out the include and exclude we need current value and some value from left
-        //so as we are overriding some value of left for finding include and exclude but if we want to access old values
-        //we cannot so if we move from right to left the right values get overrided first and then we can continue
-        //but if we move from left to right it overides some of the values when we move to next value trying to access tthe
-        //previous unoverided values it is not possible
-        //if we move from right to left we can access the left values without overiding the values which we might need in
-        //the later iterations
+        // after every loop the curr array is updated i.e for i'th index we take old value of i'th index and some value from the left
+        //so the curr array contains some values and we start iterating and change values from the left so we will be updating the old values with the new 
+        //but for any i'th place we need old i'th value and old left side value if we are changing (overiding ) values from the left we might change some
+       //values which might give incorrect answer the solution for this is we iterate from right to left as we are updating from right to left we get old values
+     // on our left side which are not overridden 
+       //i'th is updated based on the old value of i and old value from the left side
+        
     for(int index=1; index<=n; index++) {
         for(int w=capacity; w>=0; w--) {
           //include and exclude
