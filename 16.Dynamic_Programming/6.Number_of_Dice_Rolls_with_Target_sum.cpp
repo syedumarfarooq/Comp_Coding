@@ -16,7 +16,7 @@ https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/
 // class Solution {
 // public:
 //     int solveUsingRecursion(int n,int k,int target){
-//         if(n<=0){
+//         if(n<0){
 //             return 0;
 //         }
 //         if(n==0&&target==0){
