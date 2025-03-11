@@ -18,7 +18,8 @@ https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/
 // Explanation: There are two possible trees shown.
 // The first has a non-leaf node sum 36, and the second has non-leaf node sum 32.
 *//Logic
-// for n partitions there are n trees among those n trees there is n sums of non leaf nodes
+// for n partitions(diving them into two different parts as there are n elements we can divide them in n eg;1,2,3,4,5  , 1 and 2345 , 12 and 345 , 123 and 45 , 1234 and 5, 12345
+// ) there are n trees among those n trees there is n sums of non leaf nodes
 // partition is done because to divide the tree into two trees then we find the maximum element from the unordered map from both the trees
 // and multiply and store the answer as the parent node and its two children are the the two trees partitioned before
 *//Solved using recursion
