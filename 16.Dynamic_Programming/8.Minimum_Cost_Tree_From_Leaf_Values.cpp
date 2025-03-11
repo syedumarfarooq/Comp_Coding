@@ -30,7 +30,8 @@ https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/
 //             return 0;
 //         }
 //         int ans=INT_MAX;
-//         for(int i=left;i<right;i++){//the partition can be done from first to last elements and it gives 
+//         for(int i=left;i<right;i++){//the partition can be done from first to last elements and it gives and doing(partition) it in a way where there is  atleast one child  
+ // in both subtree i.e we cannot have all the elements in one subtree and another empty as the question says there mustbe two or zero children
 //             ans=min(ans,
 //             maxi[{left,i}]*maxi[{i+1,right}]+//here maximum of left and right subtrees are multiplied and added to the answer as there are 
 //               //non leaf node
