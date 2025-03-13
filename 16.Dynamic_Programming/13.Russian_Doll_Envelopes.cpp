@@ -113,7 +113,8 @@ public:
              // the height will be 1,3,6,5,7 then the longest increasing subsequence is 1,3,6,7 and u can put every envelopes inside the 
              // another and we can drop the 4,5 which is giving us wrong answer
              //this is the reason we place it in decreasing order
-             *//you many think what is the reason to put custom comprator for the sort as either way we are checking before inserting
+             *//you many think what is the reason to put custom comprator for the sort as either way we are checking before inserting and also the reason for sorting
+              *//in decending order
          //      bcz where there are element 4,2 4,5 they should be sorted in decreasing order why because  as 4,2 will be place before as it 
          //    will be greater than previous element then when 4,5 comes when they go into the  lower bound function and it checks with which
          // element to swap the lower bound will give end index and as there is no element just greater then 4,5 and we are comparing 5 so
