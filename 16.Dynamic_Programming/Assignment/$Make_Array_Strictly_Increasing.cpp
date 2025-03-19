@@ -8,7 +8,8 @@ https://leetcode.com/problems/make-array-strictly-increasing/
 // Output: 1
 // Explanation: Replace 5 with 2, then arr1 = [1, 2, 3, 6, 7].
 *//logic 
-//   we are checking prev and current if prev is less than current then we just move and if not we replace the curr with upperbound of prev 
+//   we are checking prev and current here prev is the number (i.e arr1[someindex] or  arr2[someindex] )itself and current is the index of the current element
+  //if prev is less than current then we just move and if not we replace the curr with upperbound of prev 
 // in arr2 so that it becomes strictly increasing but if we follow this above case we might get wrong answer in some cases
 // eg:arr1=1,5,3,6,7 arr2=1,2,3,4 if we apply above method and solve it will return -1 as in the [2] index 5>3 and there is no upperbound of 
 // 5 in arr2 so it is -1 but if we change the 5 in the previous iteration when [0] is prev and [1] is curr we check upperbound of 1 [0]
