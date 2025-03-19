@@ -47,6 +47,8 @@ https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/
 //         //we are creating a data structure in which with O(1) we can find the 
 //         // maximum number in that range
 //         // i and j are ranges and it stores the maximum number in that range i.e for every range there will be a maximum stored in the map
+           *//we are using map even though  unordered map is efficient because In unordered_map, you cannot directly use pair as a key because 
+           *//unordered_map requires keys to be hashable, and std::pair does not have a built-in hash function.
 //         for(int i=0;i<arr.size();i++){
 //             maxi[{i,i}]=arr[i];
 //             for(int j=i+1;j<arr.size();j++){
