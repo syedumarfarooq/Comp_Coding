@@ -11,7 +11,7 @@ https://leetcode.com/problems/burst-balloons/
 // coins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167
 *//logic
   in this we are going from bottom to top not from top to bottom bcz if we have 6 ballons B1,B2,B3,B4,B5,B6 if we take B4 and burst it
-then we need {B1,B2,B3}*(B3*B4*B5)*{B5,B6} and to solve {B1,B2,B3} sub problem if we want to burst B2 and B5 (as B4 is already burst)but 
+then we need solve{B1,B2,B3}+(B3*B4*B5)+solve{B5,B6} and to solve {B1,B2,B3} sub problem if we want to burst B3 , we need B5 (as B4 is already burst)but 
 B5 is not part of that subproblem and its dependency is on another subproblem as it is trying to access B5
 this is a independency between subproblems and we know Subproblems are independent in dp
 *//Subproblems are independent in dp
@@ -23,9 +23,9 @@ this is a independency between subproblems and we know Subproblems are independe
 //  [1]=>3*1*5,first 1 bursts
   *//how to implement
 //   we add 1 on both sides bcz it is said in question if there are only one ballon left on the left and right multiply with 1 
-// we iterative trought start to end poping each ballon and check which gives the maximum coins
+// we iterative trought sart to end adding  one ballon in every step and check which gives the maximum coins
 // eg:3,1,5,8
-//   1,3,1,5,8,1 start is [1] and end is [4]
+//   1,3,1,e,8,1 start is [1] and end is [4]
 //   we check every value from 1-4 for example lets take 5
 //   nums[start-1]*nums[i]*nums[end+1]=1*5*1
 //   then solve(nums,1,2) and solve(nums,4,4)
