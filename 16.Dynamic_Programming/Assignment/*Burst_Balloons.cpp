@@ -30,7 +30,7 @@ this is a independency between subproblems and we know Subproblems are independe
 //   nums[start-1]*nums[i]*nums[end+1]=1*5*1
 //   then solve(nums,1,2) and solve(nums,4,4)
 //   for this solve(nums,1,2) lets take 3 [1] as i
-//   nums[start-1]*nums[i]*nums[end+1]=1*3*5//as 5 was the previous ballon burst
+//   nums[start-1]*nums[i]*nums[end+1]=1*3*5//as 5 was the previous ballon added
 //   it goes on
 *//solved using recursion
   class Solution {
