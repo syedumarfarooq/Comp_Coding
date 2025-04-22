@@ -91,14 +91,14 @@
 		dist[src] = 0;
 
 
-		for(auto nbr: adjList[0]) {
-			if(dist[0] + nbr.second < dist[nbr.first]) {
+		for(auto nbr: adjList[src]) {//this is for first iteration i.e from src we are setting the neighbouring node distance
+			if(dist[src] + nbr.second < dist[nbr.first]) {
 				dist[nbr.first] = dist[0] + nbr.second;
 			}
 		}		
 			
 
-		while(!topoOrder.empty()) {
+		while(!topoOrder.empty()) {//from here the second node starts changing the dist
 
 			int topElement = topoOrder.top();
 			topoOrder.pop();
