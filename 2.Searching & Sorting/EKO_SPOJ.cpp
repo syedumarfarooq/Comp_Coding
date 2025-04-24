@@ -29,7 +29,7 @@
 bool isPossibleSol(vector<long long int>&trees,long long m,long long height){
   long long woodCollected=0;
   for(int i=0;i<trees.size();i++){
-    if(trees[i]>mid){
+    if(trees[i]>height){
       woodCollected+=(trees[i]-height);
     }
     
