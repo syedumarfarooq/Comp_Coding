@@ -26,7 +26,8 @@ public:
         for(int i=0;i<nums.size();i++){
             sum+=nums[i];
             if(sum>maxi) maxi=sum;
-            if(sum<0)sum=0;
+            if(sum<0)sum=0;//if the sum goes below negative it will effect the result so whenever it goes below zero we
+         //restart
         }
         return maxi;
     }
