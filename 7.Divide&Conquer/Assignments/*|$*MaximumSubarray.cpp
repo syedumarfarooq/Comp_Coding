@@ -21,7 +21,12 @@ https://leetcode.com/problems/maximum-subarray/description/
 // Input: nums = [5,4,-1,7,8]
 // Output: 23
 // Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
- 
+
+
+// in this we are diving the array from mid and finding the max sum from both side and also check if the joining of both 
+// left and right i.e right border and left border gives us the max sum so we check all that and return 
+//the left and right max will be given us through the recursion but the cross should be calculated
+//i.e to check if the array makes maximum subarray with somepart of left and right
 
 class Solution {
 public:
