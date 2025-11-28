@@ -27,5 +27,5 @@ int exposearch(int a[],int n,int target){
     i=j;
     j=j*2;
   }
-return binarysearch(a,i`(start position)`,min(j,n-1)`(if i goes outside the n it takes n)`,target);
+return binarysearch(a,i/2`(start position)`,min(i,n-1)`(if i goes outside the n it takes n)`,target);
 }
