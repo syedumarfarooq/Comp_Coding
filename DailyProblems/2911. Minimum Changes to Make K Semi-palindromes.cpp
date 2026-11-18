@@ -1,3 +1,6 @@
+//Approach-1 (Recursion Memoization)
+//T.C : O(n^3 * div(n) + n^2 * k) ~ O(n^3)
+//S.C : O(n^2) (costMemo n*n + memo n*k + recursion stack O(k))
 class Solution {
 public:
     int n;
