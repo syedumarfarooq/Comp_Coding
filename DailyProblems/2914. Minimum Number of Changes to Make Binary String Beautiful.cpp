@@ -1,4 +1,4 @@
-*//HINT: the subarray size does not matter as we  taking 2-2 size  will give u the answer right
+*//HINT: the subarray size(number of partition) does not matter as   taking 2-2 size  will give u the  right answer
 *//my solutions dp not needed as the constraint is long so tle will occur
     *//recursion
 class Solution {
