@@ -88,7 +88,7 @@ public:
         }
         
         mem[n]=0;
-        for(int start=n;start>=0;start--){
+        for(int start=n;start>=0;start-=2){
 
             int result=INT_MAX;
 
