@@ -1,4 +1,8 @@
 *//HINT: the subarray size(number of partition) does not matter as   taking 2-2 size  will give u the  right answer
+   // as the question only says find the changes in even length so partitioning it into size of 2 will gie the same answer, if the question had 
+   // asked to keep the length of the subarray maximum(the more the 
+   // length of subarray the better) and minimum changes
+   //to make it beautiful then we should consider size of 4,6,8 
 *//my solutions dp not needed as the constraint is long so tle will occur
     *//recursion
 class Solution {
@@ -162,3 +166,59 @@ public:
 };
 
 *// author answer
+/**************************************************************** C++ ****************************************************************/
+//Approach-1 (Simple iterate and count and keep track)
+//T.C : O(n)
+//S.C : O(1)
+class Solution {
+public:
+    int minChanges(string s) {
+        char curr = s[0];
+
+        int count = 0;
+        int changes = 0;
+        int n = s.length();
+
+        // Iterate through each character in the string
+        for (int i = 0; i < n; i++) {
+
+            if (s[i] == curr) {
+                count++;
+                continue;
+            }
+
+            if (count % 2 == 0) { //Even
+                count = 1;
+            } else { //Odd
+                count = 0;
+                changes++;
+            }
+            
+            curr = s[i];
+        }
+
+        return changes;
+    }
+};
+
+
+//Approach-2 (Simple iterate and count and keep track)
+//T.C : O(n)
+//S.C : O(1)
+class Solution {
+public:
+    int minChanges(string s) {
+        int changes = 0;
+        int n = s.length();
+
+        for (int i = 0; i < n; i += 2) {
+
+            if (s[i] != s[i + 1]) {
+                changes++;
+            }
+        }
+
+        return changes;
+    }
+};
+
