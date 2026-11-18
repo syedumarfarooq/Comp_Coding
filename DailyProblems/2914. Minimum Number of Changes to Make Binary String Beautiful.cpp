@@ -1,4 +1,4 @@
-
+*//HINT: the subarray size does not matter as we  taking 2-2 size  will give u the answer right
 *//my solutions dp not needed as the constraint is long so tle will occur
     *//recursion
 class Solution {
@@ -144,3 +144,21 @@ public:
         return change;
     }
 };
+*//second approach even more simpler
+class Solution {
+public:
+    int minChanges(string s) {
+        int count=1;
+        int change=0;
+        for(int i=1;i<s.length();i++){
+            if((i+1)%2==0){
+                if(s[i]!=s[i-1]){
+                    change++;
+                }
+            }
+        }
+        return change;
+    }
+};
+
+*// author answer
