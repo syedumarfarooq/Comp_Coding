@@ -1,3 +1,6 @@
+
+*//my solutions dp not needed as the constraint is long so tle will occur
+    *//recursion
 class Solution {
 public:
     string st;
@@ -103,5 +106,41 @@ public:
         }
         
         return mem[0];
+    }
+};
+
+*//using traversing of array mY solution
+class Solution {
+public:
+    int minChanges(string s) {
+        int currchar=-1;
+        int change=0;
+        int count=0;
+        for(int i=0;i<s.length();i++){
+            if(currchar!=-1&&s[i]!=s[currchar]){
+
+                if((count+1)%2==0){
+                    change++;
+                    count++;
+                    continue;
+                }
+                
+                if(count%2==0 ){
+                    currchar=-1;
+                    count=0;
+                }
+            }
+           
+            if(currchar!=-1 &&s[i]==s[currchar]){
+                count++;
+            }
+            if(currchar==-1){
+                currchar=i;
+
+                count++;
+            }
+            
+        }
+        return change;
     }
 };
